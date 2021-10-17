@@ -12,14 +12,7 @@
 ### 3. Design Program
 ## II. Folder Structure
 
-   assets-management-system 
-                          |-- .gitignores
-                          |-- readme.md
-                          |-- docs
-                          |-- src
-                              |-- database-queries
-                              |-- wpf
-
+   code here
 
 - The readme.md is this file
 - The .gitignores contains files and folders which are ignored when commits.
