@@ -13,11 +13,11 @@
 ## II. Folder Structure
 
 <code>
->.  
->|-readme.md  
->|-.gitignores  
->|-docs  
->|-src  
+.  
+|-readme.md  
+|-.gitignores  
+|-docs  
+|-src  
    >|-database-queries  
    >|-wpf  
    </code>
