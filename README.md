@@ -13,13 +13,19 @@
 ## II. Folder Structure
 
 <code>
-.  
-|-readme.md  
-|-.gitignores  
-|-docs  
-|-src  
-   >|-database-queries  
-   >|-wpf  
+  .
+    ├── node_modules
+    ├── src
+    ├── .gitignore
+    ├── .prettierrc
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── gatsby-ssr.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
    </code>
 
 - The readme.md is this file
