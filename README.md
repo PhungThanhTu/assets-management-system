@@ -12,14 +12,14 @@
 ### 3. Design Program
 ## II. Folder Structure
 
-  <code>
-      .
-\t\n      |-readme.md
-\t\n      |-.gitignores
-\t\n      |-docs
-\t\n      |-src
-         |-database-queries
-         |-wpf
+<code>
+.  
+|-readme.md  
+|-.gitignores  
+|-docs  
+|-src  
+   |-database-queries  
+   |-wpf  
    </code>
 
 - The readme.md is this file
