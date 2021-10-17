@@ -19,7 +19,7 @@
                       |-- src
                            |-- database-queries
                            |-- wpf
-                           `**`
+**`
 
 
 - The readme.md is this file
