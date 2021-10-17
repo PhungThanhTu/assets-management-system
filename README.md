@@ -12,7 +12,15 @@
 ### 3. Design Program
 ## II. Folder Structure
 
-   code here
+  <code>
+      .
+      |-readme.md
+      |-.gitignores
+      |-docs
+      |-src
+         |-database-queries
+         |-wpf
+   </code>
 
 - The readme.md is this file
 - The .gitignores contains files and folders which are ignored when commits.
