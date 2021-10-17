@@ -1,4 +1,5 @@
-
+src/wpf/assets-management-system/obj/
+src/wpf/assets-management-system/bin/
 src/wpf/assets-management-system/bin/Debug/net5.0-windows/assets-management-system.deps.json
 src/wpf/assets-management-system/bin/Debug/net5.0-windows/assets-management-system.dll
 src/wpf/assets-management-system/bin/Debug/net5.0-windows/assets-management-system.exe
