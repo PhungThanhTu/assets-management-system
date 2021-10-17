@@ -12,21 +12,7 @@
 ### 3. Design Program
 ## II. Folder Structure
 
-<code>
-  .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-   </code>
+
 
 - The readme.md is this file
 - The .gitignores contains files and folders which are ignored when commits.
@@ -35,4 +21,4 @@
 - In the src folder :
               <br/>+ The database-queries folder contains SQL queries for creating and manipulating with SQL Server Database
               <br/>+ The wpf folder contains WPF source code
-## III. 
+## III. Attention
