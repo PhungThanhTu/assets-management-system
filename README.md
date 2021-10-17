@@ -23,3 +23,7 @@
               <br/>+ The database-queries folder contains SQL queries for creating and manipulating with SQL Server Database
               <br/>+ The wpf folder contains WPF source code
 ## III. Attention
+- Always remember to ignore bin and obj folder in VS Solution Folder (src/wpf/assets-management-system/)
+- Remenber to pull code before working
+## IV. Branches
+- We only work on 1 branch, so be careful, don't code on files which are not your responsibilities.
