@@ -3,7 +3,8 @@
 ## I. Overview
 ### 1. Tech Stacks
 - Database : Microsoft SQL Server 2019
-- Frontend Framework : WPF 
+- Frontend Framework : WPF Application ( with .NET 5.0 )
+- IDE : Visual Studio 2019
 - Programming Language : C#
 - UI Markup Language : XAML
 ### 2. Document Stacks
