@@ -12,14 +12,13 @@
 ### 3. Design Program
 ## II. Folder Structure
 
-`assets-management-system 
-                      |-- .gitignores
-                      |-- readme.md
-                      |-- docs
-                      |-- src
-                           |-- database-queries
-                           |-- wpf
-**`
+   assets-management-system 
+                          |-- .gitignores
+                          |-- readme.md
+                          |-- docs
+                          |-- src
+                              |-- database-queries
+                              |-- wpf
 
 
 - The readme.md is this file
