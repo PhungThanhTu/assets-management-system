@@ -13,13 +13,13 @@
 ## II. Folder Structure
 
   <code>
-      \.
-      \|-readme.md
-      \|-.gitignores
-      \|-docs
-      \|-src
-         \|-database-queries
-         \|-wpf
+      .
+\t\n      |-readme.md
+\t\n      |-.gitignores
+\t\n      |-docs
+\t\n      |-src
+         |-database-queries
+         |-wpf
    </code>
 
 - The readme.md is this file
