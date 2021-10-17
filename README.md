@@ -25,6 +25,6 @@ assets-management-system
 - The docs folder contains all documents for projects.
 - The src folder contains source code
 - In the src folder :
-              + The database-queries folder contains SQL queries for creating and manipulating with SQL Server Database
-              + The wpf folder contains WPF source code
+              <br/>+ The database-queries folder contains SQL queries for creating and manipulating with SQL Server Database
+              <br/>+ The wpf folder contains WPF source code
 ## III. 
