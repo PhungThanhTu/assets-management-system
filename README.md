@@ -13,7 +13,9 @@
 ### 3. Design Program
 ## II. Folder Structure
 
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67744403/137607526-d6779226-1253-4cf9-bc5b-207309ed3f29.png">
+</p>
 
 - The readme.md is this file
 - The .gitignores contains files and folders which are ignored when commits.
