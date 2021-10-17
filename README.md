@@ -1,4 +1,3 @@
-### assets-management-system
-Assets Management System for OOAD SE100
+# ASSETS MANAGEMENT SYSTEM
 
 
