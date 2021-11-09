@@ -1,3 +1,4 @@
+src/wpf/assets-management-system/.vs/
 src/wpf/assets-management-system/obj/
 src/wpf/assets-management-system/bin/
 src/wpf/assets-management-system/bin/Debug/net5.0-windows/assets-management-system.deps.json
@@ -38,3 +39,5 @@ src/wpf/assets-management-system/obj/Debug/net5.0-windows/MainWindow.g.i.cs
 src/wpf/assets-management-system/obj/Debug/net5.0-windows/ref/assets-management-system.dll
 src/wpf/assets-management-system/obj/project.assets.json
 src/wpf/assets-management-system/obj/project.nuget.cache
+src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
+src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
