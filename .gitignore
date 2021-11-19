@@ -41,3 +41,14 @@ src/wpf/assets-management-system/obj/project.assets.json
 src/wpf/assets-management-system/obj/project.nuget.cache
 src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
+src/console/assets-management-system/obj/assets-management-system.csproj.nuget.dgspec.json
+src/console/assets-management-system/obj/assets-management-system.csproj.nuget.g.props
+src/console/assets-management-system/obj/assets-management-system.csproj.nuget.g.targets
+src/console/assets-management-system/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
+src/console/assets-management-system/obj/Debug/net5.0/assets-management-system.AssemblyInfo.cs
+src/console/assets-management-system/obj/Debug/net5.0/assets-management-system.AssemblyInfoInputs.cache
+src/console/assets-management-system/obj/Debug/net5.0/assets-management-system.assets.cache
+src/console/assets-management-system/obj/Debug/net5.0/assets-management-system.csprojAssemblyReference.cache
+src/console/assets-management-system/obj/Debug/net5.0/assets-management-system.GeneratedMSBuildEditorConfig.editorconfig
+src/console/assets-management-system/obj/project.assets.json
+src/console/assets-management-system/obj/project.nuget.cache

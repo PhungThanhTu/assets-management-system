@@ -1,0 +1,59 @@
+Mỗi thiết bị có một mã số thiết bị duy nhất để phân biệt với các thiết bị khác (nếu thiết bị
+có nhiều bản giống hệt nhau thì cũng sẽ được xem là các thiết bị khác nhau). Mỗi mã số
+thiết bị xác định được các thông tin như: tên gọi thiết bị, chủng loại thiết bị, nguyên giá
+(đơn giá mua vào từ hợp đồng), đơn vị tính, thông số kỹ thuật, năm sản suất, năm đưa
+vào sử dụng, tình trạng của thiết bị (thiết bị mới hay thiết bị đã đưa vào sử dụng, thiết bị
+đã được thanh lý hay chưa?), tỉ lệ khấu hao hàng năm. Mỗi đơn vị tính có một mã đơn vị
+tính, tên gọi đơn vị tính, ghi chú về đơn vị tính. Mỗi chủng loại có một mã chủng loại, tên
+gọi chủng loại, ghi chú về chủng loại.
+Mỗi thiết bị được cung cấp bởi một hợp đồng kinh tế nào đó thông qua các gói thầu với
+các nhà cung ngoài trường. Một hợp đồng nhập hàng có một mã số hợp đồng, ngày nhập
+hàng (về kho), một phiếu nhập hàng thuộc về một nhà cung cấp hàng hóa nào đó. Mỗi
+nhà cung cấp xác định mã số nhà cung cấp, tên gọi nhà cung cấp, địa chỉ và số điện thoại
+của nhà cung cấp.
+Hàng năm, theo định kỳ nhà trường có tổ chức đoàn đến các đơn vị để kiểm kê tài sản –
+mục đích là để đánh giá lại phẩm chất của từng loại thiết bị để từ đó có kế hoạch phân
+phối thiết bị phù hợp; thông tin cần thiết qua đợt kiểm kê tài sản là: mỗi thiết bị còn giá
+trị sử dụng là bao nhiêu ? ngày tháng năm kiểm kê, những cá nhân đã tham gia vào kiểm
+kê (thường là đại diện của đơn vị, phòng quản trị và giám hiệu).
+Mỗi thiết bị như đã phân tích ở trên có tỉ lệ khấu hao hàng năm, năm đưa thiết bị vào sử
+dụng; từ đó kết hợp với kết quả kiểm kê tài sản mà đưa ra quyết định thiết bị nào sẽ được
+thanh lý. Mỗi đợt thanh lý tài sản phải có hội đồng thanh lý tài sản (có những thành viên
+của các đơn vị sử dụng, đại diện đơn vị quản lý thiết bị của nhà trường, giám hiệu và có
+thể là có đơn vị chủ quản của trường). Hội đồng thanh lý tài sản sẽ ra quyết định thanh lý,
+ngày thanh lý.
+Các thiết bị từ phòng quản trị thiết bị của trường sẽ được chuyển giao về các đơn vị theo
+quyết định của hiệu trưởng, phiếu giao và nhận thiết bị giữa đơn vị sử dụng và phòng
+quản trị thiết bị của nhà trường. Ngoài việc cung cấp các thiết bị nguyên bộ cho các đơn
+vị (ví dụ năm 2009 khoa công nghệ thông tin được cấp 100 bộ máy tính mới, khoa nghệ
+thuật được cấp 4 đàn Piano), các đơn vị còn được cấp các thiết bị để sửa chữa hoặc để
+thay thế nhỏ lẻ (ví dụ khoa công nghệ thông tin năm 2009 được cấp 300 mouse máy tính,
+30 thanh Ram,…) – các đợt cung cấp nhỏ lẻ này cũng phải tuân thủ các quy tắc chặt chẽ:
+đơn vị sử dụng cần gởi đề nghị xin cấp vật tư lên giám hiệu (gởi tập trung về phòng quản
+trị thiết bị), sau đó phòng quản trị thiết bị gởi yêu cầu của các đơn vị lên giám hiệu xem
+xét ký duyệt, sau khi giám hiệu ký duyệt thì phòng quản trị thiết bị tiến hành cho các
+công ty có nhu cầu đấu thầu công khai (hoặc không cần đầu thầu công khai nếu là các gói
+thiết bị nhỏ - thường là dưới 100 triệu). Sau khi phòng quản trị thiết bị mua xong thì cung
+cấp các thiết bị về cho các đơn vị (ngoài phiếu giao nhận cần có thêm quyết định của
+giám hiệu nếu đó là các gói thầu mới).
+Các đơn vị và phòng quản trị thiết bị có những phiếu giao nhận cụ thể, mỗi phiếu giao
+nhận có một mã số phiếu giao nhận, ngày giao nhận, hai bên ký giao nhận. Mỗi phiếu
+giao nhận có một danh sách các thiết bị (mỗi phiếu giao nhận này ứng với phòng quản trị
+thiết bị và một số đơn vị nào đó). Việc chuyển các thiết bị giữa các đơn vị đều phải thông
+qua trung gian là phòng quản trị thiết bị. Khi sử dụng, nếu tài sản bị hư hỏng hoặc mất
+mát đơn vị phải báo cho phòng quản trị thiết bị biết để đánh giá lại chất lượng tài sản.
+Khi sửa chữa hoặc thay thế các thiết bị đều phải được lưu lại các thông tin như: chi phí,
+công ty sửa chữa, quyết định đồng ý cho sửa chữa? Tài sản có thể rời khỏi trường bằng
+nhiều cách: mất, bán, thanh lý hoặc điều động ra khỏi trường (theo quyết định của cơ
+quan chủ quản). Hệ thống này không cần quản lý việc sử dụng thiết bị tại các đơn vị.
+Hệ chương trình phải có các chức năng sau:
+1.Danh sách các thiết bị mà mỗi đơn vị đang quản lý.
+2.Tình hình sửa chữa thiết bị của tất cả các đơn vị trong một khoảng thời gian nào đó,
+chi phí sửa chữa.
+3.Bảng kiểm kê tài sản của từng đơn vị(bảng đánh giá phẩm chất cho từng thiết bị).
+4.Danh sách các thiết bị được thanh lý theo một quyết định nào đó, theo một năm nào đó.
+5.Thông tin các thiết bị trong một hợp đồng kinh tế nào đó.
+6.Tình trạng sứ dụng của các thiết bị
+7.Thống kê được số lượng tài sản theo nhóm của cả trường, sự tăng giảm số lượng thiết
+bị theo một khoảng thời gian nào đó.
+8.Liệt kê các tài sản thuộc diện cần thanh lý (giá trị sử dụng còn lại nhỏ hơn 50%).
