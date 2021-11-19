@@ -57,3 +57,60 @@ chi phí sửa chữa.
 7.Thống kê được số lượng tài sản theo nhóm của cả trường, sự tăng giảm số lượng thiết
 bị theo một khoảng thời gian nào đó.
 8.Liệt kê các tài sản thuộc diện cần thanh lý (giá trị sử dụng còn lại nhỏ hơn 50%).
+
+
+
+Yêu cầu về giao diện
+- Screen Login
+Có một txtbox username
+Có một txtbox password
+Có một nút đăng nhập 
+- Main Screen
+Có các button để dẫn đến các screen khác, và nút Logout để trở về
+màn hình login
+- Screen Devices
+Có một dropdown để chọn đơn vị lưu trữ thiết bị
+Có một button để kiểm kê toàn bộ thiết bị
+Có một button để thêm thiết bị, khi bấm vào button này, screen AddDevice sẽ hiện ra
+Có một datatable để hiển thị danh sách các thiết bị
+Trên datatable này có các cột mã số, tên,đơn vị, chủng loại, tình trạng, giá trị sử dụng
+Khi click chuột phải vào một Device, context menu hiện ra
+Context menu có
+ + Select - Đưa Device vào Bảng chọn
+ + View Detail - Hiển thị DeviceDetail của thiết bị
+ + Update - Cập nhật Tình trạng và giá trị sử dụng của thiết bị
+Có một button hiện ra Bảng Chọn, có cấu trúc giống với bảng danh sách thiết bị
+- Screen AddDevice
+Có một bảng hiện các hợp đồng kinh tế, bao gồm mã hợp đồng, đơn vị cung cấp, trạng thái (-đã mua, chưa mua)
+mặc định lúc đầu là trạng thái Chưa mua
+Chọn vào hợp đồng và bấm Buy, các thiết bị có trong hợp đồng sẽ được add vào danh sách thiết bị
+Các thiết bị được add theo cách này có đơn vị mặc định là Device Management Department (Phòng quản trị thiết bị)
+Khi bấm vào một Hợp đồng, danh sách thiết bị trong Hợp đồng sẽ hiện ra 
+- Screen Select Table - Bảng chọn
+Hiển thị danh sách các thiết bị đã được Select - đưa vào bảng chọn
+Có các nút Sửa chữa
+Khi bấm vào nút Sửa chữa, một Bảng sửa chữa hiện ra, cho phép ta chọn Đơn vị sửa chữa 
+Confirm bảng này sẽ tiến hành sửa chữa thiết bị
+- Screen DeviceDetail
+Cửa sổ hiện đầy đủ thông tin của thiết bị, bao gồm
+mã số - ID
+tên gọi thiết bị - Name
+chủng loại thiết bị - Type
+nguyên giá - Price
+đơn vị tính - Unit
+thông số kỹ thuật - Specification
+năm sản suất - Production Year
+năm đưa vào sử dụng - Implement Year
+tình trạng của thiết bị - Status
+tỉ lệ khấu hao hàng năm - Anual Value Lost
+- Screen Repair Information
+Có một txtbox nhập năm để biết tình hình sửa chữa thiết bị trong năm
+Có một datatable hiển thị tình hình sửa chữa thiết bị :
++ Tên thiết bị
++ Thời điểm sửa chữa
++ Năm sửa chữa
+- Screen bảng kiểm kê tài sản
+Hiển thị danh sách các Đợt kiểm kê tài sản 
+Khi bấm vào một Đợt kiểm kê, danh sách từng thiết bị trong đợt kiểm kê ấy
+sẽ hiện ra, giống với danh sách thiết bị, khi bấm vào cũng hiện chi tiết 
+y như DeviceDetail
