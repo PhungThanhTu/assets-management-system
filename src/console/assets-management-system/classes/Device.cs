@@ -1,3 +1,8 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+
 namespace assets_management_system {
     public static class DeviceConst
     {
@@ -36,7 +41,7 @@ namespace assets_management_system {
 
         public Device(int id)
         {
-            
+            DataTable QueriedDataTable = ExecuteQuery.SqlDataTableFromQuery("SELECT * from "+ DeviceConst.TABLE_NAME + " WHERE " + DeviceConst.COLUMN_ID + " = " + id);
         }
 
     }
