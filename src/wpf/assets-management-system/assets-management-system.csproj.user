@@ -7,7 +7,54 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddDevicesWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AssetInvWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DeviceDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="DevicesWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RepairInformationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SelectTableWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddDevicesWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AssetInvWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeviceDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DevicesWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RepairInformationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SelectTableWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
