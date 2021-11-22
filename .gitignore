@@ -52,3 +52,5 @@ src/console/assets-management-system/obj/Debug/net5.0/assets-management-system.c
 src/console/assets-management-system/obj/Debug/net5.0/assets-management-system.GeneratedMSBuildEditorConfig.editorconfig
 src/console/assets-management-system/obj/project.assets.json
 src/console/assets-management-system/obj/project.nuget.cache
+src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
+src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
