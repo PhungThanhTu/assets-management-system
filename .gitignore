@@ -54,3 +54,5 @@ src/console/assets-management-system/obj/project.assets.json
 src/console/assets-management-system/obj/project.nuget.cache
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
 src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
+src/console/assets-management-system/.vscode/launch.json
+src/console/assets-management-system/.vscode/tasks.json
