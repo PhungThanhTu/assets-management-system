@@ -25,7 +25,10 @@ namespace assets_management_system
         }
         private void LoginClicked(object sender, RoutedEventArgs e)
         {
-        
+            string username = txtboxUsername.Text;
+            string password = FloatingPasswordBox.Password;
+            var data = HTTPClientHandler.GetJsonData();
+            MessageBox.Show(data);
         }
     }
 }
