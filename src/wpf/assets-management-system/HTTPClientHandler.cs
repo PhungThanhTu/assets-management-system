@@ -4,20 +4,28 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using 
 
 namespace assets_management_system
 {
     class HTTPClientHandler
     {
-        public static string GetJsonData()
+        public static string GetJsonData(string uri)
         {
             using(var client = new HttpClient())
             {
-                var endpoint = new Uri("http://localhost:3000/");
+                var endpoint = new Uri(uri);
                 var result = client.GetAsync(endpoint).Result;
                 var json = result.Content.ReadAsStringAsync().Result;
                 return json;
             }
+        }
+
+        public static string PostJsonObject(object obj, string uri)
+        {
+            var endpoint = new Uri(uri);
+
+            
         }
     }
 }
