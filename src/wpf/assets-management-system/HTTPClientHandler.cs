@@ -21,11 +21,6 @@ namespace assets_management_system
             }
         }
 
-        public static string PostJsonObject(object obj, string uri)
-        {
-            var endpoint = new Uri(uri);
-
-            
-        }
+        
     }
 }
