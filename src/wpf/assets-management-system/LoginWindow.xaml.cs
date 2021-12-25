@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using assets_management_system.data_classes;
+using Newtonsoft.Json;
 
 namespace assets_management_system
 {
@@ -27,8 +29,24 @@ namespace assets_management_system
         {
             string username = txtboxUsername.Text;
             string password = FloatingPasswordBox.Password;
-            var data = HTTPClientHandler.GetJsonData();
+ 
+
+
+            Supplier cellphoneS = new Supplier
+            {
+                id = 8,
+                name = "cellphoneS",
+                address = "TPHCM",
+                phone = "03561"
+            };
+
+            var data = HTTPClientHandler.PatchJsonData("https://evening-mountain-03563.herokuapp.com/supplier", cellphoneS);
+
             MessageBox.Show(data);
+
+
         }
+
+        
     }
 }
