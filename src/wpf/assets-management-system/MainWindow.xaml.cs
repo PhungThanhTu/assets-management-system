@@ -29,6 +29,7 @@ namespace assets_management_system
             //loginWindow.ShowDialog();
             ////MainWindow mainWindow = new MainWindow();
             ////mainWindow.Show();
+            PagesNavigation.Navigate(new DevicePage());
         }
        
 

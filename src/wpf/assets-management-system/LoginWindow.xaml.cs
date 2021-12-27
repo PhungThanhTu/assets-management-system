@@ -35,7 +35,9 @@ namespace assets_management_system
 
             if(getMessage.message == "success")
             {
-                
+                MainWindow newWindow = new MainWindow();
+                newWindow.Show();
+                this.Close();
             }
             else
             {

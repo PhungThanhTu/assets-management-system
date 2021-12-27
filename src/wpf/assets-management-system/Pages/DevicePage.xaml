@@ -34,7 +34,7 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="10 0 0 10">
-                    <ComboBox Margin="20 5 50 5" ItemsSource="{Binding Division}" SelectedItem="{Binding SelectedDivision, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Division" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Height="35" Width="150"/>
+                    <ComboBox Margin="20 5 50 5" ItemsSource="{Binding divisions}" SelectedItem="{Binding SelectedDivision, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Division" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Height="35" Width="150"/>
                     <ComboBox ItemsSource="{Binding Transfer}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Storage Unit" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Height="35" Width="100"/>
                 </WrapPanel>
             </materialDesign:Card>
