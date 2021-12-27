@@ -29,24 +29,28 @@ namespace assets_management_system
         {
             string username = txtboxUsername.Text;
             string password = FloatingPasswordBox.Password;
- 
 
+            Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/login/" + username + "/" + password));
 
-            Supplier cellphoneS = new Supplier
+            if(getMessage.message == "success")
             {
-                id = 8,
-                name = "cellphoneS",
-                address = "TPHCM",
-                phone = "03561"
-            };
+                DevicesWindow newWindow = new DevicesWindow();
+                newWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(getMessage.message);
+            }
 
-            var data = HTTPClientHandler.PatchJsonData("https://evening-mountain-03563.herokuapp.com/supplier", cellphoneS);
 
-            MessageBox.Show(data);
 
 
         }
 
-        
+        private void CancelClicked(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
