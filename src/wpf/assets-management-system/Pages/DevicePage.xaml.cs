@@ -1,5 +1,4 @@
-﻿using assets_management_system.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace assets_management_system
+namespace assets_management_system.Pages
 {
     /// <summary>
-    /// Interaction logic for AddDevicesWindow.xaml
+    /// Interaction logic for DevicePage.xaml
     /// </summary>
-    public partial class AddDevicesWindow : Window
+    public partial class DevicePage : System.Windows.Controls.Page
     {
-        public AddDevicesWindow()
+        public DevicePage()
         {
             InitializeComponent();
-        }
-
-        public static implicit operator AddDevicesWindow(DevicePage v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

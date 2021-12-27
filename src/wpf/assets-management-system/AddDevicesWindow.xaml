@@ -27,30 +27,26 @@
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
 
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="0 0 0 10">
-                    <TextBox Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên vật tư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <ComboBox Margin="5 5 15 5" ItemsSource="{Binding Unit}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Đơn vị đo" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <ComboBox Margin="5 5 15 5" ItemsSource="{Binding Suplier}" SelectedItem="{Binding SelectedSuplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Nhà cung cấp" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <TextBox Text="{Binding QRCode, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="QR code" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Text="{Binding BarCode, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Bar code" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <ComboBox Margin="5 5 15 5" ItemsSource="{Binding Supplier}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Supplier" Width="100" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <DatePicker Margin="5 5 5 5" materialDesign:HintAssist.IsFloating="true" Width="100"/>
                 </WrapPanel>
             </materialDesign:Card>
 
-            <materialDesign:Card Grid.Row="1" Margin="5">
+            <materialDesign:Card Grid.Row="2" Margin="5">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100"></Button>
+                    <Button Command="{Binding AddCommand}" Content="Add Devices" Margin="250 5 10 5" Width="200" Height="35"></Button>
+                    <Button Command="{Binding EditCommand}" Content="Done" Margin="10 5 5 5" Width="200" Height="35"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
-            <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
+            <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
                         <ListView.View>

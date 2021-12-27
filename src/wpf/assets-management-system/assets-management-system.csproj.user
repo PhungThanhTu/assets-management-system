@@ -7,54 +7,66 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\AccountPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="AddDevicesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AssetInvWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DeviceDetailWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="DevicesWindow.xaml.cs">
+    <Compile Update="ContractWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="RepairInformationWindow.xaml.cs">
+    <Compile Update="Pages\DeviceDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\DevicePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RepairPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="SelectTableWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserWindow.xaml.cs">
+    <Compile Update="TransferWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\AccountPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AddDevicesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AssetInvWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DeviceDetailWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="DevicesWindow.xaml">
+    <Page Update="ContractWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="RepairInformationWindow.xaml">
+    <Page Update="Pages\DeviceDetailPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\DevicePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RepairPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SelectTableWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserWindow.xaml">
+    <Page Update="TransferWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

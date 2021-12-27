@@ -11,13 +11,13 @@
      TextElement.FontSize="13"
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
+     Background="#FFE0CAFA"
      FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Login" Height="300" Width="400"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <materialDesign:Card Width="330" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <materialDesign:Card   Width="330" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Grid.Resources>
                     <Style TargetType="Grid">
@@ -54,11 +54,12 @@
                             ToolTip="Resource name: MaterialDesignRaisedButton"
                             Content="Login">
                     </Button>
-                    <Button Grid.Column="1"
+                    <Button Grid.Column="1" Click="CancelClicked"
                             Style="{StaticResource MaterialDesignRaisedButton}"
                             Width="110"  
                             Background="OrangeRed"
-                            ToolTip="Resource name: MaterialDesignRaisedButton">
+                            ToolTip="Resource name: MaterialDesignRaisedButton"
+                            Content="Cancel">
 
                     </Button>
                 </Grid>

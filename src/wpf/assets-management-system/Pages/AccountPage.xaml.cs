@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace assets_management_system
 {
     /// <summary>
-    /// Interaction logic for UserWindow.xaml
+    /// Interaction logic for AccountPage.xaml
     /// </summary>
-    public partial class UserWindow : Window
+    public partial class AccountPage : System.Windows.Controls.Page
     {
-        public UserWindow()
+        public AccountPage()
         {
             InitializeComponent();
         }

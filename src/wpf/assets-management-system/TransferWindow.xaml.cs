@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace assets_management_system
+namespace assets_management_system.Page
 {
     /// <summary>
-    /// Interaction logic for DeviceDetailWindow.xaml
+    /// Interaction logic for TransferWindow.xaml
     /// </summary>
-    public partial class DeviceDetailWindow : Window
+    public partial class TransferWindow : Window
     {
-        public DeviceDetailWindow()
+        public TransferWindow()
         {
             InitializeComponent();
         }

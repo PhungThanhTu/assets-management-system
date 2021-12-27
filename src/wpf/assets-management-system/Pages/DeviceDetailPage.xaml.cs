@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace assets_management_system
+namespace assets_management_system.Pages
 {
     /// <summary>
-    /// Interaction logic for RepairInformationWindow.xaml
+    /// Interaction logic for DeviceDetailPage.xaml
     /// </summary>
-    public partial class RepairInformationWindow : Window
+    public partial class DeviceDetailPage : System.Windows.Controls.Page
     {
-        public RepairInformationWindow()
+        public DeviceDetailPage()
         {
             InitializeComponent();
         }
