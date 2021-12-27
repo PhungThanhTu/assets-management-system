@@ -27,34 +27,30 @@ namespace assets_management_system
         }
         private void LoginClicked(object sender, RoutedEventArgs e)
         {
-            if (txtboxUsername.Text.Length == 0)
-                MessageBox.Show("Please enter your username!");
-            
-            else if (FloatingPasswordBox.Password.Length == 0)
-                MessageBox.Show("Please enter your password!");
+            string username = txtboxUsername.Text;
+            string password = FloatingPasswordBox.Password;
 
+            Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/login/" + username + "/" + password));
+
+            if(getMessage.message == "success")
+            {
+                DevicesWindow newWindow = new DevicesWindow();
+                newWindow.Show();
+                this.Close();
+            }
             else
             {
-                User user = new User();
-                user.username = txtboxUsername.Text;
-                user.password = FloatingPasswordBox.Password;
+                MessageBox.Show(getMessage.message);
             }
 
-            //Supplier cellphoneS = new Supplier
-            //{
-            //    id = 8,
-            //    name = "cellphoneS",
-            //    address = "TPHCM",
-            //    phone = "03561"
-            //};
 
-            //var data = HTTPClientHandler.PatchJsonData("https://evening-mountain-03563.herokuapp.com/supplier", cellphoneS);
+
 
         }
 
         private void CancelClicked(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
         }
     }
 }
