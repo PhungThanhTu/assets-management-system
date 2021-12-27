@@ -8,8 +8,6 @@ src/wpf/assets-management-system/bin/Debug/net5.0-windows/assets-management-syst
 src/wpf/assets-management-system/bin/Debug/net5.0-windows/assets-management-system.runtimeconfig.dev.json
 src/wpf/assets-management-system/bin/Debug/net5.0-windows/assets-management-system.runtimeconfig.json
 src/wpf/assets-management-system/bin/Debug/net5.0-windows/ref/assets-management-system.dll
-src/wpf/assets-management-system/MainWindow.xaml
-src/wpf/assets-management-system/MainWindow.xaml.cs
 src/wpf/assets-management-system/obj/assets-management-system.csproj.nuget.dgspec.json
 src/wpf/assets-management-system/obj/assets-management-system.csproj.nuget.g.props
 src/wpf/assets-management-system/obj/assets-management-system.csproj.nuget.g.targets
@@ -87,6 +85,10 @@ src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.d
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
 src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
+src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
+src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
+src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
+src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
 src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo

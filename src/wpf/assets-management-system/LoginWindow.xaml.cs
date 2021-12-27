@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using assets_management_system.data_classes;
+using assets_management_system.Pages;
 using Newtonsoft.Json;
 
 namespace assets_management_system
@@ -34,9 +35,7 @@ namespace assets_management_system
 
             if(getMessage.message == "success")
             {
-                DevicesWindow newWindow = new DevicesWindow();
-                newWindow.Show();
-                this.Close();
+                
             }
             else
             {
