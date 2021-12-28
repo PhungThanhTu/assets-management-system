@@ -28,6 +28,9 @@ namespace assets_management_system
         public AddDevicesWindow()
         {
             InitializeComponent();
+            devices = new List<Device>();
+            suppliers = new List<Supplier>();
+            
         }
         
         public void Window_Loaded(object sender, RoutedEventArgs e)
@@ -35,7 +38,7 @@ namespace assets_management_system
             suppliers = JsonConvert.DeserializeObject<IList<Supplier>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/supplier"));
             cbSupplier.ItemsSource = suppliers;
             cbSupplier.DisplayMemberPath = "name";
-            devices = JsonConvert.DeserializeObject<IList<Device>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/device/list"));
+            devices.Clear();
             lvDevice.ItemsSource = devices;
         }
 

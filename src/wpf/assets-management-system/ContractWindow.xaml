@@ -38,7 +38,7 @@
                     <ComboBox x:Name="cbContract"
                               Margin="20 5 50 5" 
                               ItemsSource="{Binding Contract}" 
-                              SelectedItem="{Binding SelectedContract, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                              SelectionChanged="cbContract_SelectionChanged" 
                               materialDesign:HintAssist.Hint="Contract" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 

@@ -116,7 +116,7 @@
                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
             </Grid.Effect>
             <Grid Background="#FFA46FE4">
-                <TextBlock Text="TRANG QUẢN LÝ" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="#FFBC96EA" FontSize="16"/>
+                <TextBlock Text="MANAGEMENT PANEL" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="#FFBC96EA" FontSize="16"/>
             </Grid>
             <StackPanel Grid.Row="1">
 

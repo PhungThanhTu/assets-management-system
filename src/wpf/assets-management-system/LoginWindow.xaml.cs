@@ -38,7 +38,13 @@ namespace assets_management_system
                 MessageBox.Show("Please enter Password!");
             else
             {
-                Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/login/" + username + "/" + password));
+                Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData(API_config.enpoint_uri +"login/" + username + "/" + password));
+                    
+                if(getMessage == null)
+                {
+                    MessageBox.Show("Cannot connect to the server", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
 
                 if (getMessage.message == "success")
                 {
@@ -48,7 +54,7 @@ namespace assets_management_system
                 }
                 else
                 {
-                    MessageBox.Show("Username or Password incorrect!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(getMessage.message, "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
 
             }

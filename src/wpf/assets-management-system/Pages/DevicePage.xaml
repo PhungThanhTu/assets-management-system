@@ -14,7 +14,8 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="670"
-      Title="DevicePage">
+      Title="DevicePage"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -38,7 +39,7 @@
                               Margin="20 5 50 5" 
                               ItemsSource="{Binding cbDivisions}" 
                               SelectionChanged="Combobox_SelectionChanged"
-                              SelectedItem="{Binding Division, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              
                               materialDesign:HintAssist.Hint="Division" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 

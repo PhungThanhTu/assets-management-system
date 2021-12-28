@@ -35,6 +35,8 @@ namespace assets_management_system
 
         private void LogOutClicked(object sender, RoutedEventArgs e)
         {
+            LoginWindow newWindow = new LoginWindow();
+            newWindow.Show();
             this.Close();
         }
 

@@ -27,21 +27,77 @@ namespace assets_management_system.Page
         public ContractWindow()
         {
             InitializeComponent();
+            FetchContract();
+            cbContract.SelectedIndex = 0;
         }
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            contract = JsonConvert.DeserializeObject<IList<Contract>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/contract"));
-            cbContract.ItemsSource = contract;
-            cbContract.DisplayMemberPath = "import_date";
+            
 
-            devices = JsonConvert.DeserializeObject<IList<Device>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/device/query?contract=1"));
-            lvDevice.ItemsSource = devices;
+           
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        void FetchContract()
+        {
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "contract");
+
+            try
+            {
+                contract = JsonConvert.DeserializeObject<IList<Contract>>(data);
+                cbContract.ItemsSource = contract;
+                cbContract.DisplayMemberPath = "import_date";
+                cbContract.SelectedValuePath = "id";
+            }
+            catch
+            {
+                if (data != null)
+                {
+                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
+                    MessageBox.Show(errorMessage.message);
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to connect to the server");
+                }
+            }
+        }
+
+        void FetchDevices()
+        {
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "device/query?contract=" + cbContract.SelectedValue);
+
+            try
+            {
+                devices = JsonConvert.DeserializeObject<IList<Device>>(data);
+                lvDevice.ItemsSource = devices;
+
+            }
+            catch
+            {
+                if (data != null)
+                {
+                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
+                    MessageBox.Show(errorMessage.message);
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to connect to the server");
+                }
+            }
+
+        }
+
+        private void cbContract_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FetchDevices();
         }
     }
 }

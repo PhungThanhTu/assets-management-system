@@ -29,20 +29,14 @@ namespace assets_management_system.Pages
         public DevicePage()
         {
             InitializeComponent();
-            divisions = JsonConvert.DeserializeObject<IList<Division>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/division"));
-            cbDividion.ItemsSource = divisions;
-            cbDividion.DisplayMemberPath = "name";
-            devices = JsonConvert.DeserializeObject<IList<Device>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/device/query?division=1"));           
-            lvDevice.ItemsSource = devices;
-            
-                 
+            FetchDivision();
+            cbDividion.SelectedIndex = 0;
+
         }
         private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-
+            FetchDevices();
         }
-
         private void Contract_Click(object sender, RoutedEventArgs e)
         {
             ContractWindow contractWindow = new ContractWindow();
@@ -59,6 +53,66 @@ namespace assets_management_system.Pages
         {
             TransferWindow transferWindow = new TransferWindow();
             transferWindow.ShowDialog();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        void FetchDevices()
+        {
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "device/query?division=" + cbDividion.SelectedValue);
+
+            try
+            {
+                devices = JsonConvert.DeserializeObject<IList<Device>>(data);
+                lvDevice.ItemsSource = devices;
+
+            }
+            catch
+            {
+                if (data != null)
+                {
+                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
+                    MessageBox.Show(errorMessage.message);
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to connect to the server");
+                }
+            }
+
+        }
+
+        void FetchDivision()
+        {
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "division");
+
+            try
+            {
+  
+                divisions = JsonConvert.DeserializeObject<IList<Division>>(data); 
+                cbDividion.DisplayMemberPath = "name";
+                cbDividion.SelectedValuePath = "id";
+                cbDividion.ItemsSource = divisions;
+
+            }
+            catch
+            {
+                if (data != null)
+                {
+                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
+                    MessageBox.Show(errorMessage.message);
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to connect to the server");
+                }
+            }
+           
         }
     }
 }
