@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace assets_management_system.data_classes
 {
-    class Contract
+    public class Contract
     {   
         public int id { get; set; }
         public int supplier { get; set; }

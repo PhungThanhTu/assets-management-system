@@ -31,22 +31,27 @@ namespace assets_management_system
             string username = txtboxUsername.Text;
             string password = FloatingPasswordBox.Password;
 
-            Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/login/" + username + "/" + password));
+            if (txtboxUsername.Text.Length == 0)
+                MessageBox.Show("Please enter Username!");
 
-            if(getMessage.message == "success")
-            {
-                MainWindow newWindow = new MainWindow();
-                newWindow.Show();
-                this.Close();
-            }
+            else if (FloatingPasswordBox.Password.Length == 0)
+                MessageBox.Show("Please enter Password!");
             else
             {
-                MessageBox.Show(getMessage.message);
+                Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/login/" + username + "/" + password));
+
+                if (getMessage.message == "success")
+                {
+                    MainWindow newWindow = new MainWindow();
+                    newWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Username or Password incorrect!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
             }
-
-
-
-
         }
 
         private void CancelClicked(object sender, RoutedEventArgs e)

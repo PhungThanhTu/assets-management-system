@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using assets_management_system.data_classes;
+using Newtonsoft.Json;
 
 namespace assets_management_system
 {
@@ -20,14 +22,22 @@ namespace assets_management_system
     /// </summary>
     public partial class AddDevicesWindow : Window
     {
+        public IList<Supplier> suppliers { get; set; }
+        public IList<Device> devices { get; set; }
+
         public AddDevicesWindow()
         {
             InitializeComponent();
         }
-
-        public static implicit operator AddDevicesWindow(DevicePage v)
+        
+        public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            suppliers = JsonConvert.DeserializeObject<IList<Supplier>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/supplier"));
+            cbSupplier.ItemsSource = suppliers;
+            cbSupplier.DisplayMemberPath = "name";
+            devices = JsonConvert.DeserializeObject<IList<Device>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/device/list"));
+            lvDevice.ItemsSource = devices;
         }
+
     }
 }
