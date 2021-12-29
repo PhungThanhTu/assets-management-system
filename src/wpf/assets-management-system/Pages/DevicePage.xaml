@@ -13,8 +13,9 @@
      TextOptions.TextRenderingMode="Auto"
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="DevicePage">
+      d:DesignHeight="450" d:DesignWidth="670"
+      Title="DevicePage"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -34,31 +35,74 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="10 0 0 10">
-                    <ComboBox Margin="20 5 50 5" ItemsSource="{Binding divisions}" SelectedItem="{Binding SelectedDivision, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Division" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Height="35" Width="150"/>
-                    <ComboBox ItemsSource="{Binding Transfer}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Storage Unit" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Height="35" Width="100"/>
+                    <ComboBox x:Name="cbDividion" 
+                              Margin="20 5 50 5" 
+                              ItemsSource="{Binding cbDivisions}" 
+                              SelectionChanged="Combobox_SelectionChanged"
+                              
+                              materialDesign:HintAssist.Hint="Division" 
+                              IsEditable="True" 
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                              Height="35" Width="auto"/>
+                    
+                    
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Command="{Binding ContractCommand}"  Content="Contract" Margin="250 5 10 5"  Height="35" Width="200"></Button>
-                    <Button Command="{Binding NewContractCommand}"  Content="New Contract" Margin="10 5 5 5"  Height="35" Width="200"></Button>
+                    <Button Command="{Binding TransferCommand}" Click="Transfer_Click" Content="Transfer" Margin="30 10 5 10"  Height="35" Width="200"></Button>
+                    <Button Command="{Binding ContractCommand}" Click="Contract_Click" Content="Contract" Margin="5 10 5 10"  Height="35" Width="200"></Button>
+                    <Button Command="{Binding NewContractCommand}" Click="NewContract_Click" Content="New Contract" Margin="5 10 5 10"  Height="35" Width="200"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}">
+                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" MouseDoubleClick="listview_MouseDoubleClick">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
-                                <GridViewColumn Header="Device name" DisplayMemberBinding="{Binding Devicename}"></GridViewColumn>
-                                <GridViewColumn Header="Unit" DisplayMemberBinding="{Binding Unit}"></GridViewColumn>
-                                <GridViewColumn Header="Types of device" DisplayMemberBinding="{Binding Type}"></GridViewColumn>
-                                <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}"></GridViewColumn>
-                                <GridViewColumn Header="Use value" DisplayMemberBinding="{Binding UseValue}"></GridViewColumn>
+                                <GridViewColumn Header="ID"  Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="45">
+                                                <TextBlock Text="{Binding id}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Device name" Width="230">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="120">
+                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Header="Specification" Width="200">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="120">
+                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Header="Price" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="70">
+                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
+                        
                     </ListView>
                 </ScrollViewer>
             </materialDesign:Card>

@@ -33,16 +33,12 @@ namespace assets_management_system
         }
        
 
-        
-
-        
-        
-     
         private void LogOutClicked(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow newWindow = new LoginWindow();
+            newWindow.Show();
+            this.Close();
         }
-
 
         private void Account_Click(object sender, RoutedEventArgs e)
         {
@@ -52,12 +48,6 @@ namespace assets_management_system
         private void Device_Click(object sender, RoutedEventArgs e)
         {
             PagesNavigation.Navigate(new DevicePage());
-        }
-
-
-        private void DeviceDetail_Click(object sender, RoutedEventArgs e)
-        {
-            PagesNavigation.Navigate(new DeviceDetailPage());
         }
 
         private void Repair_Click(object sender, RoutedEventArgs e)

@@ -15,7 +15,7 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
       WindowStartupLocation="CenterScreen"      
         Name="mainWindow"
-        Title="ASSETS MANAGEMENT SYSTEM" Height="600" Width="1024" >
+        Title="ASSETS MANAGEMENT SYSTEM" Height="600" Width="924" >
     <Window.Resources>
         <ResourceDictionary>
             <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
@@ -116,7 +116,7 @@
                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
             </Grid.Effect>
             <Grid Background="#FFA46FE4">
-                <TextBlock Text="TRANG QUẢN LÝ" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="#FFBC96EA" FontSize="16"/>
+                <TextBlock Text="MANAGEMENT PANEL" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="#FFBC96EA" FontSize="16"/>
             </Grid>
             <StackPanel Grid.Row="1">
 
@@ -133,12 +133,7 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="DeviceDetail_Click">
-                    <Grid Width="160">
-                        <materialDesign:PackIcon Kind="ClipboardTextSearchOutline" VerticalAlignment="Center" Width="20" Height="20"/>
-                        <TextBlock HorizontalAlignment="Center" Text="Device Detail" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
-                    </Grid>
-                </Button>
+                
 
                 <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Repair_Click">
                     <Grid Width="160">
@@ -169,7 +164,7 @@
                 </Button>
 
 
-                <Button Margin="10" Background="OrangeRed" BorderBrush="OrangeRed">
+                <Button Click ="LogOutClicked" Margin="10" Background="OrangeRed" BorderBrush="OrangeRed">
                     <Grid Width="160">
                         <materialDesign:PackIcon Kind="LogoutVariant" VerticalAlignment="Center" Width="20" Height="20"/>
                         <TextBlock HorizontalAlignment="Center" Text="Log Out" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
