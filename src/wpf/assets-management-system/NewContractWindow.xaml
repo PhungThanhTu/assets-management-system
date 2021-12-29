@@ -59,15 +59,15 @@
                     <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding PostDevice}"  Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID"  Width="100">
-                                    <!--<GridViewColumn.CellTemplate>
+                                <!--<GridViewColumn Header="ID"  Width="100">
+                                    <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="45">
                                                 <TextBlock Text="{Binding id}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
-                                    </GridViewColumn.CellTemplate>-->
-                                </GridViewColumn>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>-->
                                 <GridViewColumn Header="Device name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>

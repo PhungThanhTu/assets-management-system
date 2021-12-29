@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using assets_management_system.data_classes;
+using Newtonsoft.Json;
 
 namespace assets_management_system
 {
@@ -19,9 +21,24 @@ namespace assets_management_system
     /// </summary>
     public partial class DeviceDetailWindow : Window
     {
-        public DeviceDetailWindow()
+        public int id { get; set; }
+        public DeviceDetail detail;
+        public DeviceDetailWindow(int id)
         {
             InitializeComponent();
+            this.id = id;
+            detail = new DeviceDetail();
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "device/detail/" + id);
+            try
+            {
+                detail = JsonConvert.DeserializeObject<DeviceDetail>(data);
+
+                name.Text = detail.name;
+            }
+            catch
+            {
+                MessageBox.Show(data);
+            }
         }
     }
 }
