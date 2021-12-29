@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace assets_management_system.Pages
+namespace assets_management_system
 {
     /// <summary>
-    /// Interaction logic for DeviceDetailPage.xaml
+    /// Interaction logic for DeviceDetailWindow.xaml
     /// </summary>
-    public partial class DeviceDetailPage : System.Windows.Controls.Page
+    public partial class DeviceDetailWindow : Window
     {
-        public DeviceDetailPage()
+        public DeviceDetailWindow()
         {
             InitializeComponent();
         }
