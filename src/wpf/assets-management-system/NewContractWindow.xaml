@@ -43,7 +43,7 @@
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="0 0 0 10">
                     <ComboBox Margin="5 5 15 5" x:Name="cbSupplier" ItemsSource="{Binding cbSupplier}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Supplier" Width="auto" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <DatePicker Margin="5 5 5 5" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
+                    <DatePicker Margin="5 5 5 5" x:Name="dpContract" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -56,17 +56,17 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" >
+                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding PostDevice}"  Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID"  Width="100">
-                                    <GridViewColumn.CellTemplate>
+                                    <!--<GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="45">
                                                 <TextBlock Text="{Binding id}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
+                                    </GridViewColumn.CellTemplate>-->
                                 </GridViewColumn>
                                 <GridViewColumn Header="Device name" Width="230">
                                     <GridViewColumn.CellTemplate>

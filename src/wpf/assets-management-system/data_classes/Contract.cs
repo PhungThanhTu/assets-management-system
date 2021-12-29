@@ -12,4 +12,10 @@ namespace assets_management_system.data_classes
         public int supplier { get; set; }
         public DateTime import_date { get; set; }
     }
+
+    public class PostContract
+    {
+        public int supplier { get; set; }
+        public string import_date { get; set; }
+    }
 }

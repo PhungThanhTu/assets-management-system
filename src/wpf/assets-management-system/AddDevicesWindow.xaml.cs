@@ -22,14 +22,45 @@ namespace assets_management_system
     /// </summary>
     public partial class AddDevicesWindow : Window
     {
-        public IList<Supplier> suppliers { get; set; }
-        public IList<Device> devices { get; set; }
+        public PostDevice device { get; set; }
+
+        public IList<DeviceType> types { get; set; }
+        public IList<DeviceUnit> units { get; set; }
+
+        // delegate
+        public delegate void AddDeviceDelegate(PostDevice param);
+
+        public AddDeviceDelegate AddDevice;
 
         public AddDevicesWindow()
         {
             InitializeComponent();
-            devices = new List<Device>();
-            suppliers = new List<Supplier>();
+
+            string TypeData = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "type");
+            string UnitData = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "unit");
+            try
+            {
+                types = new List<DeviceType>();
+                units = new List<DeviceUnit>();
+                // 
+                types = JsonConvert.DeserializeObject<IList<DeviceType>>(TypeData);
+                units = JsonConvert.DeserializeObject<IList<DeviceUnit>>(UnitData);
+                //
+                cbType.ItemsSource = types;
+                cbType.DisplayMemberPath = "t_name";
+                cbType.SelectedValuePath = "id";
+                //
+                cbUnit.ItemsSource = units;
+                cbUnit.DisplayMemberPath = "u_name";
+                cbUnit.SelectedValuePath = "id";
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Connection Error");
+            }
+
             
         }
         
@@ -42,5 +73,24 @@ namespace assets_management_system
         //    lvDevice.ItemsSource = devices;
         }
 
+        private void Done_Button_Click(object sender, RoutedEventArgs e)
+        {
+            device = new PostDevice();
+            device.name = txtboxName.Text.ToString();
+            device.price = int.Parse(txtboxPrice.Text.ToString());
+            device.specification = txtboxSpecification.Text.ToString();
+            device.production_year = int.Parse(txtboxProcYear.Text.ToString());
+            device.implement_year = int.Parse(txtboxImpYear.Text.ToString());
+            device.status = cbStatus.Text;
+            device.annual_value_lost = float.Parse(txtboxAnnualValueLost.Text.ToString());
+            device.current_value = int.Parse(txtboxCurentValue.Text.ToString());
+            device.unit = int.Parse(cbUnit.SelectedValue.ToString());
+            device.type = int.Parse(cbType.SelectedValue.ToString());
+            device.holding_division = 1;
+
+
+            AddDevice(device);
+            this.Close();
+        }
     }
 }
