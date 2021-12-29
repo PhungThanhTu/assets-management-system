@@ -13,7 +13,7 @@ namespace assets_management_system
         // 4 cái CRUD : GET, POST, PATCH, DELETE
         public static string GetJsonData(string uri)
         {
-            using(var client = new HttpClient())
+            using (var client = new HttpClient())
             {
                 var endpoint = new Uri(uri);
                 var result = client.GetAsync(endpoint).Result;

@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="DeviceDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NewContractWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\AccountPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -20,9 +26,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="LoginWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\DeviceDetailPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\DevicePage.xaml.cs">
@@ -39,6 +42,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="DeviceDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NewContractWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\AccountPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -52,9 +61,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="LoginWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\DeviceDetailPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\DevicePage.xaml">

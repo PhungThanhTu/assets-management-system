@@ -35,11 +35,11 @@ namespace assets_management_system
         
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            suppliers = JsonConvert.DeserializeObject<IList<Supplier>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/supplier"));
-            cbSupplier.ItemsSource = suppliers;
-            cbSupplier.DisplayMemberPath = "name";
-            devices.Clear();
-            lvDevice.ItemsSource = devices;
+        //    suppliers = JsonConvert.DeserializeObject<IList<Supplier>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/supplier"));
+        //    cbSupplier.ItemsSource = suppliers;
+        //    cbSupplier.DisplayMemberPath = "name";
+        //    devices.Clear();
+        //    lvDevice.ItemsSource = devices;
         }
 
     }

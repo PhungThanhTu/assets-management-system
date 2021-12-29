@@ -45,8 +45,8 @@ namespace assets_management_system.Pages
 
         private void NewContract_Click(object sender, RoutedEventArgs e)
         {
-            AddDevicesWindow addDevicesWindow = new AddDevicesWindow();
-            addDevicesWindow.ShowDialog();
+            NewContractWindow newContractWindow = new NewContractWindow();
+            newContractWindow.ShowDialog();
         }
 
         private void Transfer_Click(object sender, RoutedEventArgs e)
@@ -113,6 +113,13 @@ namespace assets_management_system.Pages
                 }
             }
            
+        }
+
+        private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {            
+            DeviceDetailWindow deviceDetailWindow = new DeviceDetailWindow();
+            deviceDetailWindow.ShowDialog();
+            
         }
     }
 }
