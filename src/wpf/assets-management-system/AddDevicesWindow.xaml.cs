@@ -75,22 +75,32 @@ namespace assets_management_system
 
         private void Done_Button_Click(object sender, RoutedEventArgs e)
         {
-            device = new PostDevice();
-            device.name = txtboxName.Text.ToString();
-            device.price = int.Parse(txtboxPrice.Text.ToString());
-            device.specification = txtboxSpecification.Text.ToString();
-            device.production_year = int.Parse(txtboxProcYear.Text.ToString());
-            device.implement_year = int.Parse(txtboxImpYear.Text.ToString());
-            device.status = cbStatus.Text;
-            device.annual_value_lost = float.Parse(txtboxAnnualValueLost.Text.ToString());
-            device.current_value = int.Parse(txtboxCurentValue.Text.ToString());
-            device.unit = int.Parse(cbUnit.SelectedValue.ToString());
-            device.type = int.Parse(cbType.SelectedValue.ToString());
-            device.holding_division = 1;
+            if(txtboxName.Text.Length==0||txtboxSpecification.Text.Length==0||txtboxPrice.Text.Length==0
+                ||txtboxAnnualValueLost.Text.Length==0||txtboxCurentValue.Text.Length==0||txtboxImpYear.Text.Length==0
+                ||txtboxProcYear.Text.Length==0||cbStatus.Text.Length==0||cbType.Text.Length==0||cbUnit.Text.Length==0)
+            {
+                MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            else
+            {
+                device = new PostDevice();
+                device.name = txtboxName.Text.ToString();
+                device.price = int.Parse(txtboxPrice.Text.ToString());
+                device.specification = txtboxSpecification.Text.ToString();
+                device.production_year = int.Parse(txtboxProcYear.Text.ToString());
+                device.implement_year = int.Parse(txtboxImpYear.Text.ToString());
+                device.status = cbStatus.Text;
+                device.annual_value_lost = float.Parse(txtboxAnnualValueLost.Text.ToString());
+                device.current_value = int.Parse(txtboxCurentValue.Text.ToString());
+                device.unit = int.Parse(cbUnit.SelectedValue.ToString());
+                device.type = int.Parse(cbType.SelectedValue.ToString());
+                device.holding_division = 1;
 
-
-            AddDevice(device);
-            this.Close();
+                AddDevice(device);
+                this.Close();
+            }
+            
         }
     }
 }

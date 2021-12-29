@@ -118,11 +118,8 @@ namespace assets_management_system.Pages
         private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int id = ((Device)lvDevice.SelectedItem).id;
-            MessageBox.Show(id.ToString());
-            
             DeviceDetailWindow deviceDetailWindow = new DeviceDetailWindow(id);
             deviceDetailWindow.ShowDialog();
-            
         }
     }
 }

@@ -49,7 +49,7 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Click="Exit_Click" Command="{Binding ExitCommand}"  Content="Exit" Margin="470 5 5 5"  Height="35" Width="200" ></Button>
+                    <Button Click="Exit_Click" Background="OrangeRed" Command="{Binding ExitCommand}"  Content="Exit" Margin="470 5 5 5"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
 

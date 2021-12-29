@@ -32,8 +32,19 @@ namespace assets_management_system
             try
             {
                 detail = JsonConvert.DeserializeObject<DeviceDetail>(data);
-
-                name.Text = detail.name;
+                txtboxName.Text = detail.name;
+                txtboxSpecification.Text = detail.specification;
+                txtboxPrice.Text = detail.price.ToString() ;
+                txtboxProduc_Year.Text = detail.production_year.ToString();
+                txtboxImple_Year.Text = detail.implement_year.ToString();
+                txtboxStatus.Text = detail.status;
+                txtboxAnnual_Value.Text = detail.annual_value_lost.ToString();
+                txtboxCurrent_Value.Text = detail.current_value.ToString();
+                txtboxHolding_Division.Text = detail.holding_division;
+                txtboxNote.Text = detail.note;
+                txtboxType.Text = detail.type;
+                txtboxUnit.Text = detail.unit;
+                
             }
             catch
             {

@@ -1,10 +1,9 @@
-﻿<Window x:Class="assets_management_system.AddDevicesWindow"
+﻿<Window x:Class="assets_management_system.DeviceEditingWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:assets_management_system"
-        Loaded="Window_Loaded"
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"     
@@ -15,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"    
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="Add Device" Height="470" Width="700">
+        Title="Edit Device" Height="470" Width="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -23,7 +22,7 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBlock Margin="5" Grid.Row="0"  Text="Add Devide" HorizontalAlignment="Center" VerticalAlignment="Top"
+            <TextBlock Margin="5" Grid.Row="0"  Text="Edit Devide" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" />
         </Grid>
 
@@ -304,7 +303,8 @@
         </Grid>
         <materialDesign:Card Grid.Row="2" Margin="5" >
             <WrapPanel>
-                <Button Command="{Binding DoneCommand}"  Content="Done" Margin="470 5 5 5"  Height="35" Width="200" Click="Done_Button_Click"></Button>
+                <Button Name="bntSubmit" Click="Submit_Click" Command="{Binding SubmitCommand}"  Content="Submit" Margin="250 5 10 5"  Height="35" Width="200" ></Button>
+                <Button Name="bntExit" Click="Exit_Click" Command="{Binding ExitCommand}"  Content="Exit" Background="OrangeRed" Margin="10 5 5 5"  Height="35" Width="200" ></Button>
             </WrapPanel>
         </materialDesign:Card>
     </Grid>

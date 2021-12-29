@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +27,9 @@ namespace assets_management_system
         public IList<Supplier> suppliers { get; set; }
         public IList<PostDevice> devices { get; set; }
 
+
         public PostContract contract { get; set; }
-        //DataRowView rowView;
+        public DataRowView rowView;
 
         public NewContractWindow()
         {
@@ -43,7 +46,6 @@ namespace assets_management_system
             cbSupplier.DisplayMemberPath = "name";
             cbSupplier.SelectedValuePath = "id";
             devices.Clear();
-            lvDevice.ItemsSource = devices;
         }
 
         private void AddDevice_Click(object sender, RoutedEventArgs e)
@@ -59,6 +61,7 @@ namespace assets_management_system
             contract = new PostContract();
             contract.supplier = (int)cbSupplier.SelectedValue;
             contract.import_date = dpContract.SelectedDate.Value.ToString("yyyy-MM-dd");
+            devices = new List<PostDevice>();
 
             try
             {
@@ -74,7 +77,8 @@ namespace assets_management_system
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            DeviceEditingWindow deviceEditingWindow = new DeviceEditingWindow();
+            deviceEditingWindow.Show();
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -82,22 +86,22 @@ namespace assets_management_system
         }
 
 
-        //private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    DataGridRow selectedRow = (DataGridRow)sender;
-        //    selectedRow.IsSelected = true;
-        //    //rowView = lvDevice.SelectedItem as DataRowView;
-        //}
+        private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DataGridRow selectedRow = (DataGridRow)sender;
+            selectedRow.IsSelected = true;
+            rowView = lvDevice_Contract.SelectedItem as DataRowView;
+        }
 
         public void AddNewDevice(PostDevice param)
         {
             
-            
             devices.Add(param);
             MessageBox.Show(JsonConvert.SerializeObject(devices));
-            lvDevice.ItemsSource = devices;
-
+            lvDevice_Contract.ItemsSource = devices;
+           
         }
 
+        
     }
 }

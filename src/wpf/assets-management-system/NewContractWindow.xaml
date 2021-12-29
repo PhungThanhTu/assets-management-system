@@ -17,13 +17,13 @@
         WindowStartupLocation="CenterScreen"
         x:Name="addDevicesWindow"     
         Title="New Contract" Height="500" Width="700">
-    <!--<Window.Resources>
+    <Window.Resources>
         <Style
             TargetType="DataGridRow">
 
             <EventSetter Event="MouseRightButtonDown" Handler="DataGridRow_MouseRightButtonDown"/>
         </Style>
-    </Window.Resources>-->
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -56,29 +56,20 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding PostDevice}"  Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" >
+                    <ListView Margin="5" Name="lvDevice_Contract" ItemsSource="{Binding PostDevice}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}"  Background="{DynamicResource MaterialDesignLightBackground}" >
                         <ListView.View>
                             <GridView>
-                                <!--<GridViewColumn Header="ID"  Width="100">
+                                <GridViewColumn Header="Device name" Width="auto">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="45">
-                                                <TextBlock Text="{Binding id}" HorizontalAlignment="Center"></TextBlock>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>-->
-                                <GridViewColumn Header="Device name" Width="230">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto" >
+                                                <TextBlock  Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="200">
+                                <GridViewColumn Header="Specification" Width="auto">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
@@ -97,6 +88,25 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
+
+                                <GridViewColumn Header="Status" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="70">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Curent value" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="70">
+                                                <TextBlock Text="{Binding current_value}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                         <ListView.ContextMenu>
@@ -105,6 +115,15 @@
                                 <MenuItem Header="Delete" Click="Delete_Click"/>
                             </ContextMenu>
                         </ListView.ContextMenu>
+                        <!--<GridViewColumn Header="Price" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Width="70">
+                                        <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>-->
 
                     </ListView>
                 </ScrollViewer>

@@ -10,6 +10,9 @@
     <Compile Update="DeviceDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DeviceEditingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="NewContractWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="DeviceDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DeviceEditingWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="NewContractWindow.xaml">
