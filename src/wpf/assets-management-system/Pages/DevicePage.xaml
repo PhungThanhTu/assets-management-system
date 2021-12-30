@@ -14,8 +14,7 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}"
       d:DesignHeight="450" d:DesignWidth="670"
-      Title="DevicePage"
-      Loaded="Page_Loaded">
+      Title="DevicePage" >
 
     <Grid>
         <Grid.RowDefinitions>

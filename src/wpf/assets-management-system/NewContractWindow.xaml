@@ -62,7 +62,7 @@
                                 <GridViewColumn Header="Device name" Width="auto">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto" >
+                                            <Grid Width="100" >
                                                 <TextBlock  Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -79,7 +79,7 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Price" >
+                                <GridViewColumn Header="Price" Width="auto">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="70">
@@ -98,10 +98,10 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Curent value" >
+                                <GridViewColumn Header="Curent value" Width="auto" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
+                                            <Grid Width="100">
                                                 <TextBlock Text="{Binding current_value}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -115,16 +115,6 @@
                                 <MenuItem Header="Delete" Click="Delete_Click"/>
                             </ContextMenu>
                         </ListView.ContextMenu>
-                        <!--<GridViewColumn Header="Price" >
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Grid Width="70">
-                                        <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
-                                    </Grid>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>-->
-
                     </ListView>
                 </ScrollViewer>
             </materialDesign:Card>

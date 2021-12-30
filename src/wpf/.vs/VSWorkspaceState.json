@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assets-management-system"
+    "\\assets-management-system",
+    "\\assets-management-system\\Pages"
   ],
-  "SelectedNode": "\\assets-management-system\\assets-management-system.sln",
+  "SelectedNode": "\\assets-management-system\\Pages\\DevicePage.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

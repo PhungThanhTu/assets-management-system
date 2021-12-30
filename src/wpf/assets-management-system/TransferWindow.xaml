@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:assets_management_system"
-        Loaded="Window_Loaded"
         mc:Ignorable="d"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -37,20 +36,21 @@
                 <WrapPanel Margin="10 0 0 10">
                     <ComboBox    
                               x:Name="cbDivision"
-                              Margin="20 5 50 5" 
+                              Margin="20 5 10 5" 
                               ItemsSource="{Binding Division}" 
                               SelectedItem="{Binding SelectedDivision, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                              materialDesign:HintAssist.Hint="Division" 
+                              materialDesign:HintAssist.Hint="Receiver Division" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                               Height="35" Width="auto"/>
+                    <DatePicker Margin="5 5 5 5" x:Name="dpTransfer" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
                     
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Command="{Binding DoneCommand}"  Content="Done" Margin="470 5 5 5"  Height="35" Width="200"></Button>
+                    <Button Click="Done_Click" Command="{Binding DoneCommand}"  Content="Done" Margin="470 5 5 5"  Height="35" Width="200"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -59,7 +59,16 @@
                     <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID"  Width="100">
+                                <GridViewColumn Width="30" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate >
+                                            <StackPanel Orientation="Horizontal" Width="50">
+                                                <CheckBox  Name="iCheckBox" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="ID"  Width="80">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="45">
@@ -68,7 +77,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Device name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
@@ -97,6 +106,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
+                                
                             </GridView>
                         </ListView.View>
                     </ListView>

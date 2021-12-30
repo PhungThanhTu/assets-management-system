@@ -42,7 +42,7 @@ namespace assets_management_system
 
         public void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            suppliers = JsonConvert.DeserializeObject<IList<Supplier>>(HTTPClientHandler.GetJsonData("https://evening-mountain-03563.herokuapp.com/supplier"));
+            suppliers = JsonConvert.DeserializeObject<IList<Supplier>>(HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "supplier"));
             cbSupplier.ItemsSource = suppliers;
             cbSupplier.DisplayMemberPath = "name";
             cbSupplier.SelectedValuePath = "id";
@@ -59,24 +59,33 @@ namespace assets_management_system
 
         private void Done_CLick(object sender, RoutedEventArgs e)
         {
-            ncontract = new PostContract();
-            ncontract.supplier = (int)cbSupplier.SelectedValue;
-            ncontract.import_date = dpContract.SelectedDate.Value.ToString("yyyy-MM-dd");
-            contract_and_devices = new ContractAndDevices()
+            if(cbSupplier.Text.Length==0||dpContract.Text.Length==0)
             {
-                contract = ncontract,
-                devices = devices
-            };
+                MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            else
+            {
+                ncontract = new PostContract();
+                ncontract.supplier = (int)cbSupplier.SelectedValue;
+                ncontract.import_date = dpContract.SelectedDate.Value.ToString("yyyy-MM-dd");
+                contract_and_devices = new ContractAndDevices()
+                {
+                    contract = ncontract,
+                    devices = devices
+                };
 
-            try
-            {
-                string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "device/add",contract_and_devices);
-                MessageBox.Show(result);
+                try
+                {
+                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "device/add", contract_and_devices);
+                    MessageBox.Show(result);
+                }
+                catch
+                {
+                    MessageBox.Show("Connection Error");
+                }
             }
-            catch
-            {
-                MessageBox.Show("Connection Error");
-            }
+            
         }
 
 
@@ -114,7 +123,6 @@ namespace assets_management_system
 
         public void EditDevice(PostDevice device, int index)
         {
-            MessageBox.Show(index.ToString());
             devices[index] = device;
             lvDevice_Contract.ItemsSource = null;
             lvDevice_Contract.ItemsSource = devices;

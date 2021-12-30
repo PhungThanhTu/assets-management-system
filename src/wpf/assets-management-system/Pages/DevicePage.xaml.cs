@@ -51,14 +51,13 @@ namespace assets_management_system.Pages
 
         private void Transfer_Click(object sender, RoutedEventArgs e)
         {
-            TransferWindow transferWindow = new TransferWindow();
+            int id = ((Division)cbDividion.SelectedItem).id;
+            string name = ((Division)cbDividion.SelectedItem).name;
+            TransferWindow transferWindow = new TransferWindow(id,name);
             transferWindow.ShowDialog();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+
 
         void FetchDevices()
         {

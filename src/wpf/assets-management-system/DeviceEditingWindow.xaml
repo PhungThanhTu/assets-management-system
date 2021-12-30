@@ -175,7 +175,6 @@
                        />
                 <ComboBox    Grid.Row="1"
                               x:Name="cbStatus" 
-                              
                               materialDesign:HintAssist.Hint="Choose Status" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
@@ -252,7 +251,6 @@
                 <ComboBox    Grid.Row="1"
                               x:Name="cbUnit"
                               ItemsSource="{Binding Status}" 
-                          
                               materialDesign:HintAssist.Hint="Choose Unit" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
@@ -279,7 +277,6 @@
                 <ComboBox    Grid.Row="1"
                               x:Name="cbType"
                               ItemsSource="{Binding Status}" 
-                             
                               materialDesign:HintAssist.Hint="Choose type" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
