@@ -8,8 +8,8 @@ namespace assets_management_system.data_classes
 {
     public class ContractAndDevices
     {
-        public Contract contract;
+        public PostContract contract;
 
-        public IList<Device> devices;
+        public IList<PostDevice> devices;
     }
 }

@@ -56,7 +56,7 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvDevice_Contract" ItemsSource="{Binding PostDevice}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}"  Background="{DynamicResource MaterialDesignLightBackground}" >
+                    <ListView Margin="5" Name="lvDevice_Contract" ItemsSource="{Binding PostDevice}"   Background="{DynamicResource MaterialDesignLightBackground}" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Device name" Width="auto">

@@ -27,8 +27,9 @@ namespace assets_management_system
         public IList<Supplier> suppliers { get; set; }
         public IList<PostDevice> devices { get; set; }
 
+        public ContractAndDevices contract_and_devices { get; set; }
 
-        public PostContract contract { get; set; }
+        public PostContract ncontract { get; set; }
         public DataRowView rowView;
 
         public NewContractWindow()
@@ -58,14 +59,18 @@ namespace assets_management_system
 
         private void Done_CLick(object sender, RoutedEventArgs e)
         {
-            contract = new PostContract();
-            contract.supplier = (int)cbSupplier.SelectedValue;
-            contract.import_date = dpContract.SelectedDate.Value.ToString("yyyy-MM-dd");
-            devices = new List<PostDevice>();
+            ncontract = new PostContract();
+            ncontract.supplier = (int)cbSupplier.SelectedValue;
+            ncontract.import_date = dpContract.SelectedDate.Value.ToString("yyyy-MM-dd");
+            contract_and_devices = new ContractAndDevices()
+            {
+                contract = ncontract,
+                devices = devices
+            };
 
             try
             {
-                string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "test_api",contract);
+                string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "device/add",contract_and_devices);
                 MessageBox.Show(result);
             }
             catch
@@ -77,12 +82,18 @@ namespace assets_management_system
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            DeviceEditingWindow deviceEditingWindow = new DeviceEditingWindow();
-            deviceEditingWindow.Show();
+            int selectedIndex = lvDevice_Contract.SelectedIndex;
+            PostDevice inputDevice = devices[selectedIndex];
+            DeviceEditingWindow deviceEditingWindow = new DeviceEditingWindow(inputDevice,selectedIndex);
+            deviceEditingWindow.editDelegate = EditDevice;
+            deviceEditingWindow.ShowDialog();
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            int deleteIndex = lvDevice_Contract.SelectedIndex;
+            devices.RemoveAt(deleteIndex);
+            lvDevice_Contract.ItemsSource = null;
+            lvDevice_Contract.ItemsSource = devices;
         }
 
 
@@ -95,11 +106,18 @@ namespace assets_management_system
 
         public void AddNewDevice(PostDevice param)
         {
-            
+
             devices.Add(param);
-            MessageBox.Show(JsonConvert.SerializeObject(devices));
+            lvDevice_Contract.ItemsSource = null;
             lvDevice_Contract.ItemsSource = devices;
-           
+        }
+
+        public void EditDevice(PostDevice device, int index)
+        {
+            MessageBox.Show(index.ToString());
+            devices[index] = device;
+            lvDevice_Contract.ItemsSource = null;
+            lvDevice_Contract.ItemsSource = devices;
         }
 
         
