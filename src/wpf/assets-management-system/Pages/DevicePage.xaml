@@ -51,8 +51,7 @@
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
                     <Button Command="{Binding TransferCommand}" Click="Transfer_Click" Content="Transfer" Margin="30 10 5 10"  Height="35" Width="200"></Button>
-                    <Button Command="{Binding ContractCommand}" Click="Contract_Click" Content="Contract" Margin="5 10 5 10"  Height="35" Width="200"></Button>
-                    <Button Command="{Binding NewContractCommand}" Click="NewContract_Click" Content="New Contract" Margin="5 10 5 10"  Height="35" Width="200"></Button>
+                    <Button Command="{Binding NewContractCommand}" Click="NewContract_Click" Content="Contract" Margin="5 10 5 10"  Height="35" Width="200"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
