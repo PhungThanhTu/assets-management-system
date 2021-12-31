@@ -1,3 +1,4 @@
+.vs
 src/wpf/assets-management-system/.vs/
 src/wpf/assets-management-system/obj/
 src/wpf/assets-management-system/bin/
@@ -116,3 +117,5 @@ src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
 src/wpf/.vs/slnx.sqlite
 src/wpf/.vs/VSWorkspaceState.json
 src/wpf/.vs/wpf/v16/.suo
+src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
+src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo

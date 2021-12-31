@@ -33,7 +33,7 @@ namespace assets_management_system.Page
         public PostTransfer nTransfer { get; set; }
         public IList<PostIDDevice> iDDevices { get; set; }
 
-        public DivisionAndDevices division_and_devices { get; set; }
+        public TransferHeader transfer_header { get; set; }
     
         public TransferWindow(int id, string name)
         {
@@ -41,6 +41,7 @@ namespace assets_management_system.Page
             divisions = JsonConvert.DeserializeObject<IList<Division>>(HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "division"));
             cbDivision.ItemsSource = divisions;
             cbDivision.DisplayMemberPath = "name";
+            cbDivision.SelectedValuePath = "id";
             this.id = id;
             this.name = name;
             device = new Device();
@@ -69,7 +70,10 @@ namespace assets_management_system.Page
 
         private void Done_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(id.ToString());
+            //MessageBox.Show(id.ToString());
+            iDDevices = new List<PostIDDevice>();
+            iDDevices.Clear();
+
             if(cbDivision.Text.Length==0||dpTransfer.Text.Length==0)
             {
                 MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -77,27 +81,43 @@ namespace assets_management_system.Page
             }
             else
             {
-                nTransfer = new PostTransfer();
-                nTransfer.sender_name = name;
-                nTransfer.receiver_name = cbDivision.Text;
-                //MessageBox.Show(nTransfer.receiver_name.ToString());
-                nTransfer.transfer_date = dpTransfer.SelectedDate.Value.ToString("yyyy-MM-dd");
-                //MessageBox.Show(nTransfer.transfer_date);
+                nTransfer = new PostTransfer()
+                {
+                    sender = this.id,
+                    receiver = int.Parse(cbDivision.SelectedValue.ToString()),
+                    transfer_date = dpTransfer.SelectedDate.Value.ToString("yyyy-MM-dd")
+            };
                 
-                //    division_and_devices = new DivisionAndDevices()
-                //    {
-                //        transfer = nTransfer,
-                //        iDDevices = iDDevices
-                //    };
-                //    try
-                //    {
-                //        string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "transfer/add", division_and_devices);
-                //        MessageBox.Show(result);
-                //    }
-                //    catch
-                //    {
-                //        MessageBox.Show("Connection Error");
-                //    }
+                
+                //MessageBox.Show(nTransfer.receiver_name.ToString());
+                
+
+                // set up post device id
+                foreach(Device device in lvDevice.SelectedItems)
+                {
+                    PostIDDevice newSelectedDevice = new PostIDDevice();
+                    newSelectedDevice.id = device.id;
+
+                    iDDevices.Add(newSelectedDevice);
+                }
+                // set up transfer
+                transfer_header = new TransferHeader
+                {
+                    devices = iDDevices,
+                    transfer = nTransfer
+                };
+                //MessageBox.Show(nTransfer.transfer_date);
+
+
+                try
+                {
+                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "transfer/add", transfer_header);
+                    MessageBox.Show(result);
+                }
+                catch
+                {
+                    MessageBox.Show("Connection Error");
+                }
             }
         }
     }

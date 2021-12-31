@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace assets_management_system.data_classes
 {
-    public class DivisionAndDevices
+    public class TransferHeader
     {
         public PostTransfer transfer;
-        public IList<PostIDDevice> iDDevices;
+        public IList<PostIDDevice> devices;
     }
 }

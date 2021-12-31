@@ -8,8 +8,8 @@ namespace assets_management_system.data_classes
 {
     public class PostTransfer
     {
-        public string sender_name { get; set; }
-        public string receiver_name { get; set; }
+        public int sender{ get; set; }
+        public int receiver { get; set; }
         public string transfer_date { get; set; }
     }
     

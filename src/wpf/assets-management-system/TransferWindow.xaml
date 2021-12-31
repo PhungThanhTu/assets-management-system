@@ -38,7 +38,7 @@
                               x:Name="cbDivision"
                               Margin="20 5 10 5" 
                               ItemsSource="{Binding Division}" 
-                              SelectedItem="{Binding SelectedDivision, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                              
                               materialDesign:HintAssist.Hint="Receiver Division" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
