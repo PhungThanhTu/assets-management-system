@@ -120,3 +120,6 @@ src/wpf/.vs/wpf/v16/.suo
 src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
 src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
+*.v2
+src/wpf/assets-management-system/.vs/assets-management-system/v16/.suo
+src/wpf/assets-management-system/.vs/assets-management-system/DesignTimeBuild/.dtbcache.v2
