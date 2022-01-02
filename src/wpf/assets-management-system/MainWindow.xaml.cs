@@ -25,10 +25,6 @@ namespace assets_management_system
         public MainWindow()
         {
             InitializeComponent();
-            //LoginWindow loginWindow = new LoginWindow();
-            //loginWindow.ShowDialog();
-            ////MainWindow mainWindow = new MainWindow();
-            ////mainWindow.Show();
             PagesNavigation.Navigate(new DevicePage());
         }
        
@@ -53,6 +49,21 @@ namespace assets_management_system
         private void Repair_Click(object sender, RoutedEventArgs e)
         {
             PagesNavigation.Navigate(new RepairPage());
+        }
+
+        private void Liquidation_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new LiquidationPage());
+        }
+
+        private void Inventory_Click(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new InventoryPage());
+        }
+
+        private void Statistic_CLick(object sender, RoutedEventArgs e)
+        {
+            PagesNavigation.Navigate(new StatisticPage());
         }
     }
 }

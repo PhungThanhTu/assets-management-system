@@ -20,8 +20,8 @@ namespace assets_management_system.data_classes
     public class TransferDetail
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public string specification { get; set; }
-        public int price { get; set; }
+        public string sender_name { get; set; }
+        public string receiver_name { get; set; }
+        public string transfer_date { get; set; }
     }
 }

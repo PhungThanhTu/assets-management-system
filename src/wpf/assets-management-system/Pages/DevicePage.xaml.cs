@@ -37,12 +37,7 @@ namespace assets_management_system.Pages
         {
             FetchDevices();
         }
-        private void Contract_Click(object sender, RoutedEventArgs e)
-        {
-            ContractWindow contractWindow = new ContractWindow();
-            contractWindow.ShowDialog(); 
-        }
-
+       
         private void NewContract_Click(object sender, RoutedEventArgs e)
         {
             NewContractWindow newContractWindow = new NewContractWindow();
@@ -52,12 +47,9 @@ namespace assets_management_system.Pages
         private void Transfer_Click(object sender, RoutedEventArgs e)
         {
             int id = ((Division)cbDividion.SelectedItem).id;
-            string name = ((Division)cbDividion.SelectedItem).name;
-            TransferWindow transferWindow = new TransferWindow(id,name);
+            TransferWindow transferWindow = new TransferWindow(id);
             transferWindow.ShowDialog();
         }
-
-
 
         void FetchDevices()
         {
@@ -119,6 +111,12 @@ namespace assets_management_system.Pages
             int id = ((Device)lvDevice.SelectedItem).id;
             DeviceDetailWindow deviceDetailWindow = new DeviceDetailWindow(id);
             deviceDetailWindow.ShowDialog();
+        }
+
+        private void Check_Click(object sender, RoutedEventArgs e)
+        {
+            CheckWindow checkWindow = new CheckWindow();
+            checkWindow.ShowDialog();
         }
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using assets_management_system.data_classes;
+using assets_management_system.Page;
 using Newtonsoft.Json;
 
 
@@ -128,6 +129,10 @@ namespace assets_management_system
             lvDevice_Contract.ItemsSource = devices;
         }
 
-        
+        private void ListContract_Click(object sender, RoutedEventArgs e)
+        {
+            ContractWindow contractWindow = new ContractWindow();
+            contractWindow.ShowDialog();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Page x:Class="assets_management_system.Pages.DevicePage"
+﻿<Page x:Class="assets_management_system.Pages.LiquidationPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,59 +6,35 @@
       xmlns:local="clr-namespace:assets_management_system.Pages"
       mc:Ignorable="d" 
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-     TextElement.FontWeight="Regular"
-     TextElement.FontSize="13"
-     TextOptions.TextFormattingMode="Ideal"
-     TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
-      d:DesignHeight="450" d:DesignWidth="670"
-      Title="DevicePage" >
-
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"     
+        TextElement.FontWeight="Regular"    
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"    
+        TextOptions.TextRenderingMode="Auto"     
+        Background="{DynamicResource MaterialDesignPaper}"    
+        FontFamily="{DynamicResource MaterialDesignFont}"     
+        Title="InventoryPage" 
+      d:DesignHeight ="450" d:DesignWidth="670">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-        </Grid>
-
+        <Grid Grid.Row="0"></Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Margin="5" Grid.Row="0"  Text="Devices Which Need Liquidating" HorizontalAlignment="Center" VerticalAlignment="Top"
+                   FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" />
+            </Grid>
 
-            <!--các element binding từ selected item-->
-            <materialDesign:Card Grid.Row="0" Margin="5">
-                <WrapPanel Margin="10 0 0 10">
-                    <ComboBox x:Name="cbDividion" 
-                              Margin="20 5 50 5" 
-                              ItemsSource="{Binding cbDivisions}" 
-                              SelectionChanged="Combobox_SelectionChanged"
-                              
-                              materialDesign:HintAssist.Hint="Division" 
-                              IsEditable="True" 
-                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
-                              Height="35" Width="auto"/>
-                    
-                    
-                </WrapPanel>
-            </materialDesign:Card>
-
-            <materialDesign:Card Grid.Row="2" Margin="5" >
-                <WrapPanel>
-                    <Button Command="{Binding TransferCommand}" Click="Check_Click" Content="Check Device" Margin="20 10 10 10"  Height="35" Width="200"></Button>
-                    <Button Command="{Binding TransferCommand}" Click="Transfer_Click" Content="Transfer" Margin="10 10 10 10"  Height="35" Width="200"></Button>
-                    <Button Command="{Binding NewContractCommand}" Click="NewContract_Click" Content="Contract" Margin="10 10 5 10"  Height="35" Width="200"></Button>
-                </WrapPanel>
-            </materialDesign:Card>
-
-            <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
+            <materialDesign:Card Grid.Row="1" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" MouseDoubleClick="listview_MouseDoubleClick">
+                    <ListView Margin="5" Name="lvInventory" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID"  Width="100">
@@ -101,10 +77,17 @@
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>
-                        
                     </ListView>
                 </ScrollViewer>
             </materialDesign:Card>
+
+            <materialDesign:Card Grid.Row="2" Margin="5" >
+                <WrapPanel>
+                    <Button Name="bntShowLiquidationHistory" Click="ShowLiquidationHistory_Click"   Content="Show Liquidation History" Margin="210 5 10 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntStart_Liquidation" Click="StartLiquidation_Click"   Content="Start Liquidation" Margin="10 5 10 5"  Height="35" Width="200" ></Button>
+                </WrapPanel>
+            </materialDesign:Card>
         </Grid>
+
     </Grid>
 </Page>

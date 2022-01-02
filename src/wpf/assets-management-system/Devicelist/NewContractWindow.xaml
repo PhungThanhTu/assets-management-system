@@ -1,0 +1,124 @@
+﻿<Window x:Class="assets_management_system.NewContractWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:assets_management_system"
+        Loaded="Window_Loaded"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"     
+        TextElement.FontWeight="Regular"    
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"    
+        TextOptions.TextRenderingMode="Auto"     
+        Background="{DynamicResource MaterialDesignPaper}"    
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStartupLocation="CenterScreen"
+        x:Name="addDevicesWindow"     
+        Title="New Contract" Height="500" Width="700">
+    <Window.Resources>
+        <Style
+            TargetType="DataGridRow">
+
+            <EventSetter Event="MouseRightButtonDown" Handler="DataGridRow_MouseRightButtonDown"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--các element binding từ selected item-->
+            <materialDesign:Card Grid.Row="0" Margin="5">
+                <WrapPanel Margin="0 0 0 10">
+                    <ComboBox Margin="5 5 15 5" x:Name="cbSupplier" ItemsSource="{Binding cbSupplier}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Supplier" Width="auto" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <DatePicker Margin="5 5 5 5" x:Name="dpContract" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
+                </WrapPanel>
+            </materialDesign:Card>
+
+            <materialDesign:Card Grid.Row="2" Margin="5">
+                <WrapPanel>
+                    <Button Click="ListContract_Click" Command="{Binding ListCommand}" Content="List Contract" Margin="20 5 10 5" Width="200" Height="35"></Button>
+                    <Button Click="AddDevice_Click" Command="{Binding AddCommand}" Content="Add Devices" Margin="10 5 10 5" Width="200" Height="35"></Button>
+                    <Button Click="Done_CLick" Command="{Binding DoneCommand}" Content="Done" Margin="10 5 5 5" Width="200" Height="35"></Button>
+                </WrapPanel>
+            </materialDesign:Card>
+
+            <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ListView Margin="5" Name="lvDevice_Contract" ItemsSource="{Binding PostDevice}"   Background="{DynamicResource MaterialDesignLightBackground}" >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Device name" Width="auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="100" >
+                                                <TextBlock  Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Header="Specification" Width="auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="120">
+                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Header="Price" Width="auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="70">
+                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Header="Status" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="70">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Curent value" Width="auto" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="100">
+                                                <TextBlock Text="{Binding current_value}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Edit" Click="Edit_Click"/>
+                                <MenuItem Header="Delete" Click="Delete_Click"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </ScrollViewer>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</Window>
