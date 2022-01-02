@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using assets_management_system.data_classes;
 using Newtonsoft.Json;
+using assets_management_system.Devicelist;
 
 namespace assets_management_system.Page
 {
@@ -35,7 +36,7 @@ namespace assets_management_system.Page
 
         public TransferHeader transfer_header { get; set; }
     
-        public TransferWindow(int id, string name)
+        public TransferWindow(int id)
         {
             InitializeComponent();
             divisions = JsonConvert.DeserializeObject<IList<Division>>(HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "division"));
@@ -43,7 +44,6 @@ namespace assets_management_system.Page
             cbDivision.DisplayMemberPath = "name";
             cbDivision.SelectedValuePath = "id";
             this.id = id;
-            this.name = name;
             device = new Device();
             string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "device/query?division=" + id);
             try
@@ -68,13 +68,20 @@ namespace assets_management_system.Page
 
         }
 
-        private void Done_Click(object sender, RoutedEventArgs e)
+        
+
+        private void ListTransfer_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show(id.ToString());
+            ListTransferWindow listTransferWindow = new ListTransferWindow();
+            listTransferWindow.Show();
+        }
+
+        private void Transfer_Click(object sender, RoutedEventArgs e)
+        {   
             iDDevices = new List<PostIDDevice>();
             iDDevices.Clear();
 
-            if(cbDivision.Text.Length==0||dpTransfer.Text.Length==0)
+            if (cbDivision.Text.Length == 0 || dpTransfer.Text.Length == 0)
             {
                 MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
@@ -86,14 +93,10 @@ namespace assets_management_system.Page
                     sender = this.id,
                     receiver = int.Parse(cbDivision.SelectedValue.ToString()),
                     transfer_date = dpTransfer.SelectedDate.Value.ToString("yyyy-MM-dd")
-            };
-                
-                
-                //MessageBox.Show(nTransfer.receiver_name.ToString());
-                
+                };
 
                 // set up post device id
-                foreach(Device device in lvDevice.SelectedItems)
+                foreach (Device device in lvDevice.SelectedItems)
                 {
                     PostIDDevice newSelectedDevice = new PostIDDevice();
                     newSelectedDevice.id = device.id;
@@ -106,8 +109,6 @@ namespace assets_management_system.Page
                     devices = iDDevices,
                     transfer = nTransfer
                 };
-                //MessageBox.Show(nTransfer.transfer_date);
-
 
                 try
                 {

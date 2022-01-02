@@ -7,25 +7,52 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="DeviceDetailWindow.xaml.cs">
+    <Compile Update="AddPesonnelWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DeviceEditingWindow.xaml.cs">
+    <Compile Update="Devicelist\CheckListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NewContractWindow.xaml.cs">
+    <Compile Update="Devicelist\CheckWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Devicelist\DeviceDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Devicelist\DeviceEditingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Devicelist\ListTransferWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Devicelist\NewContractWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="EditStatusWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Inventory\Establish_Inventory_CouncilWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Inventory\InventoryDeviceWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Liquidation\Establish_Liquidation_CouncilWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Liquidation\LiquidationHistoryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\AccountPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="AddDevicesWindow.xaml.cs">
+    <Compile Update="Devicelist\AddDevicesWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="AssetInvWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ContractWindow.xaml.cs">
+    <Compile Update="Devicelist\ContractWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="LoginWindow.xaml.cs">
@@ -34,36 +61,75 @@
     <Compile Update="Pages\DevicePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\InventoryPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\LiquidationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\RepairPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SelectTableWindow.xaml.cs">
+    <Compile Update="Pages\StatisticPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="TransferWindow.xaml.cs">
+    <Compile Update="Devicelist\StartCheckingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Devicelist\TransferWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Repair\Choose Repairer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="DeviceDetailWindow.xaml">
+    <Page Update="AddPesonnelWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DeviceEditingWindow.xaml">
+    <Page Update="Devicelist\CheckListWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NewContractWindow.xaml">
+    <Page Update="Devicelist\CheckWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Devicelist\DeviceDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Devicelist\DeviceEditingWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Devicelist\ListTransferWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Devicelist\NewContractWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="EditStatusWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Inventory\Establish_Inventory_CouncilWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Inventory\InventoryDeviceWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Liquidation\Establish_Liquidation_CouncilWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Liquidation\LiquidationHistoryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\AccountPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="AddDevicesWindow.xaml">
+    <Page Update="Devicelist\AddDevicesWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="AssetInvWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ContractWindow.xaml">
+    <Page Update="Devicelist\ContractWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="LoginWindow.xaml">
@@ -72,13 +138,25 @@
     <Page Update="Pages\DevicePage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\InventoryPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\LiquidationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\RepairPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SelectTableWindow.xaml">
+    <Page Update="Pages\StatisticPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="TransferWindow.xaml">
+    <Page Update="Devicelist\StartCheckingWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Devicelist\TransferWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Repair\Choose Repairer.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

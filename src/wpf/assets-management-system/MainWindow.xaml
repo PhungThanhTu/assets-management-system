@@ -142,21 +142,21 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" >
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Liquidation_Click" >
                     <Grid Width="160">
                         <materialDesign:PackIcon Kind="ContentPaste" VerticalAlignment="Center" Width="20" Height="20"/>
                         <TextBlock HorizontalAlignment="Center" Text="Liquidation" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" >
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Inventory_Click" >
                     <Grid Width="160">
                         <materialDesign:PackIcon Kind="BookSyncOutline" VerticalAlignment="Center" Width="20" Height="20"/>
                         <TextBlock HorizontalAlignment="Center" Text="Inventory" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" >
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Statistic_CLick">
                     <Grid Width="160">
                         <materialDesign:PackIcon Kind="SignalCellular2" VerticalAlignment="Center" Width="20" Height="20"/>
                         <TextBlock HorizontalAlignment="Center" Text="Statistics" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>

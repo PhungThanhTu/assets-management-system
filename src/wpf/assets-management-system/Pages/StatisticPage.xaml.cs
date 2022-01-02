@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace assets_management_system
+namespace assets_management_system.Pages
 {
     /// <summary>
-    /// Interaction logic for SelectTableWindow.xaml
+    /// Interaction logic for StatisticPage.xaml
     /// </summary>
-    public partial class SelectTableWindow : Window
+    public partial class StatisticPage : System.Windows.Controls.Page
     {
-        public SelectTableWindow()
+        public StatisticPage()
         {
             InitializeComponent();
         }

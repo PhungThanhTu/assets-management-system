@@ -1,5 +1,4 @@
-﻿using assets_management_system.Repair;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,23 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using assets_management_system.Inventory;
+using assets_management_system.Page;
 
 namespace assets_management_system.Pages
 {
     /// <summary>
-    /// Interaction logic for RepairPage.xaml
+    /// Interaction logic for InventoryPage.xaml
     /// </summary>
-    public partial class RepairPage : System.Windows.Controls.Page
+    public partial class InventoryPage : System.Windows.Controls.Page
     {
-        public RepairPage()
+        public InventoryPage()
         {
             InitializeComponent();
         }
 
-        private void Repair_Click(object sender, RoutedEventArgs e)
+        private void StartInventory_Click(object sender, RoutedEventArgs e)
         {
-            Choose_Repairer chooseRepairer = new Choose_Repairer();
-            chooseRepairer.Show();
+            Establish_Inventory_CouncilWindow establish_Inventory_CouncilWindow = new Establish_Inventory_CouncilWindow();
+            establish_Inventory_CouncilWindow.Show();
         }
     }
 }

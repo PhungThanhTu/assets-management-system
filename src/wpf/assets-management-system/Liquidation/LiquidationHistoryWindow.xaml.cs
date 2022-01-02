@@ -1,5 +1,4 @@
-﻿using assets_management_system.Repair;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,25 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace assets_management_system.Pages
+namespace assets_management_system.Liquidation
 {
     /// <summary>
-    /// Interaction logic for RepairPage.xaml
+    /// Interaction logic for LiquidationHistoryWindow.xaml
     /// </summary>
-    public partial class RepairPage : System.Windows.Controls.Page
+    public partial class LiquidationHistoryWindow : Window
     {
-        public RepairPage()
+        public LiquidationHistoryWindow()
         {
             InitializeComponent();
         }
 
-        private void Repair_Click(object sender, RoutedEventArgs e)
+        private void Show_Click(object sender, RoutedEventArgs e)
         {
-            Choose_Repairer chooseRepairer = new Choose_Repairer();
-            chooseRepairer.Show();
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
