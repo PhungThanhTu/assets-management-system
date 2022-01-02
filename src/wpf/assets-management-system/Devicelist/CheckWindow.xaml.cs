@@ -67,6 +67,7 @@ namespace assets_management_system
                 {
                     PostDetail newSelectedDevice = new PostDetail();
                     newSelectedDevice.id = device.id;
+                    newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
                     newSelectedDevice.status = device.status;
                     nDetail.Add(newSelectedDevice);
                 }
@@ -79,7 +80,7 @@ namespace assets_management_system
 
                 try
                 {
-                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "check/add", check_header);
+                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "test_api", check_header);
                     MessageBox.Show(result);                 
                 }
                 catch
@@ -129,6 +130,8 @@ namespace assets_management_system
                 cbDivision.DisplayMemberPath = "name";
                 cbDivision.SelectedValuePath = "id";
                 cbDivision.ItemsSource = divisions;
+
+                
 
             }
             catch

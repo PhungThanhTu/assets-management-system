@@ -524,6 +524,45 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Transfer List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/transfer/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET transfer detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/transfer/detail/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"detail",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
