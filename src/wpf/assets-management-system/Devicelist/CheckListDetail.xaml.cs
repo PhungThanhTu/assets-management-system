@@ -17,30 +17,21 @@ using Newtonsoft.Json;
 namespace assets_management_system.Devicelist
 {
     /// <summary>
-    /// Interaction logic for CheckListWindow.xaml
+    /// Interaction logic for CheckListDetail.xaml
     /// </summary>
-    public partial class CheckListWindow : Window
+    public partial class CheckListDetail : Window
     {
-        public IList<CheckList> checkLists { get; set; }
-        public CheckListWindow()
+        public int id { get; set; }
+        public IList<CheckDetail> checkDetails;
+        public CheckListDetail(int id)
         {
             InitializeComponent();
-            FetchCheck();
-        }
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        void FetchCheck()
-        {
-            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "check/list");
-
+            this.id = id;
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "check/id/" + id);
             try
             {
-                checkLists = JsonConvert.DeserializeObject<IList<CheckList>>(data);
-                lvCheckList.ItemsSource = checkLists;
+                checkDetails = JsonConvert.DeserializeObject<IList<CheckDetail>>(data);
+                lvCheckDetail.ItemsSource = checkDetails;
 
             }
             catch
@@ -56,13 +47,11 @@ namespace assets_management_system.Devicelist
                     MessageBox.Show("Unable to connect to the server");
                 }
             }
-
         }
-        private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            int id = ((CheckList)lvCheckList.SelectedItem).id;
-            CheckListDetail checkListDetail = new CheckListDetail(id);
-            checkListDetail.ShowDialog();
+            this.Close();
         }
     }
 }

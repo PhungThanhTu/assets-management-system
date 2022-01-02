@@ -51,7 +51,7 @@
                 <WrapPanel>
                     <Button Click="ListContract_Click" Command="{Binding ListCommand}" Content="List Contract" Margin="20 5 10 5" Width="200" Height="35"></Button>
                     <Button Click="AddDevice_Click" Command="{Binding AddCommand}" Content="Add Devices" Margin="10 5 10 5" Width="200" Height="35"></Button>
-                    <Button Click="Done_CLick" Command="{Binding DoneCommand}" Content="Done" Margin="10 5 5 5" Width="200" Height="35"></Button>
+                    <Button Click="Done_CLick" Command="{Binding DoneCommand}" Content=" Add New Contract" Margin="10 5 5 5" Width="200" Height="35"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -93,7 +93,7 @@
                                 <GridViewColumn Header="Status" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
+                                            <Grid Width="auto">
                                                 <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

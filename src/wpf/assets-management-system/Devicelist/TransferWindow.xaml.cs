@@ -114,6 +114,10 @@ namespace assets_management_system.Page
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "transfer/add", transfer_header);
                     MessageBox.Show(result);
+                    device = new Device();
+                    string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "device/query?division=" + id);
+                    devices = JsonConvert.DeserializeObject<IList<Device>>(data);
+                    lvDevice.ItemsSource = devices;
                 }
                 catch
                 {

@@ -40,7 +40,16 @@ namespace assets_management_system.Devicelist
             }
             catch
             {
-                
+                if (data != null)
+                {
+                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
+                    MessageBox.Show(errorMessage.message);
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to connect to the server");
+                }
             }
         }
 

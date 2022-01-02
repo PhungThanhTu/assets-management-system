@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace assets_management_system.Inventory
     /// </summary>
     public partial class InventoryDeviceWindow : Window
     {
+        private DataRowView rowView;
+
         public InventoryDeviceWindow()
         {
             InitializeComponent();
@@ -26,7 +29,8 @@ namespace assets_management_system.Inventory
 
         private void CheckStatus_Click(object sender, RoutedEventArgs e)
         {
-
+            EditStatusWindow editStatusWindow = new EditStatusWindow();
+            editStatusWindow.ShowDialog();
         }
 
         private void FinishInventory_Click(object sender, RoutedEventArgs e)
@@ -36,7 +40,9 @@ namespace assets_management_system.Inventory
 
         private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            DataGridRow selectedRow = (DataGridRow)sender;
+            selectedRow.IsSelected = true;
+            rowView = lvInventory.SelectedItem as DataRowView;
         }
     }
 }

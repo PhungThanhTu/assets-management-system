@@ -10,6 +10,9 @@
     <Compile Update="AddPesonnelWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Devicelist\CheckListDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Devicelist\CheckListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,6 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddPesonnelWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Devicelist\CheckListDetail.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Devicelist\CheckListWindow.xaml">

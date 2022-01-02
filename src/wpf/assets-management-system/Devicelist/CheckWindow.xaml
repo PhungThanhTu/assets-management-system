@@ -34,7 +34,8 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="0 0 0 10">
-                    <ComboBox Margin="5 5 15 5" x:Name="cbDivision" ItemsSource="{Binding cbDivision}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Division" Width="auto" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <ComboBox Margin="5 5 15 5" x:Name="cbDivision" ItemsSource="{Binding cbDivision}" SelectionChanged="Combobox_SelectionChanged"  materialDesign:HintAssist.Hint="Division" Width="auto" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <DatePicker Margin="5 5 5 5" x:Name="dpTransfer" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
                     
                 </WrapPanel>
             </materialDesign:Card>
@@ -42,14 +43,14 @@
             <materialDesign:Card Grid.Row="2" Margin="5">
                 <WrapPanel>
                     <Button Click="CheckList_Click" Command="{Binding ListCommand}" Content="View Checklist " Margin="220 5 10 5" Width="200" Height="35"></Button>
-                    <Button Click="StartChecking_Click" Command="{Binding AddCommand}" Content="Add Devices" Margin="10 5 10 5" Width="200" Height="35"></Button>
+                    <Button Click="StartChecking_Click" Command="{Binding AddCommand}" Content="Start Checking" Margin="10 5 10 5" Width="200" Height="35"></Button>
                     
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvDevice_Contract" ItemsSource="{Binding PostDevice}"   Background="{DynamicResource MaterialDesignLightBackground}" >
+                    <ListView Margin="5" Name="lvDevice_Check" ItemsSource="{Binding Device}"  SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="30" >
@@ -61,26 +62,26 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Id" Width="auto">
+                                <GridViewColumn Header="Id" Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto" >
+                                            <Grid Width="45" >
                                                 <TextBlock  Text="{Binding id}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="auto">
+                                <GridViewColumn Header="Device name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="100" >
+                                            <Grid Width="120" >
                                                 <TextBlock  Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="auto">
+                                <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
@@ -90,21 +91,11 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Price" Width="auto">
+                                <GridViewColumn Header="Price" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="70">
                                                 <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-
-                                <GridViewColumn Header="Status" >
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

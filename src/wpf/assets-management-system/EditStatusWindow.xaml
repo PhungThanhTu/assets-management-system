@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:assets_management_system"
         mc:Ignorable="d"
-        Title="EditStatusWindow" Height="450" Width="800">
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"     
+        TextElement.FontWeight="Regular"    
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"    
+        TextOptions.TextRenderingMode="Auto"     
+        Background="{DynamicResource MaterialDesignPaper}"    
+        FontFamily="{DynamicResource MaterialDesignFont}"     
+        Title="Edit Status" 
+        WindowStartupLocation="CenterScreen"
+        Height ="150" Width="310">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"></Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Margin="5" Grid.Row="0"  Text="How is this device?" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   FontFamily="Segoe UI" FontSize="14" FontWeight="Bold" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <materialDesign:Card Grid.Column="0" Margin="5" >
+                    <WrapPanel Height="70">
+                        <ComboBox    
+                              x:Name="cbStatus"
+                              Margin="5 15 5 5" 
+                              ItemsSource="{Binding Status}" 
+                              materialDesign:HintAssist.Hint="Choose Status" 
+                              IsEditable="True" 
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                              Height="35" Width="150">
+                            <Label Content="New"></Label>
+                            <Label Content="Used"></Label>
+                            <Label Content="Need Liquidating"></Label>
+                            <Label Content="Spoiled"></Label>
+                            <Label Content="Liquidated"></Label>
+                            <Label Content="Lost"></Label>
+                            <Label Content="Transfered Outside"></Label>
+                        </ComboBox>
+
+
+                        <Button Name="bntEditStatus" Click="EditStatus_Click"   Content="Edit Status" Margin="0 25 5 5"  Height="30" Width="120" ></Button>
+                    </WrapPanel>
+                </materialDesign:Card>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
