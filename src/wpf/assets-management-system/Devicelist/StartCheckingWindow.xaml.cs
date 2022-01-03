@@ -31,12 +31,13 @@ namespace assets_management_system
         public int idDivision { get; set; }
 
         public StartCheckingWindow(IList<CheckDetail> checkDetails,int idDivision)
-        {
+        {   
+
             InitializeComponent();
+            ncheckDetails = new List<CheckDetail>();
             this.ncheckDetails = checkDetails;
             this.idDivision = idDivision;
             lvDevice_Check.ItemsSource = ncheckDetails;
-            ncheckDetails = new List<CheckDetail>();
         }
 
         
@@ -57,7 +58,7 @@ namespace assets_management_system
             {
                 int selectedIndex = lvDevice_Check.SelectedIndex;
                 MessageBox.Show(selectedIndex.ToString());
-                CheckDetail inputCheck = ncheckDetails[selectedIndex];
+                CheckDetail inputCheck = (CheckDetail)lvDevice_Check.SelectedItem;
                 EditStatusWindow editStatusWindow = new EditStatusWindow(inputCheck, selectedIndex);
                 editStatusWindow.editDelegate = EditCheckDevice;
                 editStatusWindow.ShowDialog();

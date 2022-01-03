@@ -90,7 +90,7 @@
 
         <materialDesign:Card Grid.Row="2" Margin="5">
             <WrapPanel>
-                <Button Margin="450 5 5 5 " Height="35" Width="200" Content="Checking" Click="Checking_Click"></Button>
+                <Button Margin="450 5 5 5 " Height="35" Width="200" Content="Confirm Device Status" Click="Checking_Click"></Button>
             </WrapPanel>
         </materialDesign:Card>
         
