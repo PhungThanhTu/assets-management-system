@@ -20,14 +20,14 @@ namespace assets_management_system
     /// </summary>
     public partial class EditStatusWindow : Window
     {
-        public PostDevice device { get; set; }
+        public CheckDetail detail { get; set; }
         public int index { get; set; }
-        public delegate void EditDeviceDelegate(PostDevice device, int index);
+        public delegate void EditDeviceDelegate(CheckDetail detail, int index);
         public EditDeviceDelegate editDelegate;
-        public EditStatusWindow()
+        public EditStatusWindow(CheckDetail detail, int index)
         {
             InitializeComponent();
-            this.device = device;
+            this.detail = detail;
             this.index = index;
         }
 
@@ -40,8 +40,8 @@ namespace assets_management_system
             }
             else
             {
-                device.status = cbStatus.Text;
-                editDelegate(this.device, this.index);
+                detail.status = cbStatus.Text;
+                editDelegate(this.detail, this.index);
                 this.Close();
             }
         }

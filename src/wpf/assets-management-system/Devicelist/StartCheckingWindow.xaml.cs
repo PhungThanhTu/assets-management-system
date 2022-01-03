@@ -23,18 +23,20 @@ namespace assets_management_system
     public partial class StartCheckingWindow : Window
     {
         public DataRowView rowView;
-        public IList<PostDevice> devices { get; set; }
+
         public PostCheck nCheck { get; set; }
         public IList<PostDetail> nDetail { get; set; }
         public IList<CheckDetail> ncheckDetails { get; set; }
         public CheckHeader check_header { get; set; }
+        public int idDivision { get; set; }
 
-        public StartCheckingWindow(IList<CheckDetail> checkDetails)
+        public StartCheckingWindow(IList<CheckDetail> checkDetails,int idDivision)
         {
             InitializeComponent();
             this.ncheckDetails = checkDetails;
-            devices = new List<PostDevice>();
+            this.idDivision = idDivision;
             lvDevice_Check.ItemsSource = ncheckDetails;
+            ncheckDetails = new List<CheckDetail>();
         }
 
         
@@ -54,18 +56,19 @@ namespace assets_management_system
             else
             {
                 int selectedIndex = lvDevice_Check.SelectedIndex;
-                PostDevice inputDevice = devices[selectedIndex];
-                DeviceEditingWindow deviceEditingWindow = new DeviceEditingWindow(inputDevice, selectedIndex);
-                deviceEditingWindow.editDelegate = EditDevice;
-                deviceEditingWindow.ShowDialog();
+                MessageBox.Show(selectedIndex.ToString());
+                CheckDetail inputCheck = ncheckDetails[selectedIndex];
+                EditStatusWindow editStatusWindow = new EditStatusWindow(inputCheck, selectedIndex);
+                editStatusWindow.editDelegate = EditCheckDevice;
+                editStatusWindow.ShowDialog();
             }
 
         }
-        public void EditDevice(PostDevice device, int index)
+        public void EditCheckDevice(CheckDetail detail, int index)
         {
-            devices[index] = device;
+            ncheckDetails[index] = detail;
             lvDevice_Check.ItemsSource = null;
-            lvDevice_Check.ItemsSource = devices;
+            lvDevice_Check.ItemsSource = ncheckDetails;
         }
 
         private void Checking_Click(object sender, RoutedEventArgs e)

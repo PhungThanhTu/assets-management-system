@@ -46,17 +46,18 @@ namespace assets_management_system
         private void StartChecking_Click(object sender, RoutedEventArgs e)
         {
             idDivision = (int)cbDivision.SelectedValue;
+            nDetail = new List<CheckDetail>();
+            nDetail.Clear();
             foreach (Device device in lvDevice_Check.SelectedItems)
             {
                 CheckDetail newSelectedDevice = new CheckDetail();
                 newSelectedDevice.id = device.id;
                 newSelectedDevice.name = device.name.ToString();
                 newSelectedDevice.current_value = device.current_value;
-                newSelectedDevice.division = idDivision;
                 newSelectedDevice.status = device.status.ToString();
                 nDetail.Add(newSelectedDevice);
             }
-            StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail);
+            StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail,idDivision);
             startCheckingWindow.ShowDialog();
         }
         private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)

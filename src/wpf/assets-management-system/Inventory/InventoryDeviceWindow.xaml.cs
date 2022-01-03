@@ -29,8 +29,8 @@ namespace assets_management_system.Inventory
 
         private void CheckStatus_Click(object sender, RoutedEventArgs e)
         {
-            EditStatusWindow editStatusWindow = new EditStatusWindow();
-            editStatusWindow.ShowDialog();
+            //EditStatusWindow editStatusWindow = new EditStatusWindow();
+            //editStatusWindow.ShowDialog();
         }
 
         private void FinishInventory_Click(object sender, RoutedEventArgs e)

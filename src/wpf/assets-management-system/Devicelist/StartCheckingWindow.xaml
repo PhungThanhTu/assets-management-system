@@ -51,28 +51,28 @@
                                 <GridViewColumn Header="Device name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Current value" Width="200">
+                                <GridViewColumn Header="Current value" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding current_value}" HorizontalAlignment="Center"></TextBlock>
+                                        <Grid Width="100" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding current_value}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Status" >
+                                <GridViewColumn Header="Status" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
+                                        <Grid Width="120" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
