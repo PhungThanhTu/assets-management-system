@@ -31,6 +31,9 @@
     <Compile Update="Devicelist\NewContractWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Devicelist\TransferDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="EditStatusWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -109,6 +112,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Devicelist\NewContractWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Devicelist\TransferDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="EditStatusWindow.xaml">

@@ -35,7 +35,7 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvTransfer" ItemsSource="{Binding Transfer}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
+                    <ListView Margin="5" Name="lvTransfer" ItemsSource="{Binding Transfer}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" MouseDoubleClick="listview_MouseDoubleClick" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID"  Width="100">

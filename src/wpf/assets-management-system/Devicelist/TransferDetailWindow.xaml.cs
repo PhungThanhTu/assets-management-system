@@ -1,4 +1,6 @@
-﻿using System;
+﻿using assets_management_system.data_classes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,27 +13,25 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using assets_management_system.data_classes;
-using Newtonsoft.Json;
 
 namespace assets_management_system.Devicelist
 {
     /// <summary>
-    /// Interaction logic for CheckListDetail.xaml
+    /// Interaction logic for TransferDetailWindow.xaml
     /// </summary>
-    public partial class CheckListDetail : Window
+    public partial class TransferDetailWindow : Window
     {
+        public IList<DeviceDetail> deviceDetails { get; set; }
         public int id { get; set; }
-        public IList<CheckDetail> checkDetails;
-        public CheckListDetail(int id)
+        public TransferDetailWindow(int id)
         {
             InitializeComponent();
             this.id = id;
-            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "check/id/" + id);
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "transfer/detail/" + id);
             try
             {
-                checkDetails = JsonConvert.DeserializeObject<IList<CheckDetail>>(data);
-                lvCheckDetail.ItemsSource = checkDetails;
+                deviceDetails = JsonConvert.DeserializeObject<IList<DeviceDetail>>(data);
+                lvTransferDetail.ItemsSource = deviceDetails;
 
             }
             catch
@@ -46,6 +46,7 @@ namespace assets_management_system.Devicelist
                 {
                     MessageBox.Show("Unable to connect to the server");
                 }
+
             }
         }
 

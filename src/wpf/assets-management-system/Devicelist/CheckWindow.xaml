@@ -35,7 +35,7 @@
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="0 0 0 10">
                     <ComboBox Margin="5 5 15 5" x:Name="cbDivision" ItemsSource="{Binding cbDivision}" SelectionChanged="Combobox_SelectionChanged"  materialDesign:HintAssist.Hint="Division" Width="auto" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <DatePicker Margin="5 5 5 5" x:Name="dpTransfer" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
+                   
                     
                 </WrapPanel>
             </materialDesign:Card>
@@ -81,21 +81,21 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="200">
+                                <GridViewColumn Header="Current Value" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="{Binding current_value}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Price" >
+                                <GridViewColumn Header="Status" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

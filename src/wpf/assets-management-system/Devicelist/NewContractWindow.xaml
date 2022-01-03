@@ -19,8 +19,7 @@
         Title="New Contract" Height="500" Width="700">
     <Window.Resources>
         <Style
-            TargetType="DataGridRow">
-
+            TargetType="{x:Type ListBoxItem}">
             <EventSetter Event="MouseRightButtonDown" Handler="DataGridRow_MouseRightButtonDown"/>
         </Style>
     </Window.Resources>

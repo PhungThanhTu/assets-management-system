@@ -21,7 +21,7 @@ namespace assets_management_system.Devicelist
     /// </summary>
     public partial class ListTransferWindow : Window
     {
-        public IList<TransferDetail> transfers { get; set; }
+        public IList<TransferList> transfers { get; set; }
         public ListTransferWindow()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace assets_management_system.Devicelist
 
             try
             {
-                transfers = JsonConvert.DeserializeObject<IList<TransferDetail>>(data);
+                transfers = JsonConvert.DeserializeObject<IList<TransferList>>(data);
                 lvTransfer.ItemsSource = transfers;
 
             }
@@ -56,6 +56,12 @@ namespace assets_management_system.Devicelist
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int id = ((TransferList)lvTransfer.SelectedItem).id;
+            TransferDetailWindow transferDetailWindow = new TransferDetailWindow(id);
+            transferDetailWindow.ShowDialog();
         }
     }
 }

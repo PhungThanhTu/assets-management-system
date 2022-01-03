@@ -17,7 +17,7 @@ namespace assets_management_system.data_classes
     {
         public int id;
     }
-    public class TransferDetail
+    public class TransferList
     {
         public int id { get; set; }
         public string sender_name { get; set; }

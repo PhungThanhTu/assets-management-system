@@ -13,7 +13,8 @@ namespace assets_management_system.data_classes
     }
     public class CheckDetail
     {
-        public int device { get;set; }
+        public int id { get; set; }
+        public string name { get;set; }
         public int division { get; set; }
         public string status { get; set; }
         public int current_value { get; set; }

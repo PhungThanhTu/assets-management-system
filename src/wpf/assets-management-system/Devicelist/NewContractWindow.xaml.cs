@@ -92,26 +92,44 @@ namespace assets_management_system
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            int selectedIndex = lvDevice_Contract.SelectedIndex;
-            PostDevice inputDevice = devices[selectedIndex];
-            DeviceEditingWindow deviceEditingWindow = new DeviceEditingWindow(inputDevice,selectedIndex);
-            deviceEditingWindow.editDelegate = EditDevice;
-            deviceEditingWindow.ShowDialog();
+            if(lvDevice_Contract.SelectedItems.Count==0)
+            {
+                MessageBox.Show("Please add data to edit!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }    
+            else
+            {
+                int selectedIndex = lvDevice_Contract.SelectedIndex;
+                PostDevice inputDevice = devices[selectedIndex];
+                DeviceEditingWindow deviceEditingWindow = new DeviceEditingWindow(inputDevice, selectedIndex);
+                deviceEditingWindow.editDelegate = EditDevice;
+                deviceEditingWindow.ShowDialog();
+            }    
+            
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            int deleteIndex = lvDevice_Contract.SelectedIndex;
-            devices.RemoveAt(deleteIndex);
-            lvDevice_Contract.ItemsSource = null;
-            lvDevice_Contract.ItemsSource = devices;
+            if (lvDevice_Contract.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please add data to delete!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            else
+            {
+                int deleteIndex = lvDevice_Contract.SelectedIndex;
+                devices.RemoveAt(deleteIndex);
+                lvDevice_Contract.ItemsSource = null;
+                lvDevice_Contract.ItemsSource = devices;
+            }    
+
         }
 
 
         private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            DataGridRow selectedRow = (DataGridRow)sender;
-            selectedRow.IsSelected = true;
-            rowView = lvDevice_Contract.SelectedItem as DataRowView;
+                DataGridRow selectedRow = (DataGridRow)sender;
+                selectedRow.IsSelected = true;
+                rowView = lvDevice_Contract.SelectedItem as DataRowView;   
         }
 
         public void AddNewDevice(PostDevice param)

@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\assets-management-system",
+    "\\assets-management-system\\Devicelist",
     "\\assets-management-system\\Pages"
   ],
-  "SelectedNode": "\\assets-management-system\\Pages\\InventoryPage.xaml",
+  "SelectedNode": "\\assets-management-system\\Devicelist\\TransferWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

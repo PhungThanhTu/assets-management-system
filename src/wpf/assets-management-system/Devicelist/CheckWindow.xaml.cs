@@ -24,16 +24,17 @@ namespace assets_management_system
     {
         public IList<Division> divisions { get; set; }
         public IList<Device> devices { get; set; }
-        public PostCheck nCheck { get; set; }
-        public IList<PostDetail> nDetail { get; set; }
-        public CheckHeader check_header { get; set; }
+
+        public IList<CheckDetail> nDetail { get; set; }
+        
         public Division division { get; set; }
+        public int idDivision { get; set; }
 
         public CheckWindow()
         {
             InitializeComponent();
             FetchDivision();
-            cbDivision.SelectedIndex = 0;
+            cbDivision.SelectedIndex = 0;  
         }
 
         private void CheckList_Click(object sender, RoutedEventArgs e)
@@ -44,50 +45,19 @@ namespace assets_management_system
 
         private void StartChecking_Click(object sender, RoutedEventArgs e)
         {
-            StartCheckingWindow startCheckingWindow = new StartCheckingWindow();
+            idDivision = (int)cbDivision.SelectedValue;
+            foreach (Device device in lvDevice_Check.SelectedItems)
+            {
+                CheckDetail newSelectedDevice = new CheckDetail();
+                newSelectedDevice.id = device.id;
+                newSelectedDevice.name = device.name.ToString();
+                newSelectedDevice.current_value = device.current_value;
+                newSelectedDevice.division = idDivision;
+                newSelectedDevice.status = device.status.ToString();
+                nDetail.Add(newSelectedDevice);
+            }
+            StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail);
             startCheckingWindow.ShowDialog();
-
-            nDetail = new List<PostDetail>();
-            nDetail.Clear();
-
-            if ( dpTransfer.Text.Length == 0)
-            {
-                MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
-            else
-            {
-                nCheck = new PostCheck()
-                {                    
-                    check_date = dpTransfer.SelectedDate.Value.ToString("yyyy-MM-dd")
-                };
-
-                // set up postdetail
-                foreach (Device device in lvDevice_Check.SelectedItems)
-                {
-                    PostDetail newSelectedDevice = new PostDetail();
-                    newSelectedDevice.id = device.id;
-                    newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
-                    newSelectedDevice.status = device.status;
-                    nDetail.Add(newSelectedDevice);
-                }
-                // set up transfer
-                check_header = new CheckHeader
-                {
-                    check = nCheck,
-                    details = nDetail
-                };
-
-                try
-                {
-                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "test_api", check_header);
-                    MessageBox.Show(result);                 
-                }
-                catch
-                {
-                    MessageBox.Show("Connection Error");
-                }
-            }
         }
         private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

@@ -23,5 +23,15 @@ namespace assets_management_system
         {
             InitializeComponent();
         }
+
+        private void AddPersonnel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChoosePersonnel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

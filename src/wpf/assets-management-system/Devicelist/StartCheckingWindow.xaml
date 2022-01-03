@@ -24,6 +24,16 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <materialDesign:Card>
+            <WrapPanel>
+                <DatePicker Margin="10 5 5 5" x:Name="dpCheck" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Checkdate" Width="auto" />
+            </WrapPanel>
+        </materialDesign:Card>
         <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ListView Margin="5" Name="lvDevice_Check" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
@@ -76,6 +86,12 @@
                     </ListView.ContextMenu>
                 </ListView>
                 </ScrollViewer>
+        </materialDesign:Card>
+
+        <materialDesign:Card Grid.Row="2" Margin="5">
+            <WrapPanel>
+                <Button Margin="450 5 5 5 " Height="35" Width="200" Content="Checking" Click="Checking_Click"></Button>
+            </WrapPanel>
         </materialDesign:Card>
         
     </Grid>
