@@ -123,6 +123,7 @@ namespace assets_management_system.Page
                 {
                     MessageBox.Show("Connection Error");
                 }
+                this.Close();
             }
         }
     }

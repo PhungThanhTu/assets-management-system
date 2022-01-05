@@ -85,6 +85,7 @@ namespace assets_management_system
                 {
                     MessageBox.Show("Connection Error");
                 }
+                this.Close();
             }
             
         }

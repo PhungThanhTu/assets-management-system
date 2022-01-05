@@ -41,6 +41,7 @@ namespace assets_management_system.Pages
         private void NewContract_Click(object sender, RoutedEventArgs e)
         {
             NewContractWindow newContractWindow = new NewContractWindow();
+            newContractWindow.Closed += new EventHandler((e, args) => FetchDevices());
             newContractWindow.ShowDialog();
         }
 
@@ -48,6 +49,7 @@ namespace assets_management_system.Pages
         {
             int id = ((Division)cbDividion.SelectedItem).id;
             TransferWindow transferWindow = new TransferWindow(id);
+            transferWindow.Closed += new EventHandler((e, args) => FetchDevices());
             transferWindow.ShowDialog();
         }
 
@@ -116,6 +118,7 @@ namespace assets_management_system.Pages
         private void Check_Click(object sender, RoutedEventArgs e)
         {
             CheckWindow checkWindow = new CheckWindow();
+            checkWindow.Closed += new EventHandler((e, args) => FetchDevices());
             checkWindow.ShowDialog();
         }
     }
