@@ -9,6 +9,6 @@ namespace assets_management_system.data_classes
     public class CheckHeader
     {
         public PostCheck check;
-        public IList<PostDetail> details;
+        public IList<CheckDetail> detail;
     }
 }

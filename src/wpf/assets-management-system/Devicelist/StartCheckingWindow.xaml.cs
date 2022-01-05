@@ -95,18 +95,19 @@ namespace assets_management_system
                 check_header = new CheckHeader
                 {
                     check = nCheck,
-                    details = nDetail
+                    detail = ncheckDetails
                 };
 
                 try
                 {
-                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "test_api", check_header);
+                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "check/add", check_header);
                     MessageBox.Show(result);
                 }
                 catch
                 {
                     MessageBox.Show("Connection Error");
                 }
+                this.Close();
             }
         }
     }

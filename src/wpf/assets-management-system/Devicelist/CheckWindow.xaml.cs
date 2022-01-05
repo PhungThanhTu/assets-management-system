@@ -55,6 +55,7 @@ namespace assets_management_system
                 newSelectedDevice.name = device.name.ToString();
                 newSelectedDevice.current_value = device.current_value;
                 newSelectedDevice.status = device.status.ToString();
+                newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
                 nDetail.Add(newSelectedDevice);
             }
             StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail,idDivision);
