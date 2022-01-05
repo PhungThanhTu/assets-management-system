@@ -106,7 +106,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\t\"check\": {\r\n\t\t\t\"check_date\" : \"2018-05-12\"\t\r\n\t\t},\r\n\t\t\"detail\" :[\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"division\" : 2,\r\n\t\t\t\t\"status\" : \"Used\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 2,\r\n\t\t\t\t\"division\" : 1,\r\n\t\t\t\t\"status\" : \"Used\"\r\n\t\t\t}\r\n\t\t]\r\n}",
+					"raw": "{\r\n\t\t\"check\": {\r\n\t\t\t\"check_date\" : \"2014-04-05\"\t\r\n\t\t},\r\n\t\t\"detail\" :[\r\n\t\t\t{\r\n\t\t\t\t\"id\": 9,\r\n\t\t\t\t\"division\" : 2,\r\n\t\t\t\t\"status\" : \"Used\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 10,\r\n\t\t\t\t\"division\" : 2,\r\n\t\t\t\t\"status\" : \"Used\"\r\n\t\t\t}\r\n\t\t]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,7 +152,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/check/id/7",
+					"raw": "localhost:3000/check/id/17",
 					"host": [
 						"localhost"
 					],
@@ -160,7 +160,7 @@
 					"path": [
 						"check",
 						"id",
-						"7"
+						"17"
 					]
 				}
 			},
@@ -407,7 +407,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/device/query?division=2",
+					"raw": "localhost:3000/device/query?division=1",
 					"host": [
 						"localhost"
 					],
@@ -419,7 +419,7 @@
 					"query": [
 						{
 							"key": "division",
-							"value": "2"
+							"value": "1"
 						}
 					]
 				}
@@ -559,6 +559,50 @@
 						"transfer",
 						"detail",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get liquidation list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/liquidation/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"liquidation",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get need liquidating device by division",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/liquidation/query?division=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"liquidation",
+						"query"
+					],
+					"query": [
+						{
+							"key": "division",
+							"value": "1"
+						}
 					]
 				}
 			},
