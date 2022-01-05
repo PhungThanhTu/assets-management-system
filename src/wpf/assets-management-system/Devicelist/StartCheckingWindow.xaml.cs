@@ -57,7 +57,6 @@ namespace assets_management_system
             else
             {
                 int selectedIndex = lvDevice_Check.SelectedIndex;
-                MessageBox.Show(selectedIndex.ToString());
                 CheckDetail inputCheck = (CheckDetail)lvDevice_Check.SelectedItem;
                 EditStatusWindow editStatusWindow = new EditStatusWindow(inputCheck, selectedIndex);
                 editStatusWindow.editDelegate = EditCheckDevice;

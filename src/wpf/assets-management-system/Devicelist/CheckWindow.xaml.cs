@@ -59,6 +59,7 @@ namespace assets_management_system
                 nDetail.Add(newSelectedDevice);
             }
             StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail,idDivision);
+            startCheckingWindow.Closed += new EventHandler((e, args) => this.Close());
             startCheckingWindow.ShowDialog();
         }
         private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
