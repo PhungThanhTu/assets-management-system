@@ -607,6 +607,50 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get liquidation device by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://asset-management-webserver.herokuapp.com/liquidation/devices/1",
+					"protocol": "https",
+					"host": [
+						"asset-management-webserver",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"liquidation",
+						"devices",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get liquidation personnel by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://asset-management-webserver.herokuapp.com/liquidation/personnel/1",
+					"protocol": "https",
+					"host": [
+						"asset-management-webserver",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"liquidation",
+						"personnel",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
