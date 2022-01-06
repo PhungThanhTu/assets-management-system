@@ -1,0 +1,115 @@
+﻿<Window x:Class="assets_management_system.Repair.NewRepairerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:assets_management_system.Repair"
+        mc:Ignorable="d"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"     
+        TextElement.FontWeight="Regular"    
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"    
+        TextOptions.TextRenderingMode="Auto"     
+        Background="{DynamicResource MaterialDesignPaper}"    
+        FontFamily="{DynamicResource MaterialDesignFont}"     
+        Title="New Repairer" 
+        WindowStartupLocation="CenterScreen"
+        Height ="300" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <materialDesign:Card Grid.Row="0" Margin="5" Height="auto">
+
+        </materialDesign:Card>
+        <Grid Grid.Row="0" Height="150" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+              Grid.Column="1" Margin="0 10 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <TextBlock FontFamily="Roboto" 
+                       FontSize="12"
+                       Text="Repairer name:"
+                       VerticalAlignment="Center"   
+                       />
+                <TextBox Grid.Row="1"
+                        x:Name="txtboxName"                        
+                        FontSize="14"
+                         Width="170"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         />
+            </Grid>
+            <Grid Grid.Row="1"
+              Grid.Column="1" Margin="0 10 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="3*"/>
+
+                </Grid.RowDefinitions>
+                <TextBlock FontFamily="Roboto" 
+                       FontSize="12"
+                       Text="Phone Number:"
+                       VerticalAlignment="Center"   
+                       />
+                <TextBox Grid.Row="1"
+                        x:Name="txtboxPhone"                        
+                        FontSize="14"
+                         Width="170"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+
+            <Grid Grid.Row="0"
+              Grid.Column="3" Margin="0 10 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="3*"/>
+
+                </Grid.RowDefinitions>
+                <TextBlock FontFamily="Roboto" 
+                       FontSize="12"
+                       Text="Address:"
+                       VerticalAlignment="Center"   
+                       />
+                <TextBox Grid.Row="1"
+                        x:Name="txtboxAddress"                        
+                        FontSize="14"
+                         Width="170"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            </Grid>
+        </Grid>
+
+        <materialDesign:Card Grid.Row="1" Margin="5">
+            <WrapPanel>
+                <Button Margin="45 5 20 5 "  Click="AddNewRepairer_Click" Content="Add New Repairer" Height="35" Width="160"></Button>
+                <Button Margin="10 5 5 5" Click="Cancel_Click" Content="Cancel" Height="35" Width="160" Background="OrangeRed"></Button>
+            </WrapPanel>
+        </materialDesign:Card>
+    </Grid>
+</Window>

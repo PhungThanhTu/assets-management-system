@@ -25,22 +25,19 @@ namespace assets_management_system
         public DataRowView rowView;
 
         public PostCheck nCheck { get; set; }
-        public IList<PostDetail> nDetail { get; set; }
         public IList<CheckDetail> ncheckDetails { get; set; }
         public CheckHeader check_header { get; set; }
-        public int idDivision { get; set; }
 
-        public StartCheckingWindow(IList<CheckDetail> checkDetails,int idDivision)
-        {   
+        public StartCheckingWindow(IList<CheckDetail> checkDetails)
+        {
 
             InitializeComponent();
             ncheckDetails = new List<CheckDetail>();
             this.ncheckDetails = checkDetails;
-            this.idDivision = idDivision;
             lvDevice_Check.ItemsSource = ncheckDetails;
         }
 
-        
+
         private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             DataGridRow selectedRow = (DataGridRow)sender;
@@ -49,11 +46,11 @@ namespace assets_management_system
         }
         private void CheckStatus_Click(object sender, RoutedEventArgs e)
         {
-            if(lvDevice_Check.SelectedItems.Count==0)
+            if (lvDevice_Check.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Please add data to checkstatus!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
-            }    
+            }
             else
             {
                 int selectedIndex = lvDevice_Check.SelectedIndex;
@@ -85,11 +82,6 @@ namespace assets_management_system
                     check_date = dpCheck.SelectedDate.Value.ToString("yyyy-MM-dd")
                 };
 
-                // set up postdetail
-                PostDetail nCheckDetail = new PostDetail();
-                {
-
-                };
                 // set up postcheck
                 check_header = new CheckHeader
                 {
@@ -108,6 +100,11 @@ namespace assets_management_system
                 }
                 this.Close();
             }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

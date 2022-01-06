@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace assets_management_system.Repair
 {
     /// <summary>
-    /// Interaction logic for Choose_Repairer.xaml
+    /// Interaction logic for NewRepairerWindow.xaml
     /// </summary>
-    public partial class Choose_Repairer : Window
+    public partial class NewRepairerWindow : Window
     {
-        public Choose_Repairer()
+        public NewRepairerWindow()
         {
             InitializeComponent();
         }
@@ -29,9 +29,9 @@ namespace assets_management_system.Repair
 
         }
 
-        private void ChooseRepairer_Click(object sender, RoutedEventArgs e)
+        private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

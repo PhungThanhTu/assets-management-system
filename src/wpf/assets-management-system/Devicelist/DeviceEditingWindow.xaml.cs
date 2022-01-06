@@ -37,9 +37,6 @@ namespace assets_management_system
             this.device = device;
             this.index = index;
 
-            
-
-
             string TypeData = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "type");
             string UnitData = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "unit");
             try

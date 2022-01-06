@@ -13,38 +13,38 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace assets_management_system
+namespace assets_management_system.Inventory
 {
     /// <summary>
-    /// Interaction logic for EditStatusWindow.xaml
+    /// Interaction logic for EditStatusInventoryWindow.xaml
     /// </summary>
-    public partial class EditStatusWindow : Window
+    public partial class EditStatusInventoryWindow : Window
     {
-        public CheckDetail detail { get; set; }
+        public Device device { get; set; }
         public int index { get; set; }
-        public delegate void EditDeviceDelegate(CheckDetail detail, int index);
+        public delegate void EditDeviceDelegate(Device device, int index);
         public EditDeviceDelegate editDelegate;
-
-        public EditStatusWindow(CheckDetail detail, int index)
+        public EditStatusInventoryWindow(Device device, int index)
         {
             InitializeComponent();
-            this.detail = detail;
+            this.device = device;
             this.index = index;
         }
 
         private void EditStatus_Click(object sender, RoutedEventArgs e)
         {
-            if(cbStatus.Text.Length==0)
+            if (cbStatus.Text.Length == 0)
             {
                 MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
             else
             {
-                detail.status = cbStatus.Text;
-                editDelegate(this.detail, this.index);
+                device.status = cbStatus.Text;
+                editDelegate(this.device, this.index);
                 this.Close();
             }
         }
     }
+    
 }

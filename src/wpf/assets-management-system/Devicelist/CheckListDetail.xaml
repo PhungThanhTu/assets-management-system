@@ -29,7 +29,7 @@
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <TextBlock Margin="5" Grid.Row="0"  Text="Chec Detail" HorizontalAlignment="Center" VerticalAlignment="Top"
+                <TextBlock Margin="5" Grid.Row="0"  Text="Check Detail" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" />
             </Grid>
 
@@ -66,10 +66,10 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Status" Width="100">
+                                <GridViewColumn Header="Status" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="90">
+                                            <Grid Width="150">
                                                 <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

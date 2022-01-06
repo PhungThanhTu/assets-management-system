@@ -14,24 +14,24 @@ using System.Windows.Shapes;
 using assets_management_system.data_classes;
 using Newtonsoft.Json;
 
-namespace assets_management_system.Devicelist
+namespace assets_management_system.Inventory
 {
     /// <summary>
-    /// Interaction logic for CheckListDetail.xaml
+    /// Interaction logic for InventoryDetailWindow.xaml
     /// </summary>
-    public partial class CheckListDetail : Window
+    public partial class InventoryDetailWindow : Window
     {
+        public IList<InventoryDetail> inventoryDetails { get; set; }
         public int id { get; set; }
-        public IList<ChecklistDetail> checkDetails;
-        public CheckListDetail(int id)
+        public InventoryDetailWindow(int id)
         {
             InitializeComponent();
             this.id = id;
-            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "check/id/" + id);
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "inventory/device/" + id);
             try
             {
-                checkDetails = JsonConvert.DeserializeObject<IList<ChecklistDetail>>(data);
-                lvCheckDetail.ItemsSource = checkDetails;
+                inventoryDetails = JsonConvert.DeserializeObject<IList<InventoryDetail>>(data);
+                lvInventoryDetail.ItemsSource = inventoryDetails;
 
             }
             catch
@@ -46,6 +46,7 @@ namespace assets_management_system.Devicelist
                 {
                     MessageBox.Show("Unable to connect to the server");
                 }
+
             }
         }
 

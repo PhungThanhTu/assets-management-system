@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using assets_management_system.data_classes;
+using Newtonsoft.Json;
+
 
 namespace assets_management_system
 {
@@ -19,19 +22,66 @@ namespace assets_management_system
     /// </summary>
     public partial class AddPesonnelWindow : Window
     {
+        public IList<Personnel> personnels { get; set; }
+        //public IList<PostPersonnel> personnel { get; set; }
+        public delegate void ChoosePersonnelDelegate(IList<Personnel> param);
+        public ChoosePersonnelDelegate ChoosePersonnel;
+
         public AddPesonnelWindow()
         {
             InitializeComponent();
+            FetchPersonnel();
         }
 
-        private void AddPersonnel_Click(object sender, RoutedEventArgs e)
+        void FetchPersonnel ()
+        {
+            string data= HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "personnel/");
+            try
+            {
+                personnels = JsonConvert.DeserializeObject<IList<Personnel>>(data);
+                lvPersonnel.ItemsSource = personnels;
+            }
+            catch
+            {
+                if (data != null)
+                {
+                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
+                    MessageBox.Show(errorMessage.message);
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to connect to the server");
+                }
+            }
+        }
+        public void AddNewPersonnel(Personnel param)
         {
 
+            personnels.Add(param);
+            lvPersonnel.ItemsSource = null;
+            lvPersonnel.ItemsSource = personnels;
         }
-
         private void ChoosePersonnel_Click(object sender, RoutedEventArgs e)
         {
+            personnels = new List<Personnel>();
+            foreach (Personnel personnel in lvPersonnel.SelectedItems)
+            {
+                Personnel newSelectedPersonnel = new Personnel();
+                newSelectedPersonnel.id = personnel.id;
+                newSelectedPersonnel.name = personnel.name.ToString();
+                newSelectedPersonnel.position = personnel.position.ToString();
+                newSelectedPersonnel.division = personnel.division;
+                personnels.Add(newSelectedPersonnel);
+            }
+            ChoosePersonnel(personnels);
+        }
 
+        private void AddNewPersonnel_Click(object sender, RoutedEventArgs e)
+        {
+            NewPersonnelWindow newPersonnelWindow = new NewPersonnelWindow();
+            newPersonnelWindow.AddPersonnel = AddNewPersonnel;
+            newPersonnelWindow.ShowDialog(); 
         }
     }
 }

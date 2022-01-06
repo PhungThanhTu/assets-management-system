@@ -37,7 +37,13 @@
     <Compile Update="EditStatusWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Inventory\EditStatusInventoryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Inventory\Establish_Inventory_CouncilWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Inventory\InventoryDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Inventory\InventoryDeviceWindow.xaml.cs">
@@ -47,6 +53,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Liquidation\LiquidationHistoryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="NewPersonnelWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\AccountPage.xaml.cs">
@@ -88,6 +97,9 @@
     <Compile Update="Repair\Choose Repairer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Repair\NewRepairerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddPesonnelWindow.xaml">
@@ -120,7 +132,13 @@
     <Page Update="EditStatusWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Inventory\EditStatusInventoryWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Inventory\Establish_Inventory_CouncilWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Inventory\InventoryDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Inventory\InventoryDeviceWindow.xaml">
@@ -130,6 +148,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Liquidation\LiquidationHistoryWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="NewPersonnelWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\AccountPage.xaml">
@@ -169,6 +190,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Repair\Choose Repairer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Repair\NewRepairerWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

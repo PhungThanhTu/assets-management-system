@@ -26,15 +26,14 @@ namespace assets_management_system
         public IList<Device> devices { get; set; }
 
         public IList<CheckDetail> nDetail { get; set; }
-        
+
         public Division division { get; set; }
-        public int idDivision { get; set; }
 
         public CheckWindow()
         {
             InitializeComponent();
             FetchDivision();
-            cbDivision.SelectedIndex = 0;  
+            cbDivision.SelectedIndex = 0;
         }
 
         private void CheckList_Click(object sender, RoutedEventArgs e)
@@ -45,7 +44,6 @@ namespace assets_management_system
 
         private void StartChecking_Click(object sender, RoutedEventArgs e)
         {
-            idDivision = (int)cbDivision.SelectedValue;
             nDetail = new List<CheckDetail>();
             nDetail.Clear();
             foreach (Device device in lvDevice_Check.SelectedItems)
@@ -58,7 +56,7 @@ namespace assets_management_system
                 newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
                 nDetail.Add(newSelectedDevice);
             }
-            StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail,idDivision);
+            StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail);
             startCheckingWindow.Closed += new EventHandler((e, args) => this.Close());
             startCheckingWindow.ShowDialog();
         }
@@ -104,7 +102,7 @@ namespace assets_management_system
                 cbDivision.SelectedValuePath = "id";
                 cbDivision.ItemsSource = divisions;
 
-                
+
 
             }
             catch
