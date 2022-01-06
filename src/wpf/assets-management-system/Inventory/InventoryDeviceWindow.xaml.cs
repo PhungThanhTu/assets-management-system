@@ -23,11 +23,13 @@ namespace assets_management_system.Inventory
     public partial class InventoryDeviceWindow : Window
     {
         private DataRowView rowView;
+        public IList<Personnel> personnels;
         public IList<Device> devices { get; set; }
-        public InventoryDeviceWindow()
+        public InventoryDeviceWindow(IList<Personnel> personnels )
         {
             InitializeComponent();
             FetchDevices();
+            this.personnels = personnels;
         }
 
         private void CheckStatus_Click(object sender, RoutedEventArgs e)

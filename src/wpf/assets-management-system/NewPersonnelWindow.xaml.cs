@@ -22,7 +22,7 @@ namespace assets_management_system
     public partial class NewPersonnelWindow : Window
     {
         public IList<Division> divisions { get; set; }
-        public Personnel personnel { get; set; }
+        public PostPersonnel personnel { get; set; }
         public delegate void AddPersonnelDelegate(Personnel param);
 
         public AddPersonnelDelegate AddPersonnel;
@@ -54,11 +54,11 @@ namespace assets_management_system
             }
             else
             {
-                personnel = new Personnel();
+                personnel = new PostPersonnel();
                 personnel.name = txtboxName.Text.ToString();
                 personnel.position = txtboxPosition.Text.ToString();
-                //personnel.division = int.Parse(cbDivision.SelectedValue.ToString());
-                AddPersonnel(personnel);
+                personnel.division = int.Parse(cbDivision.SelectedValue.ToString());
+               
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "personnel/", personnel);

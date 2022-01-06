@@ -75,13 +75,14 @@ namespace assets_management_system
                 personnels.Add(newSelectedPersonnel);
             }
             ChoosePersonnel(personnels);
+            this.Close();
         }
 
         private void AddNewPersonnel_Click(object sender, RoutedEventArgs e)
         {
             NewPersonnelWindow newPersonnelWindow = new NewPersonnelWindow();
-            newPersonnelWindow.AddPersonnel = AddNewPersonnel;
-            newPersonnelWindow.ShowDialog(); 
+            newPersonnelWindow.Closed += new EventHandler((e, args) => FetchPersonnel());
+            newPersonnelWindow.ShowDialog();
         }
     }
 }

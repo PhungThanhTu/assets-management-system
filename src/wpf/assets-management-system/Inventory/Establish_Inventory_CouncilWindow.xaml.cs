@@ -22,6 +22,7 @@ namespace assets_management_system.Inventory
     public partial class Establish_Inventory_CouncilWindow : Window
     {
         public IList<Personnel> personnels { get; set; }
+
         public Establish_Inventory_CouncilWindow()
         {
             InitializeComponent();
@@ -36,12 +37,19 @@ namespace assets_management_system.Inventory
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            InventoryDeviceWindow inventoryDeviceWindow = new InventoryDeviceWindow();
+            
+            InventoryDeviceWindow inventoryDeviceWindow = new InventoryDeviceWindow(personnels);
             inventoryDeviceWindow.ShowDialog();
         }
         public void ChooseNewPersonnel(IList<Personnel> param)
         {
-            personnels.Add((Personnel)param);
+            personnels = new List<Personnel>();
+            foreach( Personnel element in param)
+            {
+                personnels.Add(element);
+
+            }
+           
             lvInventory.ItemsSource = null;
             lvInventory.ItemsSource = personnels;
         }
