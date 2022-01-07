@@ -27,34 +27,16 @@ namespace assets_management_system.Repair
 
         public RepairDate nrepair_date { get; set; }
         public RepairHeader repair_header { get; set; }
-        public IList<RepairBill> repairBills { get; set; }
-        public InsertRepairWindow(IList<Repairer> repairers)
+        public IList<RepairBill> nrepairBills { get; set; }
+        public IList<PostRepair> nrepair { get; set; }
+        public InsertRepairWindow(IList<Repairer> repairers,IList<RepairBill> repairBills)
         {
             InitializeComponent();
             nrepairers = new List<Repairer>();
             this.nrepairers = repairers;
-
-            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "repair/spoiled");
-
-            try
-            {
-                repairBills= JsonConvert.DeserializeObject<IList<RepairBill>>(data);
-                lvDevice.ItemsSource = repairBills;
-
-            }
-            catch
-            {
-                if (data != null)
-                {
-                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
-
-                }
-                else
-                {
-                    MessageBox.Show("Unable to connect to the server");
-                }
-            }
+            this.nrepairBills = repairBills;
+            lvDevice.ItemsSource = nrepairBills;
+           
         }
         private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -64,6 +46,15 @@ namespace assets_management_system.Repair
         }
         private void RepairConfirmBill_Click(object sender, RoutedEventArgs e)
         {
+            nrepair = new List<PostRepair>();
+            nrepair.Clear();
+            foreach (RepairBill repair in lvDevice.Items)
+            {
+                PostRepair newSelectedDevice = new PostRepair();
+                newSelectedDevice.device = repair.id;
+                newSelectedDevice.price = repair.repair_price;             
+                nrepair.Add(newSelectedDevice);
+            }
             if (dpRepair.Text.Length == 0)
             {
                 MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -81,12 +72,12 @@ namespace assets_management_system.Repair
                 {
                     repairer=nrepairers,
                     repair_date = nrepair_date,
-                    repari_bill = repairBills
+                    repair_bill = nrepair
                 };
 
                 try
                 {
-                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "test_api", repair_header);
+                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "repair/add", repair_header);
                     MessageBox.Show(result);
                 }
                 catch
@@ -115,9 +106,10 @@ namespace assets_management_system.Repair
         }
         public void EnterRepairPrice(RepairBill repair, int index)
         {
-            repairBills[index] = repair;
+            nrepairBills[index] = repair;
             lvDevice.ItemsSource = null;
-            lvDevice.ItemsSource = repairBills;
+            lvDevice.ItemsSource = nrepairBills;
         }
+
     }
 }

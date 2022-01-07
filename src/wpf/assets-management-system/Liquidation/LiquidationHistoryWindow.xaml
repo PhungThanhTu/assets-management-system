@@ -78,7 +78,7 @@
                                 <GridViewColumn Header="Liquidation Date" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="auto">
                                                 <TextBlock Text="{Binding liquidation_date}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

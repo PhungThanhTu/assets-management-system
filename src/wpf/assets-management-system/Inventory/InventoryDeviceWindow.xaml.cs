@@ -26,10 +26,12 @@ namespace assets_management_system.Inventory
         public IList<Personnel> personnels;
         public IList<Device> devices { get; set; }
         public IList<Personnel> npersonnels { get; set; }
+        public IList<CheckDetail> nDetail { get; set; }
 
         public PostCheck nCheckDate { get; set; }
         public InventoryHeader inventory_header { get; set; }
         public CheckHeader ncheck_detail { get; set; }
+       
         public InventoryDeviceWindow(IList<Personnel> personnels )
         {
             InitializeComponent();
@@ -63,6 +65,18 @@ namespace assets_management_system.Inventory
 
         private void FinishInventory_Click(object sender, RoutedEventArgs e)
         {
+            nDetail = new List<CheckDetail>();
+            nDetail.Clear();
+            foreach (Device device in lvInventory.Items)
+            {
+                CheckDetail newSelectedDevice = new CheckDetail();
+                newSelectedDevice.id = device.id;
+                newSelectedDevice.name = device.name.ToString();
+                newSelectedDevice.current_value = device.current_value;
+                newSelectedDevice.status = device.status.ToString();
+                newSelectedDevice.division = device.holding_division;
+                nDetail.Add(newSelectedDevice);
+            }
             if (dpInventory.Text.Length == 0)
             {
                 MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -80,7 +94,7 @@ namespace assets_management_system.Inventory
 
                 {
                     check = nCheckDate,
-                    detail = (IList<CheckDetail>)devices
+                    detail = nDetail
 
                 };
 
@@ -93,7 +107,7 @@ namespace assets_management_system.Inventory
 
                 try
                 {
-                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "test_api", inventory_header);
+                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "inventory/add", inventory_header);
                     MessageBox.Show(result);
                 }
                 catch

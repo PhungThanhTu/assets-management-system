@@ -10,6 +10,6 @@ namespace assets_management_system.data_classes
     {
         public IList<Repairer> repairer;
         public RepairDate repair_date;
-        public IList<RepairBill> repari_bill;
+        public IList<PostRepair> repair_bill;
     }
 }

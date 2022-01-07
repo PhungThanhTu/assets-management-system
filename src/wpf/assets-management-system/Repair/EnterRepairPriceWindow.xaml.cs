@@ -40,7 +40,7 @@ namespace assets_management_system.Repair
             }
             else
             {
-                repair.price = int.Parse(txtboxPrice.Text);
+                repair.repair_price = int.Parse(txtboxPrice.Text);
                 enterDelegate(this.repair, this.index);
                 this.Close();
             }

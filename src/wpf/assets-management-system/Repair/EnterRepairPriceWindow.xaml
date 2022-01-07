@@ -15,7 +15,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"     
         Title="Enter Repair Price" 
         WindowStartupLocation="CenterScreen"
-        Height ="150" Width="330">
+        Height ="150" Width="350">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -40,7 +40,9 @@
                         <TextBox
                         x:Name="txtboxPrice"                        
                         FontSize="14"
+                            Margin="10 5 0 0"
                             Width="150"
+                            Height="45"
                             materialDesign:HintAssist.Hint="Enter Repair Price"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}" >
                         </TextBox>
