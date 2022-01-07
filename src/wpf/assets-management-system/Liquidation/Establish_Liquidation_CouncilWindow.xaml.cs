@@ -1,4 +1,5 @@
-﻿using System;
+﻿using assets_management_system.data_classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace assets_management_system.Liquidation
     /// </summary>
     public partial class Establish_Liquidation_CouncilWindow : Window
     {
+        public IList<Personnel> personnels { get; set; }
         public Establish_Liquidation_CouncilWindow()
         {
             InitializeComponent();
@@ -26,10 +28,22 @@ namespace assets_management_system.Liquidation
 
         private void AddPesonnel_Click(object sender, RoutedEventArgs e)
         {
-            AddPesonnelWindow addPesonnelWindow = new AddPesonnelWindow();
-            addPesonnelWindow.Show();
+            AddPesonnelWindow addPersonnelWindow = new AddPesonnelWindow();
+            addPersonnelWindow.ChoosePersonnel = ChooseNewPersonnel;
+            addPersonnelWindow.ShowDialog();
         }
+        public void ChooseNewPersonnel(IList<Personnel> param)
+        {
+            personnels = new List<Personnel>();
+            foreach (Personnel element in param)
+            {
+                personnels.Add(element);
 
+            }
+
+            lvLiquidation.ItemsSource = null;
+            lvLiquidation.ItemsSource = personnels;
+        }
         private void Liquidate_Click(object sender, RoutedEventArgs e)
         {
 

@@ -47,10 +47,19 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
+                                <GridViewColumn Header="Id" Width="100">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="45" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding id}" HorizontalAlignment="Left"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                                 <GridViewColumn Header="Personnel name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120" Margin="20 0 0 0">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -60,7 +69,7 @@
                                 <GridViewColumn Header="Position" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="auto">
                                                 <TextBlock Text="{Binding position}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -70,7 +79,7 @@
                                 <GridViewColumn Header="Division" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="auto">
                                                 <TextBlock Text="{Binding division}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

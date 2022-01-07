@@ -47,7 +47,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Personnel name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
@@ -57,21 +57,21 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="200">
+                                <GridViewColumn Header="Position" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="{Binding position}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Price" >
+                                <GridViewColumn Header="Division" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto">
+                                                <TextBlock Text="{Binding division}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

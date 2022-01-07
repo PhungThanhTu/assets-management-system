@@ -63,18 +63,9 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
+                    <ListView Margin="5" Name="lvLiquidation" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" MouseDoubleClick="listview_MouseDoubleClick">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="30" >
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate >
-                                            <StackPanel Orientation="Horizontal" Width="50">
-                                                <CheckBox  Name="iCheckBox" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
                                 <GridViewColumn Header="ID"  Width="80">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
@@ -84,31 +75,11 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="200">
+                                <GridViewColumn Header="Liquidation Date" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-
-                                <GridViewColumn Header="Specification" Width="200">
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-
-                                <GridViewColumn Header="Price" >
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="{Binding liquidation_date}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
