@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace assets_management_system.data_classes
 {
-    public class CheckHeader
+    public class InventoryHeader
     {
-        public PostCheck check;
-        public IList<CheckDetail> detail;
+        public IList<Personnel> personnel;
+        public CheckHeader check_detail;
     }
-
 }

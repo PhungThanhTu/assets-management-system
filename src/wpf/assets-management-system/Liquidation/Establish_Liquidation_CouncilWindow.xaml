@@ -34,8 +34,7 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="10 0 0 10">
-                    <DatePicker Margin="5 5 5 5" x:Name="dpLiquidation" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
-
+                    <DatePicker Margin="5 5 5 5" x:Name="dpLiquidation" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Liquidation Date" Width="auto" />
 
                 </WrapPanel>
             </materialDesign:Card>
@@ -49,19 +48,10 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
+                    <ListView Margin="5" Name="lvLiquidation" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="30" >
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate >
-                                            <StackPanel Orientation="Horizontal" Width="50">
-                                                <CheckBox  Name="iCheckBox" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                <GridViewColumn Header="ID"  Width="80">
+                                <GridViewColumn Header="ID"  Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="45">
@@ -70,7 +60,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="200">
+                                <GridViewColumn Header="Personnel name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
@@ -80,26 +70,25 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="200">
+                                <GridViewColumn Header="Position" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="{Binding position}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Price" >
+                                <GridViewColumn Header="Division" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto">
+                                                <TextBlock Text="{Binding division}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-
                             </GridView>
                         </ListView.View>
                     </ListView>

@@ -19,4 +19,5 @@ namespace assets_management_system.data_classes
         public string phone { get; set; }
         public string address { get; set; }
     }
+
 }

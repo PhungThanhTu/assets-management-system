@@ -24,6 +24,7 @@
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
@@ -31,10 +32,25 @@
                 <TextBlock Margin="5" Grid.Row="0"  Text="Devices Which Need Liquidating" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" />
             </Grid>
-
             <materialDesign:Card Grid.Row="1" Margin="5">
+                <WrapPanel Margin="10 0 0 5">
+                    <ComboBox    
+                              x:Name="cbDivision"
+                              Margin="20 5 10 5" 
+                              ItemsSource="{Binding Year}" 
+                              materialDesign:HintAssist.Hint="Choose Division" 
+                              IsEditable="True" 
+                              SelectionChanged="Combobox_SelectionChanged"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                              Height="35" Width="auto"/>
+
+
+                </WrapPanel>
+            </materialDesign:Card>
+
+            <materialDesign:Card Grid.Row="2" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvInventory" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
+                    <ListView Margin="5" Name="lvLiquidation" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID"  Width="100">
@@ -66,6 +82,16 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
+                                <GridViewColumn Header="Status" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="auto">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
                                 <GridViewColumn Header="Price" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
@@ -81,7 +107,7 @@
                 </ScrollViewer>
             </materialDesign:Card>
 
-            <materialDesign:Card Grid.Row="2" Margin="5" >
+            <materialDesign:Card Grid.Row="3" Margin="5" >
                 <WrapPanel>
                     <Button Name="bntShowLiquidationHistory" Click="ShowLiquidationHistory_Click"   Content="Show Liquidation History" Margin="210 5 10 5"  Height="35" Width="200" ></Button>
                     <Button Name="bntStart_Liquidation" Click="StartLiquidation_Click"   Content="Start Liquidation" Margin="10 5 10 5"  Height="35" Width="200" ></Button>

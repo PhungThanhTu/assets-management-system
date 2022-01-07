@@ -52,6 +52,9 @@
     <Compile Update="Liquidation\Establish_Liquidation_CouncilWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Liquidation\LiquidationDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Liquidation\LiquidationHistoryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,7 +100,19 @@
     <Compile Update="Repair\Choose Repairer.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Repair\EnterRepairPriceWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Repair\InsertRepairWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Repair\NewRepairerWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Repair\RepairListDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Repair\RepairListWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -147,6 +162,9 @@
     <Page Update="Liquidation\Establish_Liquidation_CouncilWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Liquidation\LiquidationDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Liquidation\LiquidationHistoryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -192,7 +210,19 @@
     <Page Update="Repair\Choose Repairer.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Repair\EnterRepairPriceWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Repair\InsertRepairWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Repair\NewRepairerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Repair\RepairListDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Repair\RepairListWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

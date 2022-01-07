@@ -23,7 +23,6 @@ namespace assets_management_system
     public partial class AddPesonnelWindow : Window
     {
         public IList<Personnel> personnels { get; set; }
-        //public IList<PostPersonnel> personnel { get; set; }
         public delegate void ChoosePersonnelDelegate(IList<Personnel> param);
         public ChoosePersonnelDelegate ChoosePersonnel;
 
@@ -55,13 +54,13 @@ namespace assets_management_system
                 }
             }
         }
-        public void AddNewPersonnel(Personnel param)
-        {
+        //public void AddNewPersonnel(Personnel param)
+        //{
 
-            personnels.Add(param);
-            lvPersonnel.ItemsSource = null;
-            lvPersonnel.ItemsSource = personnels;
-        }
+        //    personnels.Add(param);
+        //    lvPersonnel.ItemsSource = null;
+        //    lvPersonnel.ItemsSource = personnels;
+        //}
         private void ChoosePersonnel_Click(object sender, RoutedEventArgs e)
         {
             personnels = new List<Personnel>();

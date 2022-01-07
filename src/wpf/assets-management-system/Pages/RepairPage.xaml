@@ -34,9 +34,18 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvInventory" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
+                    <ListView Margin="5" Name="lvDevice" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
+                                <GridViewColumn Width="40" >
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate >
+                                            <StackPanel Orientation="Horizontal" Width="100">
+                                                <CheckBox  Name="iCheckBox" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                                 <GridViewColumn Header="ID"  Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
@@ -56,21 +65,21 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="200">
+                                <GridViewColumn Header="Specification" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="100">
                                                 <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Price" >
+                                <GridViewColumn Header="Status" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -83,7 +92,8 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntRepair" Click="Repair_Click"   Content="Repair" Margin="440 5 10 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntShowRepair" Click="ShowRepair_Click"   Content="Show Repair History" Margin="200 5 10 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntRepair" Click="Repair_Click"   Content="Repair" Margin="20 5 10 5"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>

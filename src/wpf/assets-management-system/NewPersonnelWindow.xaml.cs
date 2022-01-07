@@ -23,9 +23,6 @@ namespace assets_management_system
     {
         public IList<Division> divisions { get; set; }
         public PostPersonnel personnel { get; set; }
-        public delegate void AddPersonnelDelegate(Personnel param);
-
-        public AddPersonnelDelegate AddPersonnel;
 
         public NewPersonnelWindow()
         {

@@ -17,20 +17,22 @@ using System.Windows.Shapes;
 namespace assets_management_system.Liquidation
 {
     /// <summary>
-    /// Interaction logic for LiquidationHistoryWindow.xaml
+    /// Interaction logic for LiquidationDetailWindow.xaml
     /// </summary>
-    public partial class LiquidationHistoryWindow : Window
+    public partial class LiquidationDetailWindow : Window
     {
-        public IList<LiquidationList> liquidationLists { get; set; }
-        public LiquidationHistoryWindow()
+        public IList<LiquidationDetail> liquidationDetails { get; set; }
+        public int id { get; set; }
+        public LiquidationDetailWindow(int id)
         {
             InitializeComponent();
-            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "liquidation/list");
-
+            this.id = id;
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "liquidation/devices/" + id);
             try
             {
-                liquidationLists = JsonConvert.DeserializeObject<IList<LiquidationList>>(data);
-                lvLiquidation.ItemsSource = liquidationLists;
+                liquidationDetails = JsonConvert.DeserializeObject<IList<LiquidationDetail>>(data);
+                lvLiquidationDetail.ItemsSource = liquidationDetails;
+
             }
             catch
             {
@@ -44,19 +46,10 @@ namespace assets_management_system.Liquidation
                 {
                     MessageBox.Show("Unable to connect to the server");
                 }
+
             }
         }
 
-        private void Show_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            int id = ((LiquidationList)lvLiquidation.SelectedItem).id;
-            LiquidationDetailWindow liquidationDetail = new LiquidationDetailWindow(id);
-            liquidationDetail.ShowDialog();
-        }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

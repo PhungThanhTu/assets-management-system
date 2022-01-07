@@ -39,6 +39,7 @@ namespace assets_management_system.Inventory
         {
             
             InventoryDeviceWindow inventoryDeviceWindow = new InventoryDeviceWindow(personnels);
+            inventoryDeviceWindow.Closed += new EventHandler((e, args) => this.Close());
             inventoryDeviceWindow.ShowDialog();
         }
         public void ChooseNewPersonnel(IList<Personnel> param)

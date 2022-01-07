@@ -28,7 +28,11 @@ namespace assets_management_system.Pages
         public InventoryPage()
         {
             InitializeComponent();
-            string data= HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "inventory/list");
+            FetchInventory();
+        }
+        void FetchInventory()
+        {
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "inventory/list");
 
             try
             {
@@ -49,10 +53,10 @@ namespace assets_management_system.Pages
                 }
             }
         }
-
         private void StartInventory_Click(object sender, RoutedEventArgs e)
         {
             Establish_Inventory_CouncilWindow establish_Inventory_CouncilWindow = new Establish_Inventory_CouncilWindow();
+            establish_Inventory_CouncilWindow.Closed += new EventHandler((e, args) => FetchInventory());
             establish_Inventory_CouncilWindow.Show();
         }
         private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)

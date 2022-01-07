@@ -25,6 +25,13 @@ namespace assets_management_system.Inventory
         private DataRowView rowView;
         public IList<Personnel> personnels;
         public IList<Device> devices { get; set; }
+        public IList<Personnel> npersonnels { get; set; }
+        public IList<CheckDetail> nDetail { get; set; }
+
+        public PostCheck nCheckDate { get; set; }
+        public InventoryHeader inventory_header { get; set; }
+        public CheckHeader ncheck_detail { get; set; }
+       
         public InventoryDeviceWindow(IList<Personnel> personnels )
         {
             InitializeComponent();
@@ -58,7 +65,58 @@ namespace assets_management_system.Inventory
 
         private void FinishInventory_Click(object sender, RoutedEventArgs e)
         {
+            nDetail = new List<CheckDetail>();
+            nDetail.Clear();
+            foreach (Device device in lvInventory.Items)
+            {
+                CheckDetail newSelectedDevice = new CheckDetail();
+                newSelectedDevice.id = device.id;
+                newSelectedDevice.name = device.name.ToString();
+                newSelectedDevice.current_value = device.current_value;
+                newSelectedDevice.status = device.status.ToString();
+                newSelectedDevice.division = device.holding_division;
+                nDetail.Add(newSelectedDevice);
+            }
+            if (dpInventory.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            else
+            {
+                nCheckDate = new PostCheck()
+                {
+                    check_date = dpInventory.SelectedDate.Value.ToString("yyyy-MM-dd"),
+                };
 
+
+                ncheck_detail = new CheckHeader()
+
+                {
+                    check = nCheckDate,
+                    detail = nDetail
+
+                };
+
+                inventory_header = new InventoryHeader
+                {
+                    personnel = personnels,
+                    check_detail = ncheck_detail
+
+                };
+
+                try
+                {
+                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "inventory/add", inventory_header);
+                    MessageBox.Show(result);
+                }
+                catch
+                {
+                    MessageBox.Show("Connection Error");
+                }
+                this.Close();
+
+            }
         }
 
         private void DataGridRow_MouseRightButtonDown(object sender, MouseButtonEventArgs e)

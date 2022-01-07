@@ -14,23 +14,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace assets_management_system.Liquidation
+namespace assets_management_system.Repair
 {
     /// <summary>
-    /// Interaction logic for LiquidationHistoryWindow.xaml
+    /// Interaction logic for RepairListDetail.xaml
     /// </summary>
-    public partial class LiquidationHistoryWindow : Window
+    public partial class RepairListDetail : Window
     {
-        public IList<LiquidationList> liquidationLists { get; set; }
-        public LiquidationHistoryWindow()
+        public int id { get; set; }
+        public IList<RepairDetail> repairDetails { get; set; }
+        public RepairListDetail(int id)
         {
             InitializeComponent();
-            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "liquidation/list");
-
+            this.id = id;
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "repair/detail/" + id);
             try
             {
-                liquidationLists = JsonConvert.DeserializeObject<IList<LiquidationList>>(data);
-                lvLiquidation.ItemsSource = liquidationLists;
+                repairDetails = JsonConvert.DeserializeObject<IList<RepairDetail>>(data);
+                lvCheckDetail.ItemsSource = repairDetails;
+
             }
             catch
             {
@@ -47,16 +49,6 @@ namespace assets_management_system.Liquidation
             }
         }
 
-        private void Show_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            int id = ((LiquidationList)lvLiquidation.SelectedItem).id;
-            LiquidationDetailWindow liquidationDetail = new LiquidationDetailWindow(id);
-            liquidationDetail.ShowDialog();
-        }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

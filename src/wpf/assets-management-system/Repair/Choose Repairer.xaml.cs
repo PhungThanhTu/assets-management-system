@@ -1,4 +1,6 @@
-﻿using System;
+﻿using assets_management_system.data_classes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,19 +21,63 @@ namespace assets_management_system.Repair
     /// </summary>
     public partial class Choose_Repairer : Window
     {
-        public Choose_Repairer()
+        public IList<Repairer> repairers { get; set; }
+
+        public IList<RepairBill> nrepairBills { get; set; }
+        public Choose_Repairer(IList<RepairBill> repairBills)
         {
             InitializeComponent();
+            FetchRepairer();
+            this.nrepairBills = repairBills;
+            
+        }
+
+        void FetchRepairer()
+        {
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "repairer/");
+
+            try
+            {
+                repairers = JsonConvert.DeserializeObject<IList<Repairer>>(data);
+                lvRepairer.ItemsSource = repairers;
+            }
+            catch
+            {
+                if (data != null)
+                {
+                    Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
+                    MessageBox.Show(errorMessage.message);
+
+                }
+                else
+                {
+                    MessageBox.Show("Unable to connect to the server");
+                }
+            }
         }
 
         private void AddNewRepairer_Click(object sender, RoutedEventArgs e)
         {
-
+            NewRepairerWindow newRepairer = new NewRepairerWindow();
+            newRepairer.Closed += new EventHandler((e, args) => FetchRepairer());
+            newRepairer.ShowDialog();
         }
 
         private void ChooseRepairer_Click(object sender, RoutedEventArgs e)
         {
-
+            repairers = new List<Repairer>();
+            foreach (Repairer repairer in lvRepairer.SelectedItems)
+            {
+                Repairer newSelectedRepairer = new Repairer();
+                newSelectedRepairer.id = repairer.id;
+                newSelectedRepairer.name = repairer.name.ToString();
+                newSelectedRepairer.address = repairer.address.ToString();
+                newSelectedRepairer.phone = repairer.phone.ToString();
+                repairers.Add(newSelectedRepairer);
+            }
+            InsertRepairWindow insertRepair = new InsertRepairWindow(repairers,nrepairBills);
+            insertRepair.Closed += new EventHandler((e, args) => this.Close());
+            insertRepair.ShowDialog();
         }
     }
 }
