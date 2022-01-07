@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Võ Duy Nguyên\",\r\n    \"position\" : \"Cán bộ\",\r\n    \"division\" : 1\r\n}",
+					"raw": "{\r\n    \"name\": \"Nguyễn Đức Thành Phát\",\r\n    \"position\" : \"Cán bộ\",\r\n    \"division\" : 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,11 +39,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/personnel/",
+					"raw": "https://asset-management-webserver.herokuapp.com/personnel/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"asset-management-webserver",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"personnel",
 						""
@@ -658,11 +660,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/repairer/",
+					"raw": "https://asset-management-webserver.herokuapp.com/repairer/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"asset-management-webserver",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"repairer",
 						""
@@ -846,6 +850,96 @@
 					"path": [
 						"statistic",
 						"year_price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get full personnel list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/personnel/full_list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"personnel",
+						"full_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://asset-management-webserver.herokuapp.com/login/user/123456",
+					"protocol": "https",
+					"host": [
+						"asset-management-webserver",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"login",
+						"user",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET contract",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://asset-management-webserver.herokuapp.com/contract/",
+					"protocol": "https",
+					"host": [
+						"asset-management-webserver",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"contract",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Liquidate devices",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"personnel\" : [\r\n\t\t{\r\n\t\t\t\"id\": 1\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"id\": 2\r\n\t\t}\r\n\t],\r\n\t\"check_detail\" : {\r\n\t\t\"check\": {\r\n\t\t\t\"check_date\" : \"2014-05-12\"\t\r\n\t\t},\r\n\t\t\"detail\" :[\r\n\t\t\t{\r\n\t\t\t\t\"id\": 1,\r\n\t\t\t\t\"division\" : 1,\r\n\t\t\t\t\"status\" : \"Liquidated\",\r\n\t\t\t\t\"current_value\" : 130000\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"id\": 4,\r\n\t\t\t\t\"division\" : 1,\r\n\t\t\t\t\"status\" : \"Liquidated\",\r\n\t\t\t\t\"current_value\" : 150000\r\n\t\t\t}\r\n\t\t]\r\n\t}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/liquidation/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"liquidation",
+						"add"
 					]
 				}
 			},
