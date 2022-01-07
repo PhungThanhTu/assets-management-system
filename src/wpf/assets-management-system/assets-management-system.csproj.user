@@ -109,6 +109,12 @@
     <Compile Update="Repair\NewRepairerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Repair\RepairListDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Repair\RepairListWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddPesonnelWindow.xaml">
@@ -211,6 +217,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Repair\NewRepairerWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Repair\RepairListDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Repair\RepairListWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -31,5 +31,11 @@ namespace assets_management_system.Pages
             Choose_Repairer chooseRepairer = new Choose_Repairer();
             chooseRepairer.Show();
         }
+
+        private void ShowRepair_Click(object sender, RoutedEventArgs e)
+        {
+            RepairListWindow repairList = new RepairListWindow();
+            repairList.ShowDialog();
+        }
     }
 }

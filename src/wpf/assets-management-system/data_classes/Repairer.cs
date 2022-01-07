@@ -19,13 +19,5 @@ namespace assets_management_system.data_classes
         public string phone { get; set; }
         public string address { get; set; }
     }
-    public class RepairBill
-    {
-        public int device { get; set; }
-        public int price { get; set; }
-    }
-    public class RepairDate
-    {
-        public string repair_date { get; set; }
-    }
+
 }

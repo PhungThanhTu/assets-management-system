@@ -76,11 +76,12 @@ namespace assets_management_system.Repair
                     repair_date = dpRepair.SelectedDate.Value.ToString("yyyy-MM-dd")
                 };
 
-                // set up postcheck
+                // set up PostRepair
                 repair_header = new RepairHeader
                 {
+                    repairer=nrepairers,
                     repair_date = nrepair_date,
-                    //detail = ncheckDetails
+                    repari_bill = repairBills
                 };
 
                 try
