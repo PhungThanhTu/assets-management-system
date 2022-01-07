@@ -22,7 +22,7 @@ namespace assets_management_system.Repair
     public partial class Choose_Repairer : Window
     {
         public IList<Repairer> repairers { get; set; }
-
+        public int repairer { get; set; }
         public IList<RepairBill> nrepairBills { get; set; }
         public Choose_Repairer(IList<RepairBill> repairBills)
         {
@@ -75,7 +75,7 @@ namespace assets_management_system.Repair
                 newSelectedRepairer.phone = repairer.phone.ToString();
                 repairers.Add(newSelectedRepairer);
             }
-            InsertRepairWindow insertRepair = new InsertRepairWindow(repairers,nrepairBills);
+            InsertRepairWindow insertRepair = new InsertRepairWindow(((Repairer)lvRepairer.SelectedItem).id,nrepairBills);
             insertRepair.Closed += new EventHandler((e, args) => this.Close());
             insertRepair.ShowDialog();
         }

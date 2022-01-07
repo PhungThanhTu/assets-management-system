@@ -35,14 +35,14 @@
 
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView Margin="5" Name="lvRepairer" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
+                    <ListView SelectionMode="Single" Margin="5" Name="lvRepairer" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="70" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate >
                                             <StackPanel Orientation="Horizontal" Width="100">
-                                                <CheckBox  Name="iCheckBox" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
+                                                <RadioButton  Name="iCheckBox" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

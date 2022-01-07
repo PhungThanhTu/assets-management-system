@@ -44,12 +44,14 @@ namespace assets_management_system.Pages
                 repairBills.Add(newSelectedRepair);
             }
             Choose_Repairer chooseRepairer = new Choose_Repairer(repairBills);
+            chooseRepairer.Closed += new EventHandler((o, args) => FetchDevice());
             chooseRepairer.Show();
         }
 
         private void ShowRepair_Click(object sender, RoutedEventArgs e)
         {
             RepairListWindow repairList = new RepairListWindow();
+            repairList.Closed += new EventHandler((o, args) => FetchDevice());
             repairList.ShowDialog();
         }
         

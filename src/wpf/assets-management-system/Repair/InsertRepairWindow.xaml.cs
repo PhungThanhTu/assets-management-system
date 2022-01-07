@@ -23,17 +23,15 @@ namespace assets_management_system.Repair
     public partial class InsertRepairWindow : Window
     {
         public DataRowView rowView;
-        public IList<Repairer> nrepairers { get; set; }
+        public int nrepairer { get; set; }
 
-        public RepairDate nrepair_date { get; set; }
         public RepairHeader repair_header { get; set; }
         public IList<RepairBill> nrepairBills { get; set; }
         public IList<PostRepair> nrepair { get; set; }
-        public InsertRepairWindow(IList<Repairer> repairers,IList<RepairBill> repairBills)
+        public InsertRepairWindow(int repairer,IList<RepairBill> repairBills)
         {
             InitializeComponent();
-            nrepairers = new List<Repairer>();
-            this.nrepairers = repairers;
+            this.nrepairer = repairer;
             this.nrepairBills = repairBills;
             lvDevice.ItemsSource = nrepairBills;
            
@@ -62,16 +60,13 @@ namespace assets_management_system.Repair
             }
             else
             {
-                nrepair_date = new RepairDate()
-                {
-                    repair_date = dpRepair.SelectedDate.Value.ToString("yyyy-MM-dd")
-                };
+                
 
                 // set up PostRepair
                 repair_header = new RepairHeader
                 {
-                    repairer=nrepairers,
-                    repair_date = nrepair_date,
+                    repairer = nrepairer,
+                    repair_date = dpRepair.SelectedDate.Value.ToString("yyyy-MM-dd"),
                     repair_bill = nrepair
                 };
 
