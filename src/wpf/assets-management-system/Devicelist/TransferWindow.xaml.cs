@@ -26,9 +26,7 @@ namespace assets_management_system.Page
     {
         public int id { get; set; }
         public string name { get; set; }
-        public Device device;
-        
-
+        public Device device;        
         public IList<Division> divisions { get; set; }
         public IList<Device> devices { get; set; }
         public PostTransfer nTransfer { get; set; }
@@ -57,7 +55,7 @@ namespace assets_management_system.Page
                 if (data != null)
                 {
                     Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
+                    //MessageBox.Show(errorMessage.message);
 
                 }
                 else
@@ -100,7 +98,6 @@ namespace assets_management_system.Page
                 {
                     PostIDDevice newSelectedDevice = new PostIDDevice();
                     newSelectedDevice.id = device.id;
-
                     iDDevices.Add(newSelectedDevice);
                 }
                 // set up transfer
@@ -113,7 +110,7 @@ namespace assets_management_system.Page
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "transfer/add", transfer_header);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                     device = new Device();
                     string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "device/query?division=" + id);
                     devices = JsonConvert.DeserializeObject<IList<Device>>(data);

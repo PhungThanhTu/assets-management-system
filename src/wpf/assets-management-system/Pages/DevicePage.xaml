@@ -69,10 +69,10 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Device Name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="120" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -82,7 +82,7 @@
                                 <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="120" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -92,7 +92,7 @@
                                 <GridViewColumn Header="Price" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
+                                            <Grid Width="70" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

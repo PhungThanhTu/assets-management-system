@@ -79,7 +79,7 @@ namespace assets_management_system
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "device/add", contract_and_devices);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                 }
                 catch
                 {

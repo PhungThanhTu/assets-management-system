@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\assets-management-system",
+    "\\assets-management-system\\data_classes",
     "\\assets-management-system\\Devicelist",
     "\\assets-management-system\\Pages"
   ],
-  "SelectedNode": "\\assets-management-system\\assets-management-system.sln",
+  "SelectedNode": "\\assets-management-system\\data_classes\\Inventory.cs",
   "PreviewInSolutionExplorer": false
 }

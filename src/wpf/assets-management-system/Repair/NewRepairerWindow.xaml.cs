@@ -22,9 +22,7 @@ namespace assets_management_system.Repair
     public partial class NewRepairerWindow : Window
     {
         public PostRepairer repairer { get; set; }
-
         public delegate void AddRepairerDelegate(Repairer param);
-
         public AddRepairerDelegate AddRepairer;
         public NewRepairerWindow()
         {
@@ -48,7 +46,7 @@ namespace assets_management_system.Repair
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "repairer/", repairer);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                 }
                 catch
                 {

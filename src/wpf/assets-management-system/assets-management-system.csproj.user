@@ -61,13 +61,7 @@
     <Compile Update="NewPersonnelWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\AccountPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Devicelist\AddDevicesWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="AssetInvWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Devicelist\ContractWindow.xaml.cs">
@@ -113,6 +107,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Repair\RepairListWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Statictis\StatictisDeviceCount.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Statictis\StatictisRepairPrice.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -171,13 +171,7 @@
     <Page Update="NewPersonnelWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\AccountPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Devicelist\AddDevicesWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="AssetInvWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Devicelist\ContractWindow.xaml">
@@ -223,6 +217,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Repair\RepairListWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Statictis\StatictisDeviceCount.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Statictis\StatictisRepairPrice.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

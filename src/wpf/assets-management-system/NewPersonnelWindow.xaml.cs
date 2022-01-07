@@ -59,7 +59,7 @@ namespace assets_management_system
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "personnel/", personnel);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                 }
                 catch
                 {

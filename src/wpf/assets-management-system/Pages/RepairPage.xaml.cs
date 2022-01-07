@@ -28,8 +28,7 @@ namespace assets_management_system.Pages
         public RepairPage()
         {
             InitializeComponent();
-            FetchDevice();
-           
+            FetchDevice();          
         }
 
         private void Repair_Click(object sender, RoutedEventArgs e)
@@ -39,8 +38,7 @@ namespace assets_management_system.Pages
             {
                 RepairBill newSelectedRepair = new RepairBill();
                 newSelectedRepair.id = repair.id;
-                newSelectedRepair.name = repair.name.ToString();
-                
+                newSelectedRepair.name = repair.name.ToString();               
                 repairBills.Add(newSelectedRepair);
             }
             Choose_Repairer chooseRepairer = new Choose_Repairer(repairBills);
@@ -70,7 +68,7 @@ namespace assets_management_system.Pages
                 if (data != null)
                 {
                     Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
+                    //MessageBox.Show(errorMessage.message);
 
                 }
                 else

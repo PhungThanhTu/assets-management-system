@@ -31,13 +31,6 @@ namespace assets_management_system.Page
             cbContract.SelectedIndex = 0;
         }
 
-        public void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-
-           
-        }
-
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -59,7 +52,7 @@ namespace assets_management_system.Page
                 if (data != null)
                 {
                     Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
+                    //MessageBox.Show(errorMessage.message);
 
                 }
                 else
@@ -84,7 +77,7 @@ namespace assets_management_system.Page
                 if (data != null)
                 {
                     Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
+                    //MessageBox.Show(errorMessage.message);
 
                 }
                 else

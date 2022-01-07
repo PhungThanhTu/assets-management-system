@@ -1,4 +1,6 @@
-﻿using System;
+﻿using assets_management_system.data_classes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,27 +13,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using assets_management_system.data_classes;
-using Newtonsoft.Json;
 
-namespace assets_management_system.Devicelist
+namespace assets_management_system.Statictis
 {
     /// <summary>
-    /// Interaction logic for CheckListDetail.xaml
+    /// Interaction logic for StatictisRepairPrice.xaml
     /// </summary>
-    public partial class CheckListDetail : Window
+    public partial class StatictisRepairPrice : Window
     {
-        public int id { get; set; }
-        public IList<ChecklistDetail> checkDetails;
-        public CheckListDetail(int id)
+        public IList<RepairPrice> repairPrices { get; set; }
+        public StatictisRepairPrice()
         {
             InitializeComponent();
-            this.id = id;
-            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "check/id/" + id);
+            string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "statistic/year_price");
             try
             {
-                checkDetails = JsonConvert.DeserializeObject<IList<ChecklistDetail>>(data);
-                lvCheckDetail.ItemsSource = checkDetails;
+                repairPrices = JsonConvert.DeserializeObject<IList<RepairPrice>>(data);
+                chartRepair.ItemsSource = repairPrices;
 
             }
             catch
@@ -46,12 +44,8 @@ namespace assets_management_system.Devicelist
                 {
                     MessageBox.Show("Unable to connect to the server");
                 }
-            }
-        }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            }
         }
     }
 }

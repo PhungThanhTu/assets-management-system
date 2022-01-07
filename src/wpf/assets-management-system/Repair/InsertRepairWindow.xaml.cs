@@ -24,7 +24,6 @@ namespace assets_management_system.Repair
     {
         public DataRowView rowView;
         public int nrepairer { get; set; }
-
         public RepairHeader repair_header { get; set; }
         public IList<RepairBill> nrepairBills { get; set; }
         public IList<PostRepair> nrepair { get; set; }
@@ -73,7 +72,7 @@ namespace assets_management_system.Repair
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "repair/add", repair_header);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                 }
                 catch
                 {

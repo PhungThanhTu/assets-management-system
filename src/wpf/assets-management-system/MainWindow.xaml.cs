@@ -28,17 +28,11 @@ namespace assets_management_system
             PagesNavigation.Navigate(new DevicePage());
         }
        
-
         private void LogOutClicked(object sender, RoutedEventArgs e)
         {
             LoginWindow newWindow = new LoginWindow();
             newWindow.Show();
             this.Close();
-        }
-
-        private void Account_Click(object sender, RoutedEventArgs e)
-        {
-           PagesNavigation.Navigate(new AccountPage());
         }
 
         private void Device_Click(object sender, RoutedEventArgs e)

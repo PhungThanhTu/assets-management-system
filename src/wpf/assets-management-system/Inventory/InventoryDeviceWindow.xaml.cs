@@ -49,7 +49,6 @@ namespace assets_management_system.Inventory
             else
             {
                 int selectedIndex = lvInventory.SelectedIndex;
-                MessageBox.Show(selectedIndex.ToString());
                 Device inputCheck = (Device)lvInventory.SelectedItem;
                 EditStatusInventoryWindow editStatusInventoryWindow = new EditStatusInventoryWindow(inputCheck, selectedIndex);
                 editStatusInventoryWindow.editDelegate = EditInventoryDevice;
@@ -108,7 +107,7 @@ namespace assets_management_system.Inventory
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "inventory/add", inventory_header);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                 }
                 catch
                 {
@@ -126,8 +125,6 @@ namespace assets_management_system.Inventory
             rowView = lvInventory.SelectedItem as DataRowView;
         }
 
-
-
         void FetchDevices()
         {
             string data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "device/list");
@@ -143,7 +140,7 @@ namespace assets_management_system.Inventory
                 if (data != null)
                 {
                     Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
+                    //MessageBox.Show(errorMessage.message);
 
                 }
                 else

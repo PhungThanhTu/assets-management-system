@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace assets_management_system
+namespace assets_management_system.Statictis
 {
     /// <summary>
-    /// Interaction logic for AccountPage.xaml
+    /// Interaction logic for StatictisDeviceCount.xaml
     /// </summary>
-    public partial class AccountPage : System.Windows.Controls.Page
+    public partial class StatictisDeviceCount : Window
     {
-        public AccountPage()
+        public StatictisDeviceCount()
         {
             InitializeComponent();
         }

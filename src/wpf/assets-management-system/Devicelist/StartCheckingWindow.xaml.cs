@@ -92,7 +92,7 @@ namespace assets_management_system
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "check/add", check_header);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                 }
                 catch
                 {

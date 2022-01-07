@@ -22,7 +22,6 @@ namespace assets_management_system.Liquidation
     {
         public IList<Personnel> personnels { get; set; }
         public IList<CheckDetail> nDetail { get; set; }
-
         public PostCheck nCheckDate { get; set; }
         public InventoryHeader inventory_header { get; set; }
         public CheckHeader ncheck_detail { get; set; }
@@ -83,7 +82,7 @@ namespace assets_management_system.Liquidation
                 try
                 {
                     string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "liquidation/add", inventory_header);
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
                 }
                 catch
                 {

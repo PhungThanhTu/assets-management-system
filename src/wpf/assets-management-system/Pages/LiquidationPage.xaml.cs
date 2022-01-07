@@ -25,7 +25,6 @@ namespace assets_management_system.Pages
     {
         public IList<Division> divisions { get; set; }
         public IList<Device> devices { get; set; }
-
         public IList<CheckDetail> nDetail { get; set; }
         public LiquidationPage()
         {
@@ -77,7 +76,7 @@ namespace assets_management_system.Pages
                 if (data != null)
                 {
                     Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
+                    //MessageBox.Show(errorMessage.message);
 
                 }
                 else
@@ -108,7 +107,7 @@ namespace assets_management_system.Pages
                 if (data != null)
                 {
                     Message errorMessage = JsonConvert.DeserializeObject<Message>(data);
-                    MessageBox.Show(errorMessage.message);
+                    //MessageBox.Show(errorMessage.message);
 
                 }
                 else
