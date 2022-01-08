@@ -19,4 +19,8 @@ namespace assets_management_system.data_classes
         public string status { get; set; }
         public int current_value { get; set; }
     }
+    public class LiquidateYear
+    {
+        public string year { get; set; }
+    }
 }

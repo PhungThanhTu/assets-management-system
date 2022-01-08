@@ -42,14 +42,7 @@
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                               Height="35" Width="auto"/>
-                    <ComboBox    
-                              x:Name="cbLiquidationCommit"
-                              Margin="20 5 10 5" 
-                              ItemsSource="{Binding Liquidation}" 
-                              materialDesign:HintAssist.Hint="Choose Liquidation Commit" 
-                              IsEditable="True" 
-                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
-                              Height="35" Width="auto"/>
+                    
 
                 </WrapPanel>
             </materialDesign:Card>

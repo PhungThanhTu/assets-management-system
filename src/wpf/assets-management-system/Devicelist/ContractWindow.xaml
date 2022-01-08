@@ -69,8 +69,8 @@
                                 <GridViewColumn Header="Device name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150">
+                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -80,7 +80,7 @@
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -90,7 +90,7 @@
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

@@ -17,21 +17,21 @@ using System.Windows.Shapes;
 namespace assets_management_system.Liquidation
 {
     /// <summary>
-    /// Interaction logic for LiquidationDetailWindow.xaml
+    /// Interaction logic for LiquidatinDetailYear.xaml
     /// </summary>
-    public partial class LiquidationDetailWindow : Window
+    public partial class LiquidatinDetailYear : Window
     {
+        public string year { get; set; }
         public IList<LiquidationDetail> liquidationDetails { get; set; }
-        public int id { get; set; }
-        public LiquidationDetailWindow(int id)
+        public LiquidatinDetailYear(string year)
         {
             InitializeComponent();
-            this.id = id;           
-            string Data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "liquidation/devices/" + id);
+            this.year = year;
+            string Data = HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "liquidation/" + year);
             try
             {
                 liquidationDetails = JsonConvert.DeserializeObject<IList<LiquidationDetail>>(Data);
-                lvLiquidationDetail.ItemsSource = liquidationDetails;
+                lvInventoryDetail.ItemsSource = liquidationDetails;
 
             }
             catch

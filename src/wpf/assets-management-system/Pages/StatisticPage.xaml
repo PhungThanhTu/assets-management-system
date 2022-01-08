@@ -27,8 +27,12 @@
         <Grid Grid.Row="1">
             <materialDesign:Card Grid.Row="3" Margin="5" >
                 <WrapPanel>
-                    <Button  Click="RepairPrice_Click"   Content="REPAIR PRICE BASED ON YEAR" FontSize="30" Margin="20 50 10 5"  Height="300" Width="300" ></Button>
-                    <Button  Click="DeviceCount_Click"   Content="DEVICE COUNT BASED ON TYPE AND YEAR" FontSize="30" Margin="20 50 5 5"  Height="300" Width="300" ></Button>
+                    <Button  Click="RepairPrice_Click"    FontSize="45" Margin="20 50 10 5"  Height="400" Width="300" >
+                        <TextBlock Text="REPAIR PRICE BASED ON YEAR" TextWrapping="Wrap"></TextBlock>
+                    </Button>
+                    <Button  Click="DeviceCount_Click"  FontSize="45" Margin="20 50 5 5"  Height="400" Width="300" >
+                        <TextBlock Text="DEVICE COUNT BASED ON TYPE AND YEAR" TextWrapping="Wrap"></TextBlock>
+                    </Button>
                 </WrapPanel>
             </materialDesign:Card>
             

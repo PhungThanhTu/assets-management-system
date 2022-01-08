@@ -49,7 +49,6 @@
                             <Label Content="Used"></Label>
                             <Label Content="Need Liquidating"></Label>
                             <Label Content="Spoiled"></Label>
-                            <Label Content="Liquidated"></Label>
                             <Label Content="Lost"></Label>
                             <Label Content="Transfered Outside"></Label>
                         </ComboBox>

@@ -4,9 +4,53 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:assets_management_system.Statictis"
+         xmlns:chart="clr-namespace:Syncfusion.UI.Xaml.Charts;assembly=Syncfusion.SfChart.WPF" xmlns:local1="clr-namespace:assets_management_system"
         mc:Ignorable="d"
-        Title="StatictisDeviceCount" Height="450" Width="800">
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"     
+        TextElement.FontWeight="Regular"    
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"    
+        TextOptions.TextRenderingMode="Auto"     
+        Background="{DynamicResource MaterialDesignPaper}"    
+        FontFamily="{DynamicResource MaterialDesignFont}"    
+         WindowStartupLocation="CenterScreen"
+        Title="Statictis Device Count" Height="500" Width="700">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <materialDesign:Card Grid.Row="0" Margin="5">
+            <WrapPanel Margin="10 0 0 10">
+                <ComboBox x:Name="cbDividion" 
+                              Margin="20 5 50 5" 
+                              ItemsSource="{Binding cbDivisions}" 
+                              SelectionChanged="Combobox_SelectionChanged"
+                              materialDesign:HintAssist.Hint="Choose Division" 
+                              IsEditable="True" 
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                              Height="35" Width="auto"/>
+            </WrapPanel>
+        </materialDesign:Card>
+        <Grid Grid.Row="1">
+            <chart:SfChart Header="Device Count Based On Type and Year" Margin="5" >
+                <chart:SfChart.PrimaryAxis>
+                    <chart:CategoryAxis/>
+                </chart:SfChart.PrimaryAxis>
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis/>
+                </chart:SfChart.SecondaryAxis>
+                <chart:SfChart.Legend>
+                    <chart:ChartLegend/>
+                </chart:SfChart.Legend>
+                <chart:ColumnSeries Palette="PurpleChrome" ShowTooltip="True" Name="chartDevice" Label="Number Of Device" ItemsSource="{Binding repairPrices}" XBindingPath="year" YBindingPath="count">
+                    <chart:ColumnSeries.AdornmentsInfo>
+                        <chart:ChartAdornmentInfo ShowLabel="False"/>
+                    </chart:ColumnSeries.AdornmentsInfo>
+                </chart:ColumnSeries>
+
+            </chart:SfChart>
+        </Grid>
     </Grid>
 </Window>

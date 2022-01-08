@@ -57,7 +57,7 @@
                                 <GridViewColumn Header="Device name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="120" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -67,7 +67,7 @@
                                 <GridViewColumn Header="Status" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="120" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -77,7 +77,7 @@
                                 <GridViewColumn Header="Current Value" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="100">
+                                            <Grid Width="100" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding current_value}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

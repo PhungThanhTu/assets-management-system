@@ -71,7 +71,7 @@
                                 <GridViewColumn Header="Status" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                        <Grid Width="120" Margin="20 0 0 0">
+                                        <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

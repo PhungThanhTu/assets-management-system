@@ -11,4 +11,9 @@ namespace assets_management_system.data_classes
         public string year { get; set; }
         public int repair_price { get; set; }
     }
+    public class DeviceCount
+    {
+        public string year { get; set; }
+        public int count { get; set; }
+    }
 }
