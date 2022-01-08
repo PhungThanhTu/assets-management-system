@@ -1,0 +1,8 @@
+- github frontend :
+https://github.com/PhungThanhTu/assets-management-system
+- github backend :
+https://github.com/PhungThanhTu/asset-management-system-backend
+- webserver hosting :
+https://asset-management-webserver.herokuapp.com/
+- database hosting :
+sql5105.site4now.net
