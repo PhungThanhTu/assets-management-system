@@ -31,7 +31,7 @@
                         <TextBlock Text="REPAIR PRICE BASED ON YEAR" TextWrapping="Wrap"></TextBlock>
                     </Button>
                     <Button  Click="DeviceCount_Click"  FontSize="45" Margin="20 50 5 5"  Height="400" Width="300" >
-                        <TextBlock Text="DEVICE COUNT BASED ON TYPE AND YEAR" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Text="DEVICE COUNT BASED ON DIVISION AND YEAR" TextWrapping="Wrap"></TextBlock>
                     </Button>
                 </WrapPanel>
             </materialDesign:Card>

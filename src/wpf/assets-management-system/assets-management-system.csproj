@@ -5,6 +5,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>assets_management_system</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>smart-home-4375.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
