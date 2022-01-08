@@ -616,13 +616,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://asset-management-webserver.herokuapp.com/liquidation/devices/1",
-					"protocol": "https",
+					"raw": "localhost:3000/liquidation/devices/1",
 					"host": [
-						"asset-management-webserver",
-						"herokuapp",
-						"com"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"liquidation",
 						"devices",
@@ -660,13 +658,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://asset-management-webserver.herokuapp.com/repairer/",
-					"protocol": "https",
+					"raw": "localhost:3000/repairer/",
 					"host": [
-						"asset-management-webserver",
-						"herokuapp",
-						"com"
+						"localhost"
 					],
+					"port": "3000",
 					"path": [
 						"repairer",
 						""
@@ -775,11 +771,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/repair/bill",
+					"raw": "https://asset-management-webserver.herokuapp.com/repair/bill",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"asset-management-webserver",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"repair",
 						"bill"
@@ -940,6 +938,64 @@
 					"path": [
 						"liquidation",
 						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get device count/year by division",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/statistic/device_count/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"statistic",
+						"device_count",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Liquidation Devices By Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/liquidation/2022",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"liquidation",
+						"2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get years that have liquidation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/liquidation/years",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"liquidation",
+						"years"
 					]
 				}
 			},
