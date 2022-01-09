@@ -54,27 +54,29 @@ namespace assets_management_system
                 }
             }
         }
-        //public void AddNewPersonnel(Personnel param)
-        //{
 
-        //    personnels.Add(param);
-        //    lvPersonnel.ItemsSource = null;
-        //    lvPersonnel.ItemsSource = personnels;
-        //}
         private void ChoosePersonnel_Click(object sender, RoutedEventArgs e)
         {
-            personnels = new List<Personnel>();
-            foreach (Personnel personnel in lvPersonnel.SelectedItems)
+            if (lvPersonnel.SelectedItems.Count == 0)
             {
-                Personnel newSelectedPersonnel = new Personnel();
-                newSelectedPersonnel.id = personnel.id;
-                newSelectedPersonnel.name = personnel.name.ToString();
-                newSelectedPersonnel.position = personnel.position.ToString();
-                newSelectedPersonnel.division = personnel.division;
-                personnels.Add(newSelectedPersonnel);
+                MessageBox.Show("Please selected personnel to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            ChoosePersonnel(personnels);
-            this.Close();
+            else
+            {
+                personnels = new List<Personnel>();
+                foreach (Personnel personnel in lvPersonnel.SelectedItems)
+                {
+                    Personnel newSelectedPersonnel = new Personnel();
+                    newSelectedPersonnel.id = personnel.id;
+                    newSelectedPersonnel.name = personnel.name.ToString();
+                    newSelectedPersonnel.position = personnel.position.ToString();
+                    newSelectedPersonnel.division = personnel.division;
+                    personnels.Add(newSelectedPersonnel);
+                }
+                ChoosePersonnel(personnels);
+                this.Close();
+            }      
         }
 
         private void AddNewPersonnel_Click(object sender, RoutedEventArgs e)

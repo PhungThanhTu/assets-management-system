@@ -33,17 +33,26 @@ namespace assets_management_system.Pages
 
         private void Repair_Click(object sender, RoutedEventArgs e)
         {
-            repairBills = new List<RepairBill>();
-            foreach (RepairSpoiled repair in lvDevice.SelectedItems)
+            if (lvDevice.SelectedItems.Count == 0)
             {
-                RepairBill newSelectedRepair = new RepairBill();
-                newSelectedRepair.id = repair.id;
-                newSelectedRepair.name = repair.name.ToString();               
-                repairBills.Add(newSelectedRepair);
+                MessageBox.Show("Please selected the device to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            Choose_Repairer chooseRepairer = new Choose_Repairer(repairBills);
-            chooseRepairer.Closed += new EventHandler((o, args) => FetchDevice());
-            chooseRepairer.Show();
+            else
+            {
+                repairBills = new List<RepairBill>();
+                foreach (RepairSpoiled repair in lvDevice.SelectedItems)
+                {
+                    RepairBill newSelectedRepair = new RepairBill();
+                    newSelectedRepair.id = repair.id;
+                    newSelectedRepair.name = repair.name.ToString();
+                    repairBills.Add(newSelectedRepair);
+                }
+                Choose_Repairer chooseRepairer = new Choose_Repairer(repairBills);
+                chooseRepairer.Closed += new EventHandler((o, args) => FetchDevice());
+                chooseRepairer.Show();
+            }    
+                
         }
 
         private void ShowRepair_Click(object sender, RoutedEventArgs e)

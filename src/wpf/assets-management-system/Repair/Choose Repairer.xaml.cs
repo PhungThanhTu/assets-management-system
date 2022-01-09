@@ -65,19 +65,28 @@ namespace assets_management_system.Repair
 
         private void ChooseRepairer_Click(object sender, RoutedEventArgs e)
         {
-            repairers = new List<Repairer>();
-            foreach (Repairer repairer in lvRepairer.SelectedItems)
+            if (lvRepairer.SelectedItems.Count == 0)
             {
-                Repairer newSelectedRepairer = new Repairer();
-                newSelectedRepairer.id = repairer.id;
-                newSelectedRepairer.name = repairer.name.ToString();
-                newSelectedRepairer.address = repairer.address.ToString();
-                newSelectedRepairer.phone = repairer.phone.ToString();
-                repairers.Add(newSelectedRepairer);
+                MessageBox.Show("Please selected the repairer to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            InsertRepairWindow insertRepair = new InsertRepairWindow(((Repairer)lvRepairer.SelectedItem).id,nrepairBills);
-            insertRepair.Closed += new EventHandler((e, args) => this.Close());
-            insertRepair.ShowDialog();
+            else
+            {
+                repairers = new List<Repairer>();
+                foreach (Repairer repairer in lvRepairer.SelectedItems)
+                {
+                    Repairer newSelectedRepairer = new Repairer();
+                    newSelectedRepairer.id = repairer.id;
+                    newSelectedRepairer.name = repairer.name.ToString();
+                    newSelectedRepairer.address = repairer.address.ToString();
+                    newSelectedRepairer.phone = repairer.phone.ToString();
+                    repairers.Add(newSelectedRepairer);
+                }
+                InsertRepairWindow insertRepair = new InsertRepairWindow(((Repairer)lvRepairer.SelectedItem).id, nrepairBills);
+                insertRepair.Closed += new EventHandler((e, args) => this.Close());
+                insertRepair.ShowDialog();
+            }    
+                
         }
     }
 }

@@ -43,15 +43,16 @@ namespace assets_management_system.Repair
         }
         private void RepairConfirmBill_Click(object sender, RoutedEventArgs e)
         {
-            nrepair = new List<PostRepair>();
-            nrepair.Clear();
-            foreach (RepairBill repair in lvDevice.Items)
-            {
-                PostRepair newSelectedDevice = new PostRepair();
-                newSelectedDevice.device = repair.id;
-                newSelectedDevice.price = repair.repair_price;             
-                nrepair.Add(newSelectedDevice);
-            }
+                nrepair = new List<PostRepair>();
+                nrepair.Clear();
+                foreach (RepairBill repair in lvDevice.Items)
+                {
+                    PostRepair newSelectedDevice = new PostRepair();
+                    newSelectedDevice.device = repair.id;
+                    newSelectedDevice.price = repair.repair_price;
+                    nrepair.Add(newSelectedDevice);
+                }
+               
             if (dpRepair.Text.Length == 0)
             {
                 MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);

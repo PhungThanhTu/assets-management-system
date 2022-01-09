@@ -37,10 +37,18 @@ namespace assets_management_system.Inventory
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            
-            InventoryDeviceWindow inventoryDeviceWindow = new InventoryDeviceWindow(personnels);
-            inventoryDeviceWindow.Closed += new EventHandler((e, args) => this.Close());
-            inventoryDeviceWindow.ShowDialog();
+            if (lvInventory.Items.Count == 0)
+            {
+                MessageBox.Show("Please selected personnel to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            else
+            {
+                InventoryDeviceWindow inventoryDeviceWindow = new InventoryDeviceWindow(personnels);
+                inventoryDeviceWindow.Closed += new EventHandler((e, args) => this.Close());
+                inventoryDeviceWindow.ShowDialog();
+            }    
+                
         }
         public void ChooseNewPersonnel(IList<Personnel> param)
         {

@@ -44,21 +44,30 @@ namespace assets_management_system
 
         private void StartChecking_Click(object sender, RoutedEventArgs e)
         {
-            nDetail = new List<CheckDetail>();
-            nDetail.Clear();
-            foreach (Device device in lvDevice_Check.SelectedItems)
+            if (lvDevice_Check.SelectedItems.Count == 0)
             {
-                CheckDetail newSelectedDevice = new CheckDetail();
-                newSelectedDevice.id = device.id;
-                newSelectedDevice.name = device.name.ToString();
-                newSelectedDevice.current_value = device.current_value;
-                newSelectedDevice.status = device.status.ToString();
-                newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
-                nDetail.Add(newSelectedDevice);
+                MessageBox.Show("Please selected the device to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail);
-            startCheckingWindow.Closed += new EventHandler((e, args) => this.Close());
-            startCheckingWindow.ShowDialog();
+            else
+            {
+                nDetail = new List<CheckDetail>();
+                nDetail.Clear();
+                foreach (Device device in lvDevice_Check.SelectedItems)
+                {
+                    CheckDetail newSelectedDevice = new CheckDetail();
+                    newSelectedDevice.id = device.id;
+                    newSelectedDevice.name = device.name.ToString();
+                    newSelectedDevice.current_value = device.current_value;
+                    newSelectedDevice.status = device.status.ToString();
+                    newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
+                    nDetail.Add(newSelectedDevice);
+                }
+                StartCheckingWindow startCheckingWindow = new StartCheckingWindow(nDetail);
+                startCheckingWindow.Closed += new EventHandler((e, args) => this.Close());
+                startCheckingWindow.ShowDialog();
+            }    
+            
         }
         private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

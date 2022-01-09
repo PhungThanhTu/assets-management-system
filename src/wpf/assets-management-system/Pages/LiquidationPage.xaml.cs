@@ -41,21 +41,31 @@ namespace assets_management_system.Pages
 
         private void StartLiquidation_Click(object sender, RoutedEventArgs e)
         {
-            nDetail = new List<CheckDetail>();
-            nDetail.Clear();
-            foreach (Device device in lvLiquidation.SelectedItems)
+            
+            if(lvLiquidation.SelectedItems.Count==0)
             {
-                CheckDetail newSelectedDevice = new CheckDetail();
-                newSelectedDevice.id = device.id;
-                newSelectedDevice.name = device.name.ToString();
-                newSelectedDevice.current_value = device.current_value;
-                newSelectedDevice.status = "Liquidated";
-                newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
-                nDetail.Add(newSelectedDevice);
+                MessageBox.Show("Please selected the device to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            Establish_Liquidation_CouncilWindow establish_Liquidation_Council = new Establish_Liquidation_CouncilWindow(nDetail);
-            establish_Liquidation_Council.Closed += new EventHandler((e, args) => this.FetchDevices());
-            establish_Liquidation_Council.ShowDialog();
+            else
+            {
+                nDetail = new List<CheckDetail>();
+                nDetail.Clear();
+                foreach (Device device in lvLiquidation.SelectedItems)
+                {
+                    CheckDetail newSelectedDevice = new CheckDetail();
+                    newSelectedDevice.id = device.id;
+                    newSelectedDevice.name = device.name.ToString();
+                    newSelectedDevice.current_value = device.current_value;
+                    newSelectedDevice.status = "Liquidated";
+                    newSelectedDevice.division = int.Parse(cbDivision.SelectedValue.ToString());
+                    nDetail.Add(newSelectedDevice);
+                }
+                Establish_Liquidation_CouncilWindow establish_Liquidation_Council = new Establish_Liquidation_CouncilWindow(nDetail);
+                establish_Liquidation_Council.Closed += new EventHandler((e, args) => this.FetchDevices());
+                establish_Liquidation_Council.ShowDialog();
+            }    
+            
         }
         private void Combobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

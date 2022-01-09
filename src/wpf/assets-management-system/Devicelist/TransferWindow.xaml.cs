@@ -76,9 +76,9 @@ namespace assets_management_system.Page
 
         private void Transfer_Click(object sender, RoutedEventArgs e)
         {   
+
             iDDevices = new List<PostIDDevice>();
             iDDevices.Clear();
-
             if (cbDivision.Text.Length == 0 || dpTransfer.Text.Length == 0)
             {
                 MessageBox.Show("Please enter full information!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -92,13 +92,20 @@ namespace assets_management_system.Page
                     receiver = int.Parse(cbDivision.SelectedValue.ToString()),
                     transfer_date = dpTransfer.SelectedDate.Value.ToString("yyyy-MM-dd")
                 };
-
-                // set up post device id
-                foreach (Device device in lvDevice.SelectedItems)
+                if (lvDevice.SelectedItems.Count == 0)
                 {
-                    PostIDDevice newSelectedDevice = new PostIDDevice();
-                    newSelectedDevice.id = device.id;
-                    iDDevices.Add(newSelectedDevice);
+                    MessageBox.Show("Please selected the device to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+                else
+                {
+                    // set up post device id
+                    foreach (Device device in lvDevice.SelectedItems)
+                    {
+                        PostIDDevice newSelectedDevice = new PostIDDevice();
+                        newSelectedDevice.id = device.id;
+                        iDDevices.Add(newSelectedDevice);
+                    }
                 }
                 // set up transfer
                 transfer_header = new TransferHeader

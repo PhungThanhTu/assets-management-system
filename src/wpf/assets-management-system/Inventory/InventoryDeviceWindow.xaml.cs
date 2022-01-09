@@ -64,17 +64,25 @@ namespace assets_management_system.Inventory
 
         private void FinishInventory_Click(object sender, RoutedEventArgs e)
         {
-            nDetail = new List<CheckDetail>();
-            nDetail.Clear();
-            foreach (Device device in lvInventory.Items)
+            if (lvInventory.Items.Count == 0)
             {
-                CheckDetail newSelectedDevice = new CheckDetail();
-                newSelectedDevice.id = device.id;
-                newSelectedDevice.name = device.name.ToString();
-                newSelectedDevice.current_value = device.current_value;
-                newSelectedDevice.status = device.status.ToString();
-                newSelectedDevice.division = device.holding_division;
-                nDetail.Add(newSelectedDevice);
+                MessageBox.Show("Please selected the device to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+            else
+            {
+                nDetail = new List<CheckDetail>();
+                nDetail.Clear();
+                foreach (Device device in lvInventory.Items)
+                {
+                    CheckDetail newSelectedDevice = new CheckDetail();
+                    newSelectedDevice.id = device.id;
+                    newSelectedDevice.name = device.name.ToString();
+                    newSelectedDevice.current_value = device.current_value;
+                    newSelectedDevice.status = device.status.ToString();
+                    newSelectedDevice.division = device.holding_division;
+                    nDetail.Add(newSelectedDevice);
+                }
             }
             if (dpInventory.Text.Length == 0)
             {

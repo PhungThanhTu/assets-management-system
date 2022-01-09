@@ -58,37 +58,46 @@ namespace assets_management_system.Liquidation
             }
             else
             {
-                nCheckDate = new PostCheck()
+                if (lvLiquidation.Items.Count == 0)
                 {
-                    check_date = dpLiquidation.SelectedDate.Value.ToString("yyyy-MM-dd"),
-                };
-
-
-                ncheck_detail = new CheckHeader()
-
-                {
-                    check = nCheckDate,
-                    detail = nDetail
-
-                };
-
-                inventory_header = new InventoryHeader
-                {
-                    personnel = personnels,
-                    check_detail = ncheck_detail
-
-                };
-
-                try
-                {
-                    string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "liquidation/add", inventory_header);
-                    //MessageBox.Show(result);
+                    MessageBox.Show("Please selected personnel to continue!", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Connection Error");
+                    nCheckDate = new PostCheck()
+                    {
+                        check_date = dpLiquidation.SelectedDate.Value.ToString("yyyy-MM-dd"),
+                    };
+
+
+                    ncheck_detail = new CheckHeader()
+
+                    {
+                        check = nCheckDate,
+                        detail = nDetail
+
+                    };
+
+                    inventory_header = new InventoryHeader
+                    {
+                        personnel = personnels,
+                        check_detail = ncheck_detail
+
+                    };
+
+                    try
+                    {
+                        string result = HTTPClientHandler.PostJsonData(API_config.enpoint_uri + "liquidation/add", inventory_header);
+                        //MessageBox.Show(result);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Connection Error");
+                    }
+                    this.Close();
                 }
-                this.Close();
+                   
 
             }
         }
