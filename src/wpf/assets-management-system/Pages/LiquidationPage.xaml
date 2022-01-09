@@ -62,11 +62,11 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Device Name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -75,8 +75,8 @@
                                 <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -85,8 +85,8 @@
                                 <GridViewColumn Header="Status" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -95,8 +95,8 @@
                                 <GridViewColumn Header="Price" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="70" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -109,8 +109,8 @@
 
             <materialDesign:Card Grid.Row="3" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntShowLiquidationHistory" Click="ShowLiquidationHistory_Click"   Content="Show Liquidation History" Margin="210 5 10 5"  Height="35" Width="200" ></Button>
-                    <Button Name="bntStart_Liquidation" Click="StartLiquidation_Click"   Content="Start Liquidation" Margin="10 5 10 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntShowLiquidationHistory" Click="ShowLiquidationHistory_Click"   Content="Show Liquidation History" Margin="220 10 10 10"  Height="35" Width="200" ></Button>
+                    <Button Name="bntStart_Liquidation" Click="StartLiquidation_Click"   Content="Start Liquidation" Margin="15 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>

@@ -48,7 +48,7 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Click="Exit_Click" Background="OrangeRed" Command="{Binding ExitCommand}"  Content="Exit" Margin="470 5 5 5"  Height="35" Width="200" ></Button>
+                    <Button Click="Exit_Click" Background="OrangeRed" Command="{Binding ExitCommand}"  Content="Exit" Margin="450 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -66,10 +66,10 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Device Name" Width="220">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="150">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -79,7 +79,7 @@
                                 <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -89,7 +89,7 @@
                                 <GridViewColumn Header="Price" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
+                                            <Grid Width="70" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

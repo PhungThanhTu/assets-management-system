@@ -54,10 +54,10 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Device Name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120" Margin="20 0 0 0">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -67,7 +67,7 @@
                                 <GridViewColumn Header="Status" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120" Margin="20 0 0 0">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -96,7 +96,7 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntFinishInventory" Click="FinishInventory_Click"   Content="Finish Inventory" Margin="450 5 5 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntFinishInventory" Click="FinishInventory_Click"   Content="Finish Inventory" Margin="450 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>

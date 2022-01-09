@@ -41,8 +41,8 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Click="AddPesonnel_Click"  Content="Add Pesonnel" Margin="250 5 5 5"  Height="35" Width="200" ></Button>
-                    <Button Click="Liquidate_Click"   Content="Liquidate" Margin="15 5 5 5"  Height="35" Width="200" ></Button>
+                    <Button Click="AddPesonnel_Click"  Content="Add Personnel" Margin="220 10 10 10"  Height="35" Width="200" ></Button>
+                    <Button Click="Liquidate_Click"   Content="Liquidate" Margin="20 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -60,11 +60,11 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Personnel name" Width="230">
+                                <GridViewColumn Header="Personnel Name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -73,18 +73,18 @@
                                 <GridViewColumn Header="Position" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding position}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding position}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Division" >
+                                <GridViewColumn Header="Division" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding division}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding division}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

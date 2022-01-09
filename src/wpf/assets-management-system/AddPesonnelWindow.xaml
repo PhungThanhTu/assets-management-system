@@ -38,7 +38,7 @@
                     <ListView Margin="5" Name="lvPersonnel" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="70" >
+                                <GridViewColumn Width="40" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate >
                                             <StackPanel Orientation="Horizontal" Width="100">
@@ -47,16 +47,16 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Id" Width="100">
+                                <GridViewColumn Header="ID" Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="45" Margin="20 0 0 0">
-                                                <TextBlock Text="{Binding id}" HorizontalAlignment="Left"></TextBlock>
+                                                <TextBlock Text="{Binding id}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Personnel name" Width="230">
+                                <GridViewColumn Header="Personnel name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="150" Margin="20 0 0 0">
@@ -93,8 +93,8 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntAddNewPersonnel" Click="AddNewPersonnel_Click"   Content="Add New Personnel" Margin="230 5 5 5"  Height="35" Width="200" ></Button>
-                    <Button Name="bntChoosePersonnel" Click="ChoosePersonnel_Click"   Content="Choose Personnel" Margin="15 5 10 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntAddNewPersonnel" Click="AddNewPersonnel_Click"   Content="Add New Personnel" Margin="220 10 10 10"  Height="35" Width="200" ></Button>
+                    <Button Name="bntChoosePersonnel" Click="ChoosePersonnel_Click"   Content="Choose Personnel" Margin="20 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>

@@ -85,6 +85,11 @@ namespace assets_management_system.Statictis
             }
 
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

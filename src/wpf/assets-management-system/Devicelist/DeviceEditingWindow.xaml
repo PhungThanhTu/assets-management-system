@@ -59,7 +59,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Device name:"
+                       Text="Device Name:"
                        VerticalAlignment="Center"   
                        />
                 <TextBox Grid.Row="1"
@@ -125,7 +125,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Production year:"
+                       Text="Production Year:"
                        VerticalAlignment="Center"                   
                        />
                 <TextBox Grid.Row="1"
@@ -147,7 +147,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Implement year:"
+                       Text="Implement Year:"
                        VerticalAlignment="Center"
                        />
                 <TextBox Grid.Row="1"
@@ -205,7 +205,7 @@
                 <TextBlock  
                        FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Annual value lost:"
+                       Text="Annual Value Lost:"
                        VerticalAlignment="Center"
                                              />
                 <TextBox Grid.Row="1"
@@ -228,7 +228,7 @@
                 <TextBlock
                 FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Current value"
+                       Text="Current Value:"
                        VerticalAlignment="Center"
                        />
                 <TextBox Grid.Row="1"
@@ -250,7 +250,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Unit"
+                       Text="Unit:"
                        VerticalAlignment="Center"
                        />
                 <ComboBox    Grid.Row="1"
@@ -282,31 +282,16 @@
                 <ComboBox    Grid.Row="1"
                               x:Name="cbType"
                               ItemsSource="{Binding Status}" 
-                              materialDesign:HintAssist.Hint="Choose type" 
+                              materialDesign:HintAssist.Hint="Choose Type" 
                               IsEditable="True" 
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                                Width="auto" FontSize="14"/>
             </Grid>
-
-
-
-            <Grid Grid.Row="5"
-              Grid.Column="2" Margin="0 0 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="3*"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-            </Grid>
         </Grid>
         <materialDesign:Card Grid.Row="2" Margin="5" >
             <WrapPanel>
-                <Button Name="bntSubmit" Click="Submit_Click" Command="{Binding SubmitCommand}"  Content="Submit" Margin="250 5 10 5"  Height="35" Width="200" ></Button>
-                <Button Name="bntExit" Click="Exit_Click" Command="{Binding ExitCommand}"  Content="Exit" Background="OrangeRed" Margin="10 5 5 5"  Height="35" Width="200" ></Button>
+                <Button Name="bntSubmit" Click="Submit_Click" Command="{Binding SubmitCommand}"  Content="Submit" Margin="220 5 10 5"  Height="35" Width="200" ></Button>
+                <Button Name="bntExit" Click="Exit_Click" Command="{Binding ExitCommand}"  Content="Exit" Background="OrangeRed" Margin="20 5 10 5"  Height="35" Width="200" ></Button>
             </WrapPanel>
         </materialDesign:Card>
     </Grid>

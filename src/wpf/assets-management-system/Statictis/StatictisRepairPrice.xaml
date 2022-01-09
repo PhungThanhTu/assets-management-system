@@ -18,23 +18,36 @@
         Title="Statictis Repair Price" Height="500" Width="700">
 
     <Grid>
-        <chart:SfChart Header="Repair Price Based On Year" Margin="10" >
-            <chart:SfChart.PrimaryAxis>
-                <chart:CategoryAxis/>
-            </chart:SfChart.PrimaryAxis>
-            <chart:SfChart.SecondaryAxis>
-                <chart:NumericalAxis/>
-            </chart:SfChart.SecondaryAxis>
-            <chart:SfChart.Legend>
-                <chart:ChartLegend/>
-            </chart:SfChart.Legend>
-            <chart:ColumnSeries Palette="PurpleChrome" ShowTooltip="True" Name="chartRepair" Label="Repair Price" ItemsSource="{Binding repairPrices}" XBindingPath="year" YBindingPath="repair_price">
-                <chart:ColumnSeries.AdornmentsInfo>
-                    <chart:ChartAdornmentInfo ShowLabel="False"/>
-                </chart:ColumnSeries.AdornmentsInfo>
-            </chart:ColumnSeries>
-        
-        </chart:SfChart>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <materialDesign:Card Grid.Row="0" Margin="5">
+            <WrapPanel >
+                <chart:SfChart Header="Repair Price Based On Year" Margin="5" >
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis/>
+                    </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis/>
+                    </chart:SfChart.SecondaryAxis>
+                    <chart:SfChart.Legend>
+                        <chart:ChartLegend/>
+                    </chart:SfChart.Legend>
+                    <chart:ColumnSeries Palette="PurpleChrome" ShowTooltip="True" Name="chartRepair" Label="Repair Price" ItemsSource="{Binding repairPrices}" XBindingPath="year" YBindingPath="repair_price">
+                        <chart:ColumnSeries.AdornmentsInfo>
+                            <chart:ChartAdornmentInfo ShowLabel="False"/>
+                        </chart:ColumnSeries.AdornmentsInfo>
+                    </chart:ColumnSeries>
+
+                </chart:SfChart>
+
+            </WrapPanel>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Row="1" Margin="5">
+            <WrapPanel >
+                <Button Name="bntExit" Click="Exit_Click"   Content="Exit" Margin="450 5 10 5"  Height="35" Width="200" Background="OrangeRed"></Button>
+            </WrapPanel>
+        </materialDesign:Card>
     </Grid>
 </Window>

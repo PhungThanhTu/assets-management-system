@@ -20,9 +20,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <materialDesign:Card Grid.Row="0" Margin="5">
-            <WrapPanel Margin="10 0 0 10">
+            <WrapPanel >
                 <ComboBox x:Name="cbDividion" 
                               Margin="20 5 50 5" 
                               ItemsSource="{Binding cbDivisions}" 
@@ -34,23 +35,32 @@
             </WrapPanel>
         </materialDesign:Card>
         <Grid Grid.Row="1">
-            <chart:SfChart Header="Device Count Based On Type and Year" Margin="5" >
-                <chart:SfChart.PrimaryAxis>
-                    <chart:CategoryAxis/>
-                </chart:SfChart.PrimaryAxis>
-                <chart:SfChart.SecondaryAxis>
-                    <chart:NumericalAxis/>
-                </chart:SfChart.SecondaryAxis>
-                <chart:SfChart.Legend>
-                    <chart:ChartLegend/>
-                </chart:SfChart.Legend>
-                <chart:ColumnSeries Palette="PurpleChrome" ShowTooltip="True" Name="chartDevice" Label="Number Of Device" ItemsSource="{Binding repairPrices}" XBindingPath="year" YBindingPath="count">
-                    <chart:ColumnSeries.AdornmentsInfo>
-                        <chart:ChartAdornmentInfo ShowLabel="False"/>
-                    </chart:ColumnSeries.AdornmentsInfo>
-                </chart:ColumnSeries>
-
-            </chart:SfChart>
+            
         </Grid>
+        <materialDesign:Card Grid.Row="1" Margin="5">
+            <WrapPanel Margin="0">
+                <chart:SfChart Header="Device Count Based On Division and Year" Margin="5" >
+                    <chart:SfChart.PrimaryAxis>
+                        <chart:CategoryAxis/>
+                    </chart:SfChart.PrimaryAxis>
+                    <chart:SfChart.SecondaryAxis>
+                        <chart:NumericalAxis/>
+                    </chart:SfChart.SecondaryAxis>
+                    <chart:SfChart.Legend>
+                        <chart:ChartLegend/>
+                    </chart:SfChart.Legend>
+                    <chart:ColumnSeries Palette="PurpleChrome" ShowTooltip="True" Name="chartDevice" Label="Number Of Device" ItemsSource="{Binding repairPrices}" XBindingPath="year" YBindingPath="count">
+                        <chart:ColumnSeries.AdornmentsInfo>
+                            <chart:ChartAdornmentInfo ShowLabel="False"/>
+                        </chart:ColumnSeries.AdornmentsInfo>
+                    </chart:ColumnSeries>
+                </chart:SfChart>
+            </WrapPanel>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Row="2" Margin="5">
+            <WrapPanel >
+                <Button Name="bntExit" Click="Exit_Click"   Content="Exit" Margin="450 5 10 5"  Height="35" Width="200" Background="OrangeRed"></Button>
+            </WrapPanel>
+        </materialDesign:Card>
     </Grid>
 </Window>

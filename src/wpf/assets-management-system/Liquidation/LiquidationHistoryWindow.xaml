@@ -49,8 +49,8 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Click="Show_Click" Command="{Binding ListTransferCommand}"  Content="Show" Margin="250 5 5 5"  Height="35" Width="200" ></Button>
-                    <Button Click="Exit_Click" Command="{Binding ExitCommand}"  Content="Exit" Margin="15 5 5 5"  Height="35" Width="200" Background="OrangeRed"></Button>
+                    <Button Click="Show_Click" Command="{Binding ListTransferCommand}"  Content="Show" Margin="220 10 10 10"  Height="35" Width="200" ></Button>
+                    <Button Click="Exit_Click" Command="{Binding ExitCommand}"  Content="Exit" Margin="20 10 10 10"  Height="35" Width="200" Background="OrangeRed"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -59,7 +59,7 @@
                     <ListView Margin="5" Name="lvLiquidation" ItemsSource="{Binding Device}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch" MouseDoubleClick="listview_MouseDoubleClick">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID"  Width="80">
+                                <GridViewColumn Header="ID"  Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="45">
@@ -71,8 +71,8 @@
                                 <GridViewColumn Header="Liquidation Date" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding liquidation_date}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding liquidation_date}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

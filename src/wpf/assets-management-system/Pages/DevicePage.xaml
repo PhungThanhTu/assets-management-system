@@ -69,10 +69,10 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device Name" Width="230">
+                                <GridViewColumn Header="Device Name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120" Margin="20 0 0 0">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -82,7 +82,7 @@
                                 <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120" Margin="20 0 0 0">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

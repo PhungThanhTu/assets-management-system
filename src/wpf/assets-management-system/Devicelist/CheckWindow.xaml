@@ -42,8 +42,8 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5">
                 <WrapPanel>
-                    <Button Click="CheckList_Click" Command="{Binding ListCommand}" Content="View Checklist " Margin="220 5 10 5" Width="200" Height="35"></Button>
-                    <Button Click="StartChecking_Click" Command="{Binding AddCommand}" Content="Start Checking" Margin="10 5 10 5" Width="200" Height="35"></Button>
+                    <Button Click="CheckList_Click" Command="{Binding ListCommand}" Content="View Checklist " Margin="220 10 10 10" Width="200" Height="35"></Button>
+                    <Button Click="StartChecking_Click" Command="{Binding AddCommand}" Content="Start Checking" Margin="20 10 10 10" Width="200" Height="35"></Button>
                     
                 </WrapPanel>
             </materialDesign:Card>
@@ -71,20 +71,20 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Device Name" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120" >
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock  Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Current Value" Width="200">
+                                <GridViewColumn Header="Current Value" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="100" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding current_value}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -94,7 +94,7 @@
                                 <GridViewColumn Header="Status" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
+                                            <Grid Width="auto" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

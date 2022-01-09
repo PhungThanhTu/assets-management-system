@@ -120,47 +120,47 @@
             </Grid>
             <StackPanel Grid.Row="1">
 
-                <Button Margin="10" Height="50" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Device_Click">
+                <Button Margin="10 20 10 10" Height="55" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Device_Click">
                     <Grid Width="160" >
-                        <materialDesign:PackIcon Kind="Devices" VerticalAlignment="Center" Width="20" Height="20"/>
+                        <materialDesign:PackIcon Kind="Devices" VerticalAlignment="Center" Width="25" Height="25"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="18" Text="Device List" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>
 
 
 
-                <Button Margin="10" Height="50" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Repair_Click">
+                <Button Margin="10" Height="55" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Repair_Click">
                     <Grid Width="160">
-                        <materialDesign:PackIcon Kind="ScriptOutline" VerticalAlignment="Center" Width="20" Height="20"/>
+                        <materialDesign:PackIcon Kind="CogOutline" VerticalAlignment="Center" Width="25" Height="25"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="18" Text="Repair " FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Height="50" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Liquidation_Click" >
+                <Button Margin="10" Height="55" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Liquidation_Click" >
                     <Grid Width="160">
                         <materialDesign:PackIcon Kind="ContentPaste" VerticalAlignment="Center" Width="20" Height="20"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="18" Text="Liquidation" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Height="50" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Inventory_Click" >
+                <Button Margin="10" Height="55" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Inventory_Click" >
                     <Grid Width="160">
-                        <materialDesign:PackIcon Kind="BookSyncOutline" VerticalAlignment="Center" Width="20" Height="20"/>
+                        <materialDesign:PackIcon Kind="BookSyncOutline" VerticalAlignment="Center" Width="25" Height="25"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="18" Text="Inventory" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Height="50" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Statistic_CLick">
+                <Button Margin="10" Height="55" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Statistic_CLick">
                     <Grid Width="160">
-                        <materialDesign:PackIcon Kind="SignalCellular2" VerticalAlignment="Center" Width="20" Height="20"/>
+                        <materialDesign:PackIcon Kind="ChartBar" VerticalAlignment="Center" Width="25" Height="25"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="18" Text="Statistics" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>
 
 
-                <Button Click ="LogOutClicked" Margin="10" Height="50" Background="OrangeRed" BorderBrush="OrangeRed">
+                <Button Click ="LogOutClicked" Margin="10" Height="55" Background="OrangeRed" BorderBrush="OrangeRed">
                     <Grid Width="160">
-                        <materialDesign:PackIcon Kind="LogoutVariant" VerticalAlignment="Center" Width="20" Height="20"/>
+                        <materialDesign:PackIcon Kind="LogoutVariant" VerticalAlignment="Center" Width="25" Height="25"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="18" Text="Log Out" FontFamily="Champagne &amp; Limousines" VerticalAlignment="Center"/>
                     </Grid>
                 </Button>

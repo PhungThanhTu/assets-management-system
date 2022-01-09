@@ -4,8 +4,9 @@
     "\\assets-management-system",
     "\\assets-management-system\\data_classes",
     "\\assets-management-system\\Devicelist",
+    "\\assets-management-system\\Liquidation",
     "\\assets-management-system\\Pages"
   ],
-  "SelectedNode": "\\assets-management-system\\Pages\\StatisticPage.xaml",
+  "SelectedNode": "\\assets-management-system\\Liquidation\\LiquidatinDetailYear.xaml",
   "PreviewInSolutionExplorer": false
 }

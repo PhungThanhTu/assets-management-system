@@ -60,7 +60,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Device name:"
+                       Text="Device Name:"
                        VerticalAlignment="Center"   
                        />
                 <TextBox Grid.Row="1"
@@ -126,7 +126,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Production year:"
+                       Text="Production Year:"
                        VerticalAlignment="Center"                   
                        />
                 <TextBox Grid.Row="1"
@@ -148,7 +148,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Implement year:"
+                       Text="Implement Year:"
                        VerticalAlignment="Center"
                        />
                 <TextBox Grid.Row="1"
@@ -206,7 +206,7 @@
                 <TextBlock  
                        FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Annual value lost:"
+                       Text="Annual Value Lost:"
                        VerticalAlignment="Center"
                                              />
                 <TextBox Grid.Row="1"
@@ -229,7 +229,7 @@
                 <TextBlock
                 FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Current value"
+                       Text="Current Value"
                        VerticalAlignment="Center"
                        />
                 <TextBox Grid.Row="1"
@@ -308,7 +308,7 @@
         </Grid>
         <materialDesign:Card Grid.Row="2" Margin="5" >
             <WrapPanel>
-                <Button Command="{Binding DoneCommand}"  Content="Add Device" Margin="470 5 5 5"  Height="35" Width="200" Click="Done_Button_Click"></Button>
+                <Button Command="{Binding DoneCommand}"  Content="Add Device" Margin="440 10 10 10"  Height="35" Width="200" Click="Done_Button_Click"></Button>
             </WrapPanel>
         </materialDesign:Card>
     </Grid>

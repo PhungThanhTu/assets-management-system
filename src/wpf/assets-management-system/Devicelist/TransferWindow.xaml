@@ -36,7 +36,7 @@
                 <WrapPanel Margin="10 0 0 10">
                     <ComboBox    
                               x:Name="cbDivision"
-                              Margin="20 5 10 5" 
+                              Margin="10 5 10 5" 
                               ItemsSource="{Binding Division}" 
                               
                               materialDesign:HintAssist.Hint="Receiver Division" 
@@ -50,8 +50,8 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Click="ListTransfer_Click" Command="{Binding ListTransferCommand}"  Content="List Transfer" Margin="250 5 5 5"  Height="35" Width="200"></Button>
-                    <Button Click="Transfer_Click" Command="{Binding DoneCommand}"  Content="Transfer" Margin="15 5 5 5"  Height="35" Width="200"></Button>
+                    <Button Click="ListTransfer_Click" Command="{Binding ListTransferCommand}"  Content="List Transfer" Margin="220 10 10 10"  Height="35" Width="200"></Button>
+                    <Button Click="Transfer_Click" Command="{Binding DoneCommand}"  Content="Transfer" Margin="20 10 10 10"  Height="35" Width="200"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -82,8 +82,8 @@
                                 <GridViewColumn Header="Device name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -92,8 +92,8 @@
                                 <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -102,8 +102,8 @@
                                 <GridViewColumn Header="Price" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="70" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

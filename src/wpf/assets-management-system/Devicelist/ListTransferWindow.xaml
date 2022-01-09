@@ -47,11 +47,11 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Sender Division" Width="230">
+                                <GridViewColumn Header="Sender Division" Width="220">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding sender_name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding sender_name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -60,8 +60,8 @@
                                 <GridViewColumn Header="Receiver Division" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding receiver_name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding receiver_name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -70,8 +70,8 @@
                                 <GridViewColumn Header="Date" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding transfer_date}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding transfer_date}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

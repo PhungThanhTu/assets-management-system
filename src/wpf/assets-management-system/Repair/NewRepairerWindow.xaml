@@ -49,7 +49,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock FontFamily="Roboto" 
                        FontSize="12"
-                       Text="Repairer name:"
+                       Text="Repairer Name:"
                        VerticalAlignment="Center"   
                        />
                 <TextBox Grid.Row="1"
@@ -107,8 +107,8 @@
 
         <materialDesign:Card Grid.Row="1" Margin="5">
             <WrapPanel>
-                <Button Margin="45 5 20 5 "  Click="AddNewRepairer_Click" Content="Add New Repairer" Height="35" Width="160"></Button>
-                <Button Margin="10 5 5 5" Click="Cancel_Click" Content="Cancel" Height="35" Width="160" Background="OrangeRed"></Button>
+                <Button Margin="45 10 20 10 "  Click="AddNewRepairer_Click" Content="Add New Repairer" Height="35" Width="160"></Button>
+                <Button Margin="10 10 5 10" Click="Cancel_Click" Content="Cancel" Height="35" Width="160" Background="OrangeRed"></Button>
             </WrapPanel>
         </materialDesign:Card>
     </Grid>

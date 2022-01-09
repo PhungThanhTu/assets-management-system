@@ -55,21 +55,21 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device name" Width="230">
+                                <GridViewColumn Header="Device Name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="150">
+                                <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="100">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -78,8 +78,8 @@
                                 <GridViewColumn Header="Status" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -92,8 +92,8 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntShowRepair" Click="ShowRepair_Click"   Content="Show Repair History" Margin="200 5 10 5"  Height="35" Width="200" ></Button>
-                    <Button Name="bntRepair" Click="Repair_Click"   Content="Repair" Margin="20 5 10 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntShowRepair" Click="ShowRepair_Click"   Content="Show Repair History" Margin="220 10 10 10"  Height="35" Width="200" ></Button>
+                    <Button Name="bntRepair" Click="Repair_Click"   Content="Repair" Margin="20 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>

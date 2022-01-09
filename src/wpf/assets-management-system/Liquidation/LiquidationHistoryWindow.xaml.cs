@@ -85,8 +85,8 @@ namespace assets_management_system.Liquidation
             else
             {
                 string year = cbYear.Text.ToString();
-                LiquidatinDetailYear liquidationDetail = new LiquidatinDetailYear(year);
-                liquidationDetail.ShowDialog();
+                LiquidatinDetailYear liquidatinDetailYear = new LiquidatinDetailYear(year);
+                liquidatinDetailYear.ShowDialog();
             }
             
         }

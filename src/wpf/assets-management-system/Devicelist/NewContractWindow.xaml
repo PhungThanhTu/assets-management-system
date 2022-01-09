@@ -41,16 +41,16 @@
             <!--các element binding từ selected item-->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="0 0 0 10">
-                    <ComboBox Margin="5 5 15 5" x:Name="cbSupplier" ItemsSource="{Binding cbSupplier}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Supplier" Width="auto" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <ComboBox Margin="10 5 15 5" x:Name="cbSupplier" ItemsSource="{Binding cbSupplier}" SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Supplier" Width="auto" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
                     <DatePicker Margin="5 5 5 5" x:Name="dpContract" materialDesign:HintAssist.IsFloating="true" materialDesign:HintAssist.Hint="Select Time" Width="100" />
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="2" Margin="5">
                 <WrapPanel>
-                    <Button Click="ListContract_Click" Command="{Binding ListCommand}" Content="List Contract" Margin="20 5 10 5" Width="200" Height="35"></Button>
-                    <Button Click="AddDevice_Click" Command="{Binding AddCommand}" Content="Add Devices" Margin="10 5 10 5" Width="200" Height="35"></Button>
-                    <Button Click="Done_CLick" Command="{Binding DoneCommand}" Content=" Add New Contract" Margin="10 5 5 5" Width="200" Height="35"></Button>
+                    <Button Click="ListContract_Click" Command="{Binding ListCommand}" Content="List Contract" Margin="15 10 10 10" Width="200" Height="35"></Button>
+                    <Button Click="AddDevice_Click" Command="{Binding AddCommand}" Content="Add Devices" Margin="10 10 10 10" Width="200" Height="35"></Button>
+                    <Button Click="Done_CLick" Command="{Binding DoneCommand}" Content=" Add New Contract" Margin="10 10 5 10" Width="200" Height="35"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
@@ -59,21 +59,21 @@
                     <ListView Margin="5" Name="lvDevice_Contract" ItemsSource="{Binding PostDevice}"   Background="{DynamicResource MaterialDesignLightBackground}" >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Device name" Width="auto">
+                                <GridViewColumn Header="Device name" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="100" >
-                                                <TextBlock  Text="{Binding name}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0" >
+                                                <TextBlock  Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Specification" Width="auto">
+                                <GridViewColumn Header="Specification" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
-                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="150" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -82,8 +82,8 @@
                                 <GridViewColumn Header="Price" Width="auto">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="70">
-                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="70" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -92,8 +92,8 @@
                                 <GridViewColumn Header="Status" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
-                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="auto" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding status}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -101,8 +101,8 @@
                                 <GridViewColumn Header="Curent value" Width="auto" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="100">
-                                                <TextBlock Text="{Binding current_value}" HorizontalAlignment="Center"></TextBlock>
+                                            <Grid Width="100" Margin="20 0 0 0">
+                                                <TextBlock Text="{Binding current_value}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

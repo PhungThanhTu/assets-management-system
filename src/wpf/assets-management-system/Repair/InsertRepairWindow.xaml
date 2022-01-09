@@ -51,11 +51,11 @@
                         <ListView.View>
                             <GridView>
                                 
-                                <GridViewColumn Header="Id" Width="230">
+                                <GridViewColumn Header="ID" Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120" Margin="20 0 0 0">
-                                                <TextBlock Text="{Binding id}" HorizontalAlignment="Left"></TextBlock>
+                                            <Grid Width="45" Margin="0">
+                                                <TextBlock Text="{Binding id}" HorizontalAlignment="Center"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -64,7 +64,7 @@
                                 <GridViewColumn Header="Device Name" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -74,7 +74,7 @@
                                 <GridViewColumn Header="Repair Price" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding repair_price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -93,7 +93,7 @@
 
             <materialDesign:Card Grid.Row="3" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntAddNewRepairer" Click="RepairConfirmBill_Click"   Content="Confirm Repair Bill" Margin="450 5 5 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntAddNewRepairer" Click="RepairConfirmBill_Click"   Content="Confirm Repair Bill" Margin="450 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>

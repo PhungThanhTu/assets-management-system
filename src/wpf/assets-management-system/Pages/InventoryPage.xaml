@@ -49,7 +49,7 @@
                                 <GridViewColumn Header="Inventory Date" Width="230">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto">
+                                            <Grid Width="auto" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding inventory_date}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -64,7 +64,7 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntStart_Inventory" Click="StartInventory_Click"   Content="Start Inventory" Margin="440 5 10 5"  Height="35" Width="200" ></Button>
+                    <Button Name="bntStart_Inventory" Click="StartInventory_Click"   Content="Start Inventory" Margin="450 10 10 10"  Height="35" Width="200" ></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>

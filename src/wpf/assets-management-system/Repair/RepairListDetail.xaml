@@ -29,7 +29,7 @@
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <TextBlock Margin="5" Grid.Row="0"  Text="RepairBill Detail" HorizontalAlignment="Center" VerticalAlignment="Top"
+                <TextBlock Margin="5" Grid.Row="0"  Text="Repair Bill Detail" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontFamily="Segoe UI" FontSize="20" FontWeight="Bold" />
             </Grid>
 
@@ -38,7 +38,7 @@
                     <ListView Margin="5" Name="lvCheckDetail" ItemsSource="{Binding Transfer}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" Background="{DynamicResource MaterialDesignLightBackground}" HorizontalAlignment="Stretch">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Id"  Width="100">
+                                <GridViewColumn Header="ID"  Width="100">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid Width="45">
@@ -47,10 +47,10 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Device Name"  Width="150">
+                                <GridViewColumn Header="Device Name"  Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="120">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding name}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -59,7 +59,7 @@
                                 <GridViewColumn Header="Specification" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="150">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding specification}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -69,7 +69,7 @@
                                 <GridViewColumn Header="Repair Price" Width="150">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="150">
+                                            <Grid Width="150" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding repair_price}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>
@@ -85,7 +85,7 @@
 
             <materialDesign:Card Grid.Row="2" Margin="5" >
                 <WrapPanel>
-                    <Button Name="bntExit" Click="Exit_Click"   Content="Close" Margin="440 5 10 5"  Height="35" Width="200" Background="OrangeRed"></Button>
+                    <Button Name="bntExit" Click="Exit_Click"   Content="Exit" Margin="450 10 10 10"  Height="35" Width="200" Background="OrangeRed"></Button>
                 </WrapPanel>
             </materialDesign:Card>
         </Grid>
