@@ -67,10 +67,10 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
-                                <GridViewColumn Header="Division" Width="150">
+                                <GridViewColumn Header="Division" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Grid Width="auto" Margin="20 0 0 0">
+                                            <Grid Width="200" Margin="20 0 0 0">
                                                 <TextBlock Text="{Binding division}" HorizontalAlignment="Left"></TextBlock>
                                             </Grid>
                                         </DataTemplate>

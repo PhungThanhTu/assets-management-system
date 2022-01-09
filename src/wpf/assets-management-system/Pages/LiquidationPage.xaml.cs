@@ -43,7 +43,7 @@ namespace assets_management_system.Pages
         {
             nDetail = new List<CheckDetail>();
             nDetail.Clear();
-            foreach (Device device in lvLiquidation.Items)
+            foreach (Device device in lvLiquidation.SelectedItems)
             {
                 CheckDetail newSelectedDevice = new CheckDetail();
                 newSelectedDevice.id = device.id;

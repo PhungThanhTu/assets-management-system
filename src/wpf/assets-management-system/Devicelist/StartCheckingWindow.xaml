@@ -90,8 +90,8 @@
 
         <materialDesign:Card Grid.Row="2" Margin="5">
             <WrapPanel>
-                <Button Margin="250 10 10 10 " Height="35" Width="200" Content="Confirm Device Status" Click="Checking_Click"></Button>
-                <Button Margin="10 10 10 10 " Height="35" Width="200" Content="Exit" Click="Exit_Click" Background="OrangeRed"></Button>
+                <Button Margin="220 10 10 10 " Height="35" Width="200" Content="Confirm Device Status" Click="Checking_Click"></Button>
+                <Button Margin="20 10 10 10 " Height="35" Width="200" Content="Exit" Click="Exit_Click" Background="OrangeRed"></Button>
             </WrapPanel>
         </materialDesign:Card>
         

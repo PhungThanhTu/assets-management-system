@@ -53,7 +53,7 @@
                             <Label Content="Lost"></Label>
                             <Label Content="Transfered Outside"></Label>
                         </ComboBox>
-                        <Button Name="bntEditStatus" Click="EditStatus_Click"   Content="Edit Status" Margin="5 25 5 5"  Height="30" Width="120" ></Button>
+                        <Button Name="bntEditStatus" Click="EditStatus_Click"   Content="Edit Status" Margin="0 25 5 5"  Height="30" Width="120" ></Button>
                     </WrapPanel>
                 </materialDesign:Card>
             </Grid>
