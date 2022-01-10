@@ -37,25 +37,33 @@ namespace assets_management_system
             else if (FloatingPasswordBox.Password.Length == 0)
                 MessageBox.Show("Please enter Password!");
             else
-            {
-                Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData(API_config.enpoint_uri +"login/" + username + "/" + password));
-                    
-                if(getMessage == null)
+            {   
+                try
                 {
-                    MessageBox.Show("Cannot connect to the server", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
-                    return;
-                }
+                    Message getMessage = JsonConvert.DeserializeObject<Message>(HTTPClientHandler.GetJsonData(API_config.enpoint_uri + "login/" + username + "/" + password));
 
-                if (getMessage.message == "success")
-                {
-                    MainWindow newWindow = new MainWindow();
-                    newWindow.Show();
-                    this.Close();
+                    if (getMessage == null)
+                    {
+                        MessageBox.Show("Cannot connect to the server", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                        return;
+                    }
+
+                    if (getMessage.message == "success")
+                    {
+                        MainWindow newWindow = new MainWindow();
+                        newWindow.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(getMessage.message, "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show(getMessage.message, "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Cannot connect to the server, please try again");
                 }
+                
 
             }
         }
