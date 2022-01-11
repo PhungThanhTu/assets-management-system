@@ -5,8 +5,9 @@
     "\\assets-management-system\\data_classes",
     "\\assets-management-system\\Devicelist",
     "\\assets-management-system\\Liquidation",
-    "\\assets-management-system\\Pages"
+    "\\assets-management-system\\Pages",
+    "\\assets-management-system\\Repair"
   ],
-  "SelectedNode": "\\assets-management-system\\App.xaml",
+  "SelectedNode": "\\assets-management-system\\Liquidation\\LiquidatinDetailYear.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

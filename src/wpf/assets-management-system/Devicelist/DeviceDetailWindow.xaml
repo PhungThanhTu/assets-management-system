@@ -14,11 +14,12 @@
         Background="{DynamicResource MaterialDesignPaper}"    
         FontFamily="{DynamicResource MaterialDesignFont}"
         WindowStartupLocation="CenterScreen"
-        Title="Device Detail" Height="450" Width="800">
+        Title="Device Detail" Height="500" Width="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <TextBlock Margin="5 10 5 10" Grid.Row="0"  Text="Devide Detail" HorizontalAlignment="Center" VerticalAlignment="Top"
@@ -310,5 +311,10 @@
                     >
             </Grid>
         </Grid>
+        <materialDesign:Card Grid.Row="2" Margin="5" >
+            <WrapPanel>
+                <Button Name="bntExit" Click="Exit_Click"   Content="Exit" Margin="450 10 10 10"  Height="35" Width="200" Background="OrangeRed"></Button>
+            </WrapPanel>
+        </materialDesign:Card>
     </Grid>
 </Window>

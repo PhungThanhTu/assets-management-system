@@ -51,5 +51,10 @@ namespace assets_management_system
                 MessageBox.Show(data);
             }
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
