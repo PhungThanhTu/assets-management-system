@@ -108,10 +108,14 @@ namespace assets_management_system.Pages
         }
 
         private void listview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            int id = ((Device)lvDevice.SelectedItem).id;
-            DeviceDetailWindow deviceDetailWindow = new DeviceDetailWindow(id);
-            deviceDetailWindow.ShowDialog();
+        {   
+            if(lvDevice.SelectedItems.Count != 0)
+            {
+                int id = ((Device)lvDevice.SelectedItem).id;
+                DeviceDetailWindow deviceDetailWindow = new DeviceDetailWindow(id);
+                deviceDetailWindow.ShowDialog();
+            }
+            
         }
 
         private void Check_Click(object sender, RoutedEventArgs e)

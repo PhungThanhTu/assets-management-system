@@ -39,10 +39,17 @@ namespace assets_management_system.Repair
                 return;
             }
             else
-            {
-                repair.repair_price = int.Parse(txtboxPrice.Text);
-                enterDelegate(this.repair, this.index);
-                this.Close();
+            {   
+                if(int.TryParse(txtboxPrice.Text,out _))
+                {
+                    repair.repair_price = int.Parse(txtboxPrice.Text);
+                    enterDelegate(this.repair, this.index);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter price as number");
+                }
             }
         }
     }
